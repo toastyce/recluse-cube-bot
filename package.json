@@ -1,0 +1,23 @@
+{
+  "name": "recluse-cube-bot",
+  "version": "0.0.1",
+  "description": "recluse-cube bot for adding room and role functions",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "discord.js": "^12.2.0",
+    "leekslazylogger": "^1.1.9"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/toastyce/recluse-cube-bot.git"
+  },
+  "author": "Toastyce",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/toastyce/recluse-cube-bot/issues"
+  },
+  "homepage": "https://github.com/toastyce/recluse-cube-bot#readme"
+}
