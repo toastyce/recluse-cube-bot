@@ -7,8 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "discord.js": "^12.2.0",
-    "leekslazylogger": "^1.1.9"
+    "client.Discord.js": "^12.2.0",
+    "leekslazylogger": "^1.1.9",
+    "enmap": "^5.2.4"
   },
   "repository": {
     "type": "git",
