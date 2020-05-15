@@ -1,6 +1,6 @@
 package-lock.json
 
-
+tickets/*
 logs/
 *.log
 node_modules/
