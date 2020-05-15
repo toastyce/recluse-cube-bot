@@ -1,6 +1,12 @@
 module.exports = (client, message) => {
     // filter messages for commands
     if (message.author.bot) return;
+    if (message.channel.name.startsWith('ticket-')) {
+    }  
+      if (message.channel.name.startsWith('sealing-stone-')) {
+    }  
+      if (message.channel.name.startsWith('request-')) {
+    }
     if (message.content.indexOf(client.config.prefix) !== 0) return;
   
     // command prefix and formatting
