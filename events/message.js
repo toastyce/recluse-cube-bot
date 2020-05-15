@@ -8,6 +8,7 @@ module.exports = (client, message) => {
     // Our standard argument/command name definition.
     const args = message.content.slice(client.config.prefix.length).trim().split(/ +/g);
     const command = args.shift().toLowerCase();
+    client.log.console(`${message.author.tag} used the '${command}' command`)
   
     // Grab the command data from the client.commands Enmap
     const cmd = client.commands.get(command);
