@@ -24,6 +24,7 @@ console.log(log.colour.yellow(leeks.styles.bold(`${description} - v${version}`))
 log.init('Leeks Logger started successfully!')
 log.info(`Starting up...`)
 
+// Initialization
 client.once('ready', () => {
     log.info(`Initializing Recluse Cube...`)
     for (const file of commands) {
@@ -69,6 +70,21 @@ client.once('ready', () => {
     }
   });
 
-
-
+  
+  //Error handling
+  client.on('error', error => {
+    log.warn(`Potential error detected\n(likely Discord API connection issue)\n`);
+    log.error(`Client error:\n${error}`);
+  });  
+  client.on('warn', (e) => log.warn(`${e}`));
+  if (config.debugLevel == 1) { client.on('debug', (e) => log.debug(`${e}`)) };
+  process.on('unhandledRejection', error => {
+    log.warn(`An error was not caught`);
+    log.error(`Uncaught error: \n${error.stack}`);
+  });  
+  process.on('beforeExit', (code) => {
+    log.basic(log.colour.yellowBright(`Disconected from Discord API`));
+    log.basic(`Exiting (${code})`);
+  });
+  
 client.login(config.token);
