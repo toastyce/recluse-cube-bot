@@ -5,7 +5,7 @@ Recluse Cube
 > Set config.json
   @name recluse-cube-bot
   @author Freya <Freya#2000>
-  @license GNU-GPLv3
+  @license ISC
 ###############################################################################################
 */
 const fs = require('fs');
@@ -19,6 +19,10 @@ client.commands = new Discord.Collection();
 const cooldowns = new Discord.Collection();
 const now = Date.now();
 const commands = fs.readdirSync('./commands').filter(file => file.endsWith('.js')); //input list of commands based on names of files within commands subfolder
+
+console.log(log.colour.yellow(leeks.styles.bold(`${description} - v${version}`)));
+log.init('Leeks Logger started successfully!')
+log.info(`Starting up...`)
 
 client.once('ready', () => {
     log.info(`Initializing Recluse Cube...`)
