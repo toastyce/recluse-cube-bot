@@ -26,6 +26,7 @@ client.Discord = Discord;
 client.version = version;
 client.description = description;
 
+
 fs.readdir("./events/", (err, files) => {
   if (err) return console.error(err);
   files.forEach(file => {
