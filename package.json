@@ -1,7 +1,7 @@
 {
   "name": "recluse-cube-bot",
   "version": "0.1.0",
-  "description": "recluse-cube bot for adding room and role functions",
+  "description": "Recluse Cube",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
