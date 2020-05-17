@@ -1,3 +1,3 @@
 module.exports = (client, message) => {
-  //client.log.debug(`\n${message}`);
+  client.log.debug(`Placeholder!\n`);
   };

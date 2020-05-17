@@ -6,21 +6,18 @@ exports.run = (client, message, args) => {
       // TODO: Add member filter to DM logs
       message.channel.delete()
       // log
-      if (client.config.useEmbeds) {
-        const embed = new client.Discord.MessageEmbed()
-          .setAuthor(`${client.user.username} / Ticket Log`, client.user.avatarURL)
-          .setTitle("Ticket Closed")
-          .setColor(client.config.colour)
-          .addField("Username", message.author, true)
-          .addField("Channel", message.channel.name, true)
-          .setFooter(`${client.description} - v${client.version}`)
-          .setTimestamp();
-        client.channels.cache.get(client.config.logChannel).send({ embed })
-      } else {
-        client.channels.cache.get(client.config.logChannel).send(`Ticket closed by **${message.author.tag} (${message.author.id})**`);
-      }
+      const embed = new client.Discord.MessageEmbed()
+        .setAuthor(`${client.user.username} / Ticket Log`, client.user.avatarURL)
+        .setTitle("Ticket Closed")
+        .setColor(client.config.colour)
+        .addField("Username", message.author, true)
+        .addField("Channel", message.channel.name, true)
+        .setFooter(`${client.description} - v${client.version}`)
+        .setTimestamp();
+      client.channels.cache.get(client.config.logChannel).send({
+        embed
+      })
       client.log.info(`${message.author.tag} closed a ticket (#${message.channel.name})`)
-
     } catch (error) {
       client.log.error(client.log.colour.red(error));
     }
@@ -28,19 +25,17 @@ exports.run = (client, message, args) => {
     try {
       message.channel.delete()
       // log
-      if (client.config.useEmbeds) {
-        const embed = new client.Discord.MessageEmbed()
-          .setAuthor(`${client.user.username} / Ticket Log`, client.user.avatarURL)
-          .setTitle("Ticket Closed")
-          .setColor(client.config.colour)
-          .addField("Username", message.author, true)
-          .addField("Channel", message.channel.name, true)
-          .setFooter(`${client.description} - v${client.version}`)
-          .setTimestamp();
-        client.channels.cache.get(client.config.logChannel).send({ embed })
-      } else {
-        client.channels.cache.get(client.config.logChannel).send(`Ticket closed by **${message.author.tag} (${message.author.id})**`);
-      }
+      const embed = new client.Discord.MessageEmbed()
+        .setAuthor(`${client.user.username} / Ticket Log`, client.user.avatarURL)
+        .setTitle("Ticket Closed")
+        .setColor(client.config.colour)
+        .addField("Username", message.author, true)
+        .addField("Channel", message.channel.name, true)
+        .setFooter(`${client.description} - v${client.version}`)
+        .setTimestamp();
+      client.channels.cache.get(client.config.logChannel).send({
+        embed
+      })
       client.log.info(`${message.author.tag} closed a ticket (#${message.channel.name})`)
     } catch (error) {
       client.log.error(client.log.colour.red(error));
@@ -49,21 +44,18 @@ exports.run = (client, message, args) => {
     try {
       message.channel.delete()
       // log
-      if (client.config.useEmbeds) {
-        const embed = new client.Discord.MessageEmbed()
-          .setAuthor(`${client.user.username} / Ticket Log`, client.user.avatarURL)
-          .setTitle("Ticket Closed")
-          .setColor(client.config.colour)
-          .addField("Username", message.author, true)
-          .addField("Channel", message.channel.name, true)
-          .setFooter(`${client.description} - v${client.version}`)
-          .setTimestamp();
-        client.channels.cache.get(client.config.logChannel).send({ embed })
-      } else {
-        client.channels.cache.get(client.config.logChannel).send(`Ticket closed by **${message.author.tag} (${message.author.id})**`);
-      }
+      const embed = new client.Discord.MessageEmbed()
+        .setAuthor(`${client.user.username} / Ticket Log`, client.user.avatarURL)
+        .setTitle("Ticket Closed")
+        .setColor(client.config.colour)
+        .addField("Username", message.author, true)
+        .addField("Channel", message.channel.name, true)
+        .setFooter(`${client.description} - v${client.version}`)
+        .setTimestamp();
+      client.channels.cache.get(client.config.logChannel).send({
+        embed
+      })
       client.log.info(`${message.author.tag} closed a ticket (#${message.channel.name})`)
-
     } catch (error) {
       client.log.error(client.log.colour.red(error));
     }
@@ -78,5 +70,4 @@ exports.run = (client, message, args) => {
     }
   }
 }
-  // command ends here
-
+// command ends here
