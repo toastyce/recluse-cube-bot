@@ -1,7 +1,7 @@
 const fs = require("fs");
 module.exports = (client, message) => {
-    // filter messages for commands
     if (message.author.bot) return;
+    // log private channels
     if (message.channel.name.startsWith('ticket-')) {
         try {
             if (!fs.existsSync(`./tickets/${message.channel.name}.txt`)) {
@@ -15,6 +15,7 @@ module.exports = (client, message) => {
                 return client.log.error(err);
         });
     }
+
     if (message.channel.name.startsWith('sealing-stone-')) {
         try {
             if (!fs.existsSync(`./tickets/${message.channel.name}.txt`)) {
@@ -28,6 +29,7 @@ module.exports = (client, message) => {
                 return client.log.error(err);
         });
     }
+
     if (message.channel.name.startsWith('request-')) {
         try {
             if (!fs.existsSync(`./tickets/${message.channel.name}.txt`)) {
@@ -41,6 +43,7 @@ module.exports = (client, message) => {
                 return client.log.error(err);
         });
     }
+    // filter messages for commands
     if (message.content.indexOf(client.config.prefix) !== 0) return;
 
     // command prefix and formatting

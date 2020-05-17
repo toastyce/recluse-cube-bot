@@ -1,9 +1,10 @@
 exports.run = (client, message, args) => {
-
   message.delete();
+
   let topic = args.join(" ");
   let id = message.author.id.toString().substr(0, 4) + message.author.discriminator;
   let chan = `sealing-stone-${id}`;
+  
   if (message.guild.channels.cache.find(channel => channel.name === chan)) {
     if (client.config.useEmbeds) {
       const err1 = new client.Discord.MessageEmbed()

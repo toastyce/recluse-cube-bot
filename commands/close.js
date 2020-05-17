@@ -1,6 +1,7 @@
 exports.run = (client, message, args) => {
   // command starts here
   message.delete();
+  
   if (message.channel.name.startsWith('ticket-')) {
     try {
       // TODO: Add member filter to DM logs
