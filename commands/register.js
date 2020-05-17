@@ -25,6 +25,10 @@ exports.run = (client, message, args) => {
     c.setParent(client.config.ticketsCat);
     let supportRole = message.guild.roles.cache.get(client.config.supportRole)
     if (!supportRole) return message.channel.send(":x: No **Support Team** role found.");
+    c.createOverwrite(message.guild.roles.everyone, {
+      VIEW_CHANNEL: false,
+      SEND_MESSAGES: false
+    })
     c.createOverwrite(message.member, {
       VIEW_CHANNEL: true,
       SEND_MESSAGES: true
