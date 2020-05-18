@@ -1,7 +1,0 @@
-package-lock.json
-.gitignore
-tickets/*
-logs/
-*.log
-node_modules/
-config.json
