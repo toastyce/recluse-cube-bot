@@ -18,8 +18,8 @@ const Enmap = require("enmap");
 const fs = require("fs");
 
 const client = new Discord.Client();
-const config = require("./config.json");
-const starray = require("./strings.json");
+const config = require("./res/config.json");
+const starray = require("./res/strings.json");
 // We also need to make sure we're attaching the config to the CLIENT so it's accessible everywhere!
 client.config = config;
 client.log = log;
