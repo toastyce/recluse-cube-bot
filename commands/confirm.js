@@ -6,7 +6,6 @@ exports.run = (client, message, args) => {
     const roleName = args[2];
     const roleColor = args[3];
     const roleAffinity = args[4];
-    const userId = client.users.fetch(newMember);
     let member = message.mentions.members.first();
     if (member == newMember) {
         client.log.debug("Mention checks out.")
@@ -77,6 +76,6 @@ exports.run = (client, message, args) => {
     } catch (error) {
         client.log.error(client.log.colour.red(error));
     }
-    
+
     // command ends here
 }
