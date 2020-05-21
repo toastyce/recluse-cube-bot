@@ -64,7 +64,7 @@ exports.run = (client, message, args) => {
         embed
       });
       
-    client.log.info(`${message.author.tag} created a new registration (#sealing-stone-${id})`)
+    client.log.info(`${message.author.tag} created a new registration (#request-${id})`)
   })
   // command ends here
 }

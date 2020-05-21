@@ -6,15 +6,11 @@ exports.run = (client, message, args) => {
   let chan = `sealing-stone-${id}`;
   
   if (message.guild.channels.cache.find(channel => channel.name === chan)) {
-    if (client.config.useEmbeds) {
-      const err1 = new client.Discord.MessageEmbed()
-        .setColor("#E74C3C")
-        .setDescription(`:x: You already have an open request.`)
-      return message.channel.send(err1)
-    } else {
-      message.channel.send(`:x: You already have an open request.`)
-    }
-  };
+    const err1 = new client.Discord.MessageEmbed()
+      .setColor("#E74C3C")
+      .setDescription(client.starray.openExist)
+    return message.channel.send(err1)
+};
 
   message.guild.channels.create(`sealing-stone-${id}`, {
     type: 'text',
@@ -25,7 +21,7 @@ exports.run = (client, message, args) => {
   }).then(async c => {
     c.setParent(client.config.ticketsCat);
     let supportRole = message.guild.roles.cache.get(client.config.supportRole)
-    if (!supportRole) return message.channel.send(":x: No **Support Team** role found.");
+    if (!supportRole) return message.channel.send(client.starray.noSupportRoleErr);
     c.createOverwrite(message.guild.roles.everyone, {
       VIEW_CHANNEL: false,
       SEND_MESSAGES: false
@@ -40,27 +36,16 @@ exports.run = (client, message, args) => {
     })
 
     c.setTopic(`${message.author} | ${topic}`);
-    if (client.config.tagHereOnly) {
-      await c.send(`@here, a new user has registered.\n`);
-    } else {
-      await c.send(`<@&${client.config.supportRole}>, a new user has registered.\n`);
-    };
-
-    if (client.config.ticketImage) {
-      await c.send(`__**Here's your request, ${message.author}**__`, {
-        files: [`./image.png`]
-      })
-    } else {
-      await c.send(`__**Here's your request, ${message.author}**__`)
-    }
+    await c.send(client.starray.tagSupport.replace("{{role}}", `<@&${client.config.supportRole}>`)); 
+    await c.send(client.starray.requestCreated.replace("{{user}}", `<${message.author}>`))
 
     const created = new client.Discord.MessageEmbed()
       .setColor(client.config.colour)
-      .setDescription(`Your request (${c}) has been created.\nPlease read the information sent and follow any instructions given.`)
+      .setDescription(client.starray.requestDetails.replace("{{channel}}", `(${c})`))
       .setTimestamp();
     const welcome = new client.Discord.MessageEmbed()
       .setColor(client.config.colour)
-      .setDescription(`**New registration:** \`${topic}\`\n\n${client.config.ticketText}`)
+      .setDescription(client.starray.requestDesc.replace("{{topic}}", `${topic}`))
       
       message.channel.send(created)
       let w = await c.send(welcome)
