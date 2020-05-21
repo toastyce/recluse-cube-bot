@@ -24,6 +24,14 @@ exports.run = (client, message, args) => {
       client.log.error(client.log.colour.red(error));
     }
 
+    try {
+      client.channels.cache.get(client.config.adminChannel).send(`${message.channel.name}:`, {
+        files: [`./tickets/${message.channel.name}.txt`]
+      })
+    } catch (error) {
+      client.log.error(client.log.colour.red(error));
+    }
+
   } else if (message.channel.name.startsWith('sealing-stone-')) {
     try {
       message.channel.delete()
@@ -40,6 +48,14 @@ exports.run = (client, message, args) => {
         embed
       })
       client.log.info(`${message.author.tag} closed a ticket (#${message.channel.name})`)
+    } catch (error) {
+      client.log.error(client.log.colour.red(error));
+    }
+
+    try {
+      client.channels.cache.get(client.config.adminChannel).send(`~~Registration Closed:~~`, {
+        files: [`./tickets/${message.channel.name}.txt`]
+      })
     } catch (error) {
       client.log.error(client.log.colour.red(error));
     }
@@ -63,8 +79,16 @@ exports.run = (client, message, args) => {
     } catch (error) {
       client.log.error(client.log.colour.red(error));
     }
-    
-  } else { 
+
+    try {
+      client.channels.cache.get(client.config.adminChannel).send(`~~Room Request Closed:~~`, {
+        files: [`./tickets/${message.channel.name}.txt`]
+      })
+    } catch (error) {
+      client.log.error(client.log.colour.red(error));
+    }
+
+  } else {
     const notTicket = new client.Discord.MessageEmbed()
       .setColor("#E74C3C")
       .setDescription(client.starray.incorrectChannel)
