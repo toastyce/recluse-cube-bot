@@ -18,5 +18,7 @@ module.exports = (client, member) => {
   member.roles.add(client.config.juniorRole).catch(console.error);
   member.guild.channels.cache.get(client.config.guestChannel).send(`<@${member.id}>`).then(
     member.guild.channels.cache.get(client.config.guestChannel).send(welcomeMessage).catch(client.log.error).then(
-    member.guild.channels.cache.get(client.config.logChannel).send(embed).catch(client.log.error)));
+      member.guild.channels.cache.get(client.config.logChannel).send(embed).catch(client.log.error)));
+
+  client.log.info(`${member.username} has joined.`)
 };
