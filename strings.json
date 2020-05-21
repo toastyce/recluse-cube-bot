@@ -2,7 +2,7 @@
   "_GENERAL_MESSAGES": "Messages that apply to the entire app",
   "footer": "英雄伝説/RP Recluse Cube - v{{version}}",
   "_EVENT_MESSAGES": "Various Event related messages",
-  "welcomeMessage": "{{user}},\n\n Welcome to the Eiyuu Densetsu (英雄伝説) / Kiseki RP Discord!\n We're happy to have you!\nPlease take a moment to view the channels viewable under Bracer Notebook, and then proceed to registering.",
+  "welcomeMessage": "<{{user}}>,\n\n Welcome to the Eiyuu Densetsu (英雄伝説) / Kiseki RP Discord!\n We're happy to have you!\nPlease take a moment to view the channels viewable under Bracer Notebook, and then proceed to registering.",
   "_TICKET_MESSAGES": "New ticket texts",
   "openExist": "You already have an open request.",
   "noSupportRoleErr": ":x: No **Support Team** role found.",

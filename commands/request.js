@@ -55,7 +55,7 @@ exports.run = (client, message, args) => {
       await w.pin();
     
       const embed = new client.Discord.MessageEmbed()
-        .setAuthor(`${client.user.username} / Ticket Log`, client.user.avatarURL)
+        .setAuthor(`${client.user.username}`, client.user.avatarURL)
         .setTitle("New registration")
         .setColor(client.config.colour)
         .setDescription(`\`${topic}\``)

@@ -8,7 +8,7 @@ exports.run = (client, message, args) => {
       message.channel.delete()
       // log
       const embed = new client.Discord.MessageEmbed()
-        .setAuthor(`${client.user.username} / Ticket Log`, client.user.avatarURL)
+        .setAuthor(`${client.user.username}`, client.user.avatarURL)
         .setTitle("Ticket Closed")
         .setColor(client.config.colour)
         .addField("Username", message.author, true)
@@ -27,7 +27,7 @@ exports.run = (client, message, args) => {
       message.channel.delete()
       // log
       const embed = new client.Discord.MessageEmbed()
-        .setAuthor(`${client.user.username} / Ticket Log`, client.user.avatarURL)
+        .setAuthor(`${client.user.username}`, client.user.avatarURL)
         .setTitle("Ticket Closed")
         .setColor(client.config.colour)
         .addField("Username", message.author, true)
@@ -46,7 +46,7 @@ exports.run = (client, message, args) => {
       message.channel.delete()
       // log
       const embed = new client.Discord.MessageEmbed()
-        .setAuthor(`${client.user.username} / Ticket Log`, client.user.avatarURL)
+        .setAuthor(`${client.user.username}`, client.user.avatarURL)
         .setTitle("Ticket Closed")
         .setColor(client.config.colour)
         .addField("Username", message.author, true)

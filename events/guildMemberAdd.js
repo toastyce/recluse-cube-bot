@@ -1,6 +1,6 @@
 module.exports = (client, member) => {
   const welcomeMessage = new client.Discord.MessageEmbed()
-    .setAuthor(`${client.user.username} / Recluse Cube`, client.user.avatarURL)
+    .setAuthor(`${client.user.username}`, client.user.avatarURL)
     .setTitle("Welcome!")
     .setColor(client.config.colour)
     .setDescription(client.starray.welcomeMessage.replace("{{user}}", member.user.tag))
@@ -8,10 +8,10 @@ module.exports = (client, member) => {
     .setTimestamp();
 
   const embed = new client.Discord.MessageEmbed()
-    .setAuthor(`${client.user.username} / Ticket Log`, client.user.avatarURL)
+    .setAuthor(`<${client.user.username}>`, client.user.avatarURL)
     .setTitle("New member")
     .setColor(client.config.colour)
-    .setDescription(member.user.tag + ": A New user has joined the server.")
+    .setDescription(`<${member.user.tag, true}>` + ": A New user has joined the server.")
     .setFooter(client.starray.footer.replace("{{version}}", `${client.version}`))
     .setTimestamp();
 
