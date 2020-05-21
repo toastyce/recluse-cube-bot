@@ -9,7 +9,8 @@ module.exports = (client, message) => {
     .setAuthor(`${client.user.username}`, client.user.avatarURL)
     .setColor("#2ECC71")
     .setDescription(":white_check_mark: **Started succesfully**")
-    .setFooter(`${client.description} - v${client.version}`);
+    .setFooter(client.starray.footer.replace("{{version}}", `${client.version}`));
+
   client.channels.cache.get(client.config.logChannel).send(embed);
   if (client.guilds.cache.get(client.config.guildID).member(client.user).hasPermission("ADMINISTRATOR", false)) {
     client.log.info(`Checking permissions...`);
@@ -21,7 +22,8 @@ module.exports = (client, message) => {
       .setAuthor(`${client.user.username}`, client.user.avatarURL)
       .setColor("#2ECC71")
       .setDescription(":white_check_mark: **Required permissions have been granted**")
-      .setFooter(`${client.description} - v${client.version}`);
+      .setFooter(client.starray.footer.replace("{{version}}", `${client.version}`));
+
     client.channels.cache.get(client.config.logChannel).send(embed)
   } else {
     client.log.error(`Required permissions have not been granted`)
@@ -31,7 +33,8 @@ module.exports = (client, message) => {
       .setAuthor(`${client.user.username}`, client.user.avatarURL)
       .setColor("#E74C3C")
       .setDescription(":x: **Required permissions have not been granted**\nPlease give the bot the `ADMINISTRATOR` permission")
-      .setFooter(`${client.description} - v${client.version}`);
+      .setFooter(client.starray.footer.replace("{{version}}", `${client.version}`));
+      
     client.channels.cache.get(client.config.logChannel).send({
       embed
     })

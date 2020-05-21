@@ -1,3 +1,21 @@
 module.exports = (client, member) => {
-  const welcomeMessage = client.config.welcomeMessage.replace("{{user}}", member.user.tag);
-  };
+  const welcomeMessage = new client.Discord.MessageEmbed()
+    .setAuthor(`${client.user.username} / Recluse Cube`, client.user.avatarURL)
+    .setTitle("Welcome!")
+    .setColor(client.config.colour)
+    .setDescription(client.starray.welcomeMessage.replace("{{user}}", member.user.tag))
+    .setFooter(client.starray.footer.replace("{{version}}", `${client.version}`))
+    .setTimestamp();
+
+  const embed = new client.Discord.MessageEmbed()
+    .setAuthor(`${client.user.username} / Ticket Log`, client.user.avatarURL)
+    .setTitle("New member")
+    .setColor(client.config.colour)
+    .setDescription(member.user.tag + ": A New user has joined the server.")
+    .setFooter(client.starray.footer.replace("{{version}}", `${client.version}`))
+    .setTimestamp();
+
+  member.roles.add(client.config.juniorRole).catch(console.error);
+  member.guild.channels.cache.get(client.config.guestChannel).send(welcomeMessage).catch(client.log.error).then(
+    member.guild.channels.cache.get(client.config.logChannel).send(embed).catch(client.log.error));
+};

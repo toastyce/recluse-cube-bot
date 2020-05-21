@@ -51,7 +51,7 @@ fs.readdir("./commands/", (err, files) => {
   });
 });
 
-console.log(client.log.colour.yellow(leeks.styles.bold(`${client.description} - v${client.version}`)));
+console.log(client.log.colour.yellow(leeks.styles.bold(client.starray.footer.replace("{{version}}", `${client.version}`))));
 log.init('Leeks Logger started successfully!')
 log.info(`Starting up...`)
 

@@ -13,7 +13,7 @@ exports.run = (client, message, args) => {
         .setColor(client.config.colour)
         .addField("Username", message.author, true)
         .addField("Channel", message.channel.name, true)
-        .setFooter(`${client.description} - v${client.version}`)
+        .setFooter(client.starray.footer.replace("{{version}}", `${client.version}`))
         .setTimestamp();
       client.channels.cache.get(client.config.logChannel).send({
         embed

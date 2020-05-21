@@ -9,6 +9,7 @@ exports.run = (client, message, args) => {
     const err1 = new client.Discord.MessageEmbed()
       .setColor("#E74C3C")
       .setDescription(client.starray.openExist)
+      .setFooter(client.starray.footer.replace("{{version}}", `${client.version}`))
     return message.channel.send(err1)
 };
 
@@ -42,10 +43,13 @@ exports.run = (client, message, args) => {
     const created = new client.Discord.MessageEmbed()
       .setColor(client.config.colour)
       .setDescription(client.starray.requestDetails.replace("{{channel}}", `(${c})`))
-      .setTimestamp();
+      .setTimestamp()
+      .setFooter(client.starray.footer.replace("{{version}}", `${client.version}`));
+
     const welcome = new client.Discord.MessageEmbed()
       .setColor(client.config.colour)
       .setDescription(client.starray.requestDesc.replace("{{topic}}", `${topic}`))
+      .setFooter(client.starray.footer.replace("{{version}}", `${client.version}`))
       
       message.channel.send(created)
       let w = await c.send(welcome)
@@ -58,7 +62,7 @@ exports.run = (client, message, args) => {
         .setDescription(`\`${topic}\``)
         .addField("Username", message.author, true)
         .addField("Channel", c, true)
-        .setFooter(`${client.description} - v${client.version}`)
+        .setFooter(client.starray.footer.replace("{{version}}", `${client.version}`))
         .setTimestamp();
       client.channels.cache.get(client.config.logChannel).send({
         embed
