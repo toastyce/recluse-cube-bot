@@ -1,6 +1,9 @@
 exports.run = (client, message, args) => {
     // command starts here
     message.delete();
+    var roleLength = [];
+    message.guild.roles.cache.forEach(role => roleLength.push(`${role.name}`) );
+    client.log.info(`Position: ${roleLength.length}`);
     const newMember = args[0].replace('<@', '').replace('>', '').replace('!', '');
     const characterName = args[1];
     const roleName = args[2];
@@ -24,26 +27,32 @@ exports.run = (client, message, args) => {
         return message.channel.send(notTicket);
     };
 
-    // Create a new role with data and a reason
-    client.log.debug("creating role...");
-    message.guild.roles.create({
-            data: {
-                name: roleName,
-                color: roleColor,
-            },
-            reason: `New Registration for ${characterName}`,
-        })
-        .then(role => member.roles.add(role))
-        .catch(client.log.error);
-    // assign roles and name to member
-    let affinityRole = message.guild.roles.cache.get(`${affinityChoice}`)
-    member.setNickname(characterName).catch(client.log.error).then(
-        member.roles.add(`${client.config.memberRole}`).catch(client.log.error).then(
-            member.roles.add(affinityRole).catch(client.log.error).then(
-                member.roles.remove(client.config.juniorRole).catch(client.log.error)
+    try {
+        // Create a new role with data and a reason
+        client.log.debug("creating role...");
+        message.guild.roles.create({
+                data: {
+                    name: roleName,
+                    color: roleColor,
+                },
+                reason: `New Registration for ${characterName}`,
+            })
+            .then(
+                role => role.setPosition(roleLength.length - 1).then(
+                    role => member.roles.add(role)))
+            .catch(client.log.error);
+        // assign roles and name to member
+        let affinityRole = message.guild.roles.cache.get(`${affinityChoice}`)
+        member.setNickname(characterName).catch(client.log.error).then(
+            member.roles.add(`${client.config.memberRole}`).catch(client.log.error).then(
+                member.roles.add(affinityRole).catch(client.log.error).then(
+                    member.roles.remove(client.config.juniorRole).catch(client.log.error)
+                )
             )
-        )
-    );
+        );
+    } catch (error) {
+        client.log.debug("creating role failed.");
+    }
 
     // and finally close the ticket
     try {
