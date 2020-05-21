@@ -5,6 +5,7 @@
   "welcomeMessage": "<{{user}}>,\n\n Welcome to the Eiyuu Densetsu (英雄伝説) / Kiseki RP Discord!\n We're happy to have you!\nPlease take a moment to view the channels viewable under Bracer Notebook, and then proceed to registering.",
   "_TICKET_MESSAGES": "New ticket texts",
   "openExist": "You already have an open request.",
+  "incorrectChannel": ":x: **This command can only be used within a ticket channel**",
   "noSupportRoleErr": ":x: No **Support Team** role found.",
   "tagSupport": "{{role}}, a new user has registered.\n",
   "requestCreated": "Here's your request, {{user}}",
