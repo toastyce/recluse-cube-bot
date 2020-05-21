@@ -1,0 +1,11 @@
+{
+  "welcomeMessage": "Placeholder",
+  "_COMMENT": "New ticket texts",
+  "openExist": "You already have an open request.",
+  "noSupportRoleErr": ":x: No **Support Team** role found.",
+  "tagSupport": "{{role}}, a new user has registered.\n",
+  "requestCreated": "Here's your request, {{user}}",
+  "requestDetails": "Your request {{channel}} has been created.\nPlease read the information sent and follow any instructions given.",
+  "requestDesc": "**New registration:** {{topic}}\n\nThank you for reaching out to our administrative team.\nBelow, please explain whom you would like to play, and why you would like to play them.\nPlease allow up to 12-24 hours for a response from our team."
+
+}
