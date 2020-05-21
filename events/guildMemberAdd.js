@@ -20,5 +20,5 @@ module.exports = (client, member) => {
     member.guild.channels.cache.get(client.config.guestChannel).send(welcomeMessage).catch(client.log.error).then(
       member.guild.channels.cache.get(client.config.logChannel).send(embed).catch(client.log.error)));
 
-  client.log.info(`${member.username} has joined.`)
+  client.log.info(`${member.displayName} has joined.`)
 };
