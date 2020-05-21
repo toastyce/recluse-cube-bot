@@ -10,6 +10,15 @@ exports.run = (client, message, args) => {
     const roleColor = args[3];
     const roleAffinity = args[4];
     let member = message.mentions.members.first();
+
+    // error checks
+    if ((!newMember) || (!characterName) || (!roleName) || (!roleColor) || (!roleAffinity)) {
+        const invalidInput = new client.Discord.MessageEmbed()
+            .setColor("#E74C3C")
+            .setDescription(client.starray.invalidInput);
+        client.log.debug("We somehow ended up here.");
+        return message.channel.send(invalidInput);
+    }
     if (member == newMember) {
         client.log.debug("Mention checks out.")
     }
