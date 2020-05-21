@@ -2,7 +2,7 @@ exports.run = (client, message, args) => {
     // command starts here
     message.delete();
     const embed = new client.Discord.MessageEmbed()
-    .setTitle("HP and EP fully restored!")
+    .setTitle(client.starray.fullyRest)
     .setColor(client.config.colour)
     .setTimestamp()
     .addField("API Latency", `${Math.round(message.client.ping)}ms`, true)
