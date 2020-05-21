@@ -3,4 +3,4 @@ tickets/*
 logs/
 *.log
 node_modules/
-config.json
+res/config.json
