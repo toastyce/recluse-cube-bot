@@ -1,9 +1,6 @@
 exports.run = (client, message, args) => {
     // command starts here
     message.delete();
-    var roleLength = [];
-    message.guild.roles.cache.forEach(role => roleLength.push(`${role.name}`) );
-    client.log.info(`Position: ${roleLength.length}`);
     const newMember = args[0].replace('<@', '').replace('>', '').replace('!', '');
     const characterName = args[1];
     const roleName = args[2];
@@ -47,8 +44,7 @@ exports.run = (client, message, args) => {
                 reason: `New Registration for ${characterName}`,
             })
             .then(
-                role => role.setPosition(roleLength.length - 1).then(
-                    role => member.roles.add(role)))
+                role => member.roles.add(role))
             .catch(client.log.error);
         // assign roles and name to member
         let affinityRole = message.guild.roles.cache.get(`${affinityChoice}`)
