@@ -5,3 +5,4 @@ const embed = new client.Discord.MessageEmbed()
 .setDescription("Textfieldhere")
 .setFooter(client.starray.footer.replace("{{version}}", `${client.version}`))
 .setTimestamp();
+message.channel.send(embed)

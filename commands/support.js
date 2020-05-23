@@ -38,16 +38,16 @@ exports.run = (client, message, args) => {
 
     c.setTopic(`${message.author} | ${topic}`);
     await c.send(client.starray.tagSupport.replace("{{role}}", `<@&${client.config.supportRole}>`));
-    await c.send(client.starray.requestCreated.replace("{{user}}", `<${message.author}>`))
+    await c.send(client.starray.supportCreated.replace("{{user}}", `<${message.author}>`))
 
     const created = new client.Discord.MessageEmbed()
       .setColor(client.config.colour)
-      .setDescription(client.starray.requestDetails.replace("{{channel}}", `(${c})`))
+      .setDescription(client.starray.supportDetails.replace("{{channel}}", `(${c})`))
       .setTimestamp()
       .setFooter(client.starray.footer.replace("{{version}}", `${client.version}`));
     const welcome = new client.Discord.MessageEmbed()
       .setColor(client.config.colour)
-      .setDescription(client.starray.requestDesc.replace("{{topic}}", `${topic}`))
+      .setDescription(client.starray.supportDesc.replace("{{topic}}", `${topic}`))
       .setFooter(client.starray.footer.replace("{{version}}", `${client.version}`));
 
     message.channel.send(created)
