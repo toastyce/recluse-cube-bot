@@ -3,10 +3,13 @@ exports.run = (client, message, args) => {
     message.delete();
     if (!args[0]) {
         var specValue = "denied";
+        client.log.debug("spectators denied.");
     } else if (args[0] == "allow") {
         var specValue = args[0].toLowerCase();
-    } else if (args[0] != "allow") {
+        client.log.debug("spectators allowed.");
+    } else if (args[0] !== "allow") {
         var specValue = "denied";
+        client.log.debug("spectators denied.");
     } else {
         client.log.debug("We somehow ended up here.");
         var specValue = "denied";
@@ -18,6 +21,13 @@ exports.run = (client, message, args) => {
             .setColor("#E74C3C")
             .setDescription(client.starray.incorrectChannel)
         return message.channel.send(notTicket);
+    }
+
+    if (!message.mentions.members.first()) {
+        const err2 = new client.Discord.MessageEmbed()
+            .setColor("#E74C3C")
+            .setDescription(client.starray.noUserSpecified)
+        return message.channel.send(err2);
     }
 
     // First, we need to create the room
@@ -34,12 +44,14 @@ exports.run = (client, message, args) => {
             VIEW_CHANNEL: false,
             SEND_MESSAGES: false
         })
+
         message.mentions.members.forEach(m =>
             c.createOverwrite(m, {
                 VIEW_CHANNEL: true,
                 SEND_MESSAGES: true
             })
         )
+
 
         if (spectators == 'allow') {
             let spectatorRole = message.guild.roles.cache.get(`${client.config.memberRole}`)
@@ -48,34 +60,36 @@ exports.run = (client, message, args) => {
                 SEND_MESSAGES: false
             })
         }
+    }).then(async c => {
+
+        // finally, close the channel
+        try {
+            message.channel.delete()
+            // log
+            const embed = new client.Discord.MessageEmbed()
+                .setAuthor(`${client.user.username}`, client.user.avatarURL)
+                .setTitle("Ticket Closed")
+                .setColor(client.config.colour)
+                .addField("Username", message.author, true)
+                .addField("Channel", message.channel.name, true)
+                .setFooter(client.starray.footer.replace("{{version}}", `${client.version}`))
+                .setTimestamp();
+            client.channels.cache.get(client.config.logChannel).send({
+                embed
+            })
+            client.log.info(`${message.author.tag} closed a ticket (#${message.channel.name})`)
+        } catch (error) {
+            client.log.error(client.log.colour.red(error));
+        }
+
+        try {
+            client.channels.cache.get(client.config.adminChannel).send(`~~Room Request Closed:~~`, {
+                files: [`./tickets/${message.channel.name}.txt`]
+            })
+        } catch (error) {
+            client.log.error(client.log.colour.red(error));
+        }
     });
 
-    // finally, close the channel
-    try {
-        message.channel.delete()
-        // log
-        const embed = new client.Discord.MessageEmbed()
-            .setAuthor(`${client.user.username}`, client.user.avatarURL)
-            .setTitle("Ticket Closed")
-            .setColor(client.config.colour)
-            .addField("Username", message.author, true)
-            .addField("Channel", message.channel.name, true)
-            .setFooter(client.starray.footer.replace("{{version}}", `${client.version}`))
-            .setTimestamp();
-        client.channels.cache.get(client.config.logChannel).send({
-            embed
-        })
-        client.log.info(`${message.author.tag} closed a ticket (#${message.channel.name})`)
-    } catch (error) {
-        client.log.error(client.log.colour.red(error));
-    }
-
-    try {
-        client.channels.cache.get(client.config.adminChannel).send(`~~Room Request Closed:~~`, {
-            files: [`./tickets/${message.channel.name}.txt`]
-        })
-    } catch (error) {
-        client.log.error(client.log.colour.red(error));
-    }
     // command ends here
 }
