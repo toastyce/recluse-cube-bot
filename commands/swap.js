@@ -1,6 +1,12 @@
 exports.run = (client, message, args) => {
     // command starts here
     message.delete();
+    if (!message.member.hasPermission("MANAGE_CHANNELS")) {
+        const noPerm = new client.Discord.MessageEmbed()
+            .setColor("#E74C3C")
+            .setDescription(client.starray.noPerm)
+        return message.channel.send(noPerm);
+    }
 
     let fromMem = message.mentions.members.first();
     let toMem = message.mentions.members.last();

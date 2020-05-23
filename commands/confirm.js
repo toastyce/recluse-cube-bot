@@ -1,6 +1,13 @@
 exports.run = (client, message, args) => {
     // command starts here
     message.delete();
+    if (!message.member.roles.has(client.config.supportRole)) {
+        const noPerm = new client.Discord.MessageEmbed()
+            .setColor("#E74C3C")
+            .setDescription(client.starray.noPerm)
+        return message.channel.send(noPerm);
+    }
+
     const newMember = args[0].replace('<@', '').replace('>', '').replace('!', '');
     const characterName = args[1];
     const roleName = args[2];

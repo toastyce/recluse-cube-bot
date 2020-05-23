@@ -1,6 +1,13 @@
 exports.run = (client, message, args) => {
     // command starts here
     message.delete();
+    if (!message.member.hasPermission("MANAGE_CHANNELS")) {
+        const noPerm = new client.Discord.MessageEmbed()
+            .setColor("#E74C3C")
+            .setDescription(client.starray.noPerm)
+        return message.channel.send(noPerm);
+    }
+
     if (!args[0]) {
 
         client.log.debug("no affinity specified.");
