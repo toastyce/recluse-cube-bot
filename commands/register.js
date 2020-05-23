@@ -1,16 +1,16 @@
 exports.run = (client, message, args) => {
   message.delete();
-  if (message.member.role.has(client.config.memberRole)) {
-    const noPerm = new client.Discord.MessageEmbed()
+  if (message.member.roles.cache.find(r => r.id=== client.config.memberRole)) {
+    const changeChar = new client.Discord.MessageEmbed()
     .setColor("#E74C3C")
-    .setDescription(client.starray.noPerm)
-  return message.channel.send(noPerm);
+    .setDescription(client.starray.changeChar)
+  return message.channel.send(changeChar);
   }
-  else if (!message.member.roles.has(client.config.juniorRole)) {
+  else if (!message.member.roles.cache.find(r => r.id=== client.config.juniorRole)) {
     const noPerm = new client.Discord.MessageEmbed()
       .setColor("#E74C3C")
       .setDescription(client.starray.noPerm)
-    return message.channel.send(noperm);
+    return message.channel.send(noPerm);
   }
 
   let topic = args.join(" ");
