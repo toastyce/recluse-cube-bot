@@ -23,6 +23,7 @@
   "roomNameSet": "The room name has been set",
   "roomClosed": "The room name has been closed",
   "noUserSpecified": "You must include at least one user",
+  "noAffinity": "Please specify either light or dark affinity.",
   "swappy": "{{a}} has become the {{b}}\n - and - \n {{c}} has become the {{d}}",
   "logSwappy": "{{a}}\n has invoked the swappy command on\n\n{{b}} and {{c}}",
   "ping": "Ping Pong!",
