@@ -65,7 +65,13 @@ module.exports = (client, message) => {
     // Grab the command data from the client.commands Enmap
     const cmd = client.commands.get(command);
 
-    if (!cmd) return;
+    if (!cmd) {
+        if (message.channel.name.startsWith('registration-')) {
+            return message.delete();
+        } else if (message.channel.name.startsWith('bot-')) {
+            return message.delete();
+        } else return;
+    }
 
     // Run the command
     cmd.run(client, message, args);
