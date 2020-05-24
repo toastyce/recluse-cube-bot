@@ -44,7 +44,13 @@ module.exports = (client, message) => {
         });
     }
     // filter messages for commands
-    if (message.content.indexOf(client.config.prefix) !== 0) return;
+    if (message.content.indexOf(client.config.prefix) !== 0) {
+        if (message.channel.name.startsWith('registration-')) {
+            return message.delete();
+        } else if (message.channel.name.startsWith('bot-')) {
+            return message.delete();
+        } else return;
+    };
 
     // command prefix and formatting
     // const args = message.content.slice(client.config.prefix.length).trim().split(/"/);
@@ -64,14 +70,6 @@ module.exports = (client, message) => {
 
     // Grab the command data from the client.commands Enmap
     const cmd = client.commands.get(command);
-
-    if (!cmd) {
-        if (message.channel.name.startsWith('registration-')) {
-            return message.delete();
-        } else if (message.channel.name.startsWith('bot-')) {
-            return message.delete();
-        } else return;
-    }
 
     // Run the command
     cmd.run(client, message, args);
