@@ -12,7 +12,7 @@ exports.run = (client, message, args) => {
     const characterName = args[1];
     const roleName = args[2];
     const roleColor = args[3];
-    const roleAffinity = args[4];
+    const roleAffinity = args[4].toLowerCase();
     let member = message.mentions.members.first();
 
     // error checks
@@ -27,7 +27,7 @@ exports.run = (client, message, args) => {
         client.log.debug("Mention checks out.")
     }
     client.log.debug(member);
-    var affinitychoice = client.config.darkRole;
+    var affinityChoice = client.config.darkRole;
     if (roleAffinity.startsWith('light')) {
         affinityChoice = client.config.lightRole;
     }
