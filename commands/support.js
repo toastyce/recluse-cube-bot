@@ -64,7 +64,7 @@ exports.run = (client, message, args) => {
       .setAuthor(`${client.user.username}`, client.user.avatarURL)
       .setTitle("New ticket")
       .setColor(client.config.colour)
-      .setDescription(`\`${topic}\``)
+      .setDescription(`\`${topic}\`\n` + client.starray.closeNext)
       .addField("Username", message.author, true)
       .addField("Channel", c, true)
       .setFooter(client.starray.footer.replace("{{version}}", `${client.version}`))
