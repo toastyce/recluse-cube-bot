@@ -2,7 +2,13 @@ module.exports = (client, message) => {
   client.log.info(`Initializing Recluse Cube...`)
   client.log.success(`Connected to Discord API`)
   client.log.success(`Logged in as ${client.user.tag}`)
-  client.user.setPresence({ game: { name: client.config.playing, type: client.config.activityType }, status: client.config.status })
+  client.user.setPresence({
+    game: {
+      name: client.config.playing,
+      type: client.config.activityType
+    },
+    status: client.config.status
+  })
     .catch(client.log.error);
 
   const embed = new client.Discord.MessageEmbed()
@@ -34,9 +40,9 @@ module.exports = (client, message) => {
       .setColor("#E74C3C")
       .setDescription(":x: **Required permissions have not been granted**\nPlease give the bot the `ADMINISTRATOR` permission")
       .setFooter(client.starray.footer.replace("{{version}}", `${client.version}`));
-      
+
     client.channels.cache.get(client.config.logChannel).send({
       embed
     })
   }
-  };
+};
