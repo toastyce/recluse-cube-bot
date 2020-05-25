@@ -1,5 +1,5 @@
 exports.run = (client, message, args) => {
-    //TODO: interactive search for adding users
+    //TODO: A toggle for turning on and off spectators for a room
     
     // command starts here
     message.delete();

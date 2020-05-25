@@ -1,4 +1,6 @@
 exports.run = (client, message, args) => {
+    //TODO: room identifier
+    
     // command starts here
     message.delete();
     if (!message.member.roles.cache.find(r => r.id=== client.config.supportRole)) {
@@ -38,7 +40,7 @@ exports.run = (client, message, args) => {
     }
 
     // First, we need to create the room
-    message.guild.channels.create(`${message.channel.topic}`, {
+    message.guild.channels.create(`rs-${message.channel.topic}`, {
         type: 'text',
         permissions: {
             VIEW_CHANNEL: false,

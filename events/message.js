@@ -14,6 +14,20 @@ module.exports = (client, message) => {
             if (err)
                 return client.log.error(err);
         });
+    } 
+    
+    if (message.channel.name.startsWith('rs-')) {
+        try {
+            if (!fs.existsSync(`./tickets/${message.channel.name}.txt`)) {
+                fs.createWriteStream(`./tickets/${message.channel.name}.txt`);; //file created
+            }
+        } catch (err) {
+            client.log.debug(err)
+        }
+        fs.appendFile(`./tickets/${message.channel.name}.txt`, `\n` + message.author.tag + ` | ` + message.content, function (err) {
+            if (err)
+                return client.log.error(err);
+        });
     }
 
     if (message.channel.name.startsWith('sealing-stone-')) {
