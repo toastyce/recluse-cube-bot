@@ -3,12 +3,13 @@ module.exports = (client, message) => {
   client.log.success(`Connected to Discord API`)
   client.log.success(`Logged in as ${client.user.tag}`)
   client.user.setPresence({
-    game: {
+    activity: {
       name: client.config.playing,
       type: client.config.activityType
     },
     status: client.config.status
   })
+    //.then(console.log)
     .catch(client.log.error);
 
   const embed = new client.Discord.MessageEmbed()
