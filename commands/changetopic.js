@@ -10,12 +10,12 @@ exports.run = (client, message, args) => {
         return message.channel.send(noPerm);
     }
 
-    if (!message.channel.name.startsWith('request-')) {
-        const notTicket = new client.Discord.MessageEmbed()
-            .setColor("#E74C3C")
-            .setDescription(client.starray.incorrectChannel)
-        return message.channel.send(notTicket);
-    }
+    // if (!message.channel.name.startsWith('request-')) {
+    //     const notTicket = new client.Discord.MessageEmbed()
+    //         .setColor("#E74C3C")
+    //         .setDescription(client.starray.incorrectChannel)
+    //     return message.channel.send(notTicket);
+    // }
 
     // format topic string
     var roomname = args[0].replace(/\s/g, "-");
