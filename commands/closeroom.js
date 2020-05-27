@@ -11,9 +11,11 @@ exports.run = (client, message, args) => {
     if (message.channel.name.startsWith('rs-')) {
         try {
             var split = message.channel.topic.split(' ');
-            message.channel.messages.fetch(split[0])
+            client.log.debug(split[0]);
+            client.channels.cache.get(client.config.postChannel).then(c => { c.messages.fetch(split[0])
                 .then(message.delete())
                 .catch(console.error);
+            })
             // log
             const embed = new client.Discord.MessageEmbed()
                 .setAuthor(`${client.user.username}`, client.user.avatarURL)
