@@ -66,49 +66,95 @@ process.on('beforeExit', (code) => {
 });
 
 client.on('messageReactionAdd', async (reaction, user) => {
-  if (reaction.message.partial) await reaction.message.fetch();
-  const chan = reaction.message.embeds[0].fields[0].value
-  client.log.debug(`channel ID:${chan}`)
-  const ch = client.channels.cache.get(chan);
-  if (!ch.permissionOverwrites.get(user.id)) {
-    ch.createOverwrite([{
-      id: user.id,
-      allow: ['VIEW_CHANNEL'],
-      allow: ['SEND_MESSAGES']
-    }])
+  if (reaction.message.partial) {
+    await reaction.message.fetch();
+    if (user.bot) return;
+    const chan = reaction.message.embeds[0].fields[0].value
+    client.log.debug(`channel ID:${chan}`)
+    const ch = client.channels.cache.get(chan);
+    if (!ch.permissionOverwrites.get(user.id)) {
+      ch.createOverwrite(user.id, {
+        VIEW_CHANNEL: true,
+        SEND_MESSAGES: true
+      })
+    } else {
+      ch.overwritePermissions([{
+        id: user.id,
+        allow: ['VIEW_CHANNEL'],
+        allow: ['SEND_MESSAGES']
+      }])
+    }
+    console.log(reaction.message.embeds[0].fields[0].value)
+    if (reaction.partial) await reaction.fetch();
+    console.log(`${reaction.count} user(s) have given the same reaction to this message!`);
   } else {
-    ch.overwritePermissions([{
-      id: user.id,
-      allow: ['VIEW_CHANNEL'],
-      allow: ['SEND_MESSAGES']
-    }])
+    if (user.bot) return;
+    const chan = reaction.message.embeds[0].fields[0].value
+    client.log.debug(`channel ID:${chan}`)
+    const ch = client.channels.cache.get(chan);
+    if (!ch.permissionOverwrites.get(user.id)) {
+      ch.createOverwrite(user.id, {
+        VIEW_CHANNEL: false,
+        SEND_MESSAGES: false
+      })
+    } else {
+      ch.overwritePermissions([{
+        id: user.id,
+        allow: ['VIEW_CHANNEL'],
+        allow: ['SEND_MESSAGES']
+      }])
+    }
+    console.log(reaction.message.embeds[0].fields[0].value)
+    if (reaction.partial) await reaction.fetch();
+    console.log(`${reaction.count} user(s) have given the same reaction to this message!`);
   }
-  console.log(reaction.message.embeds[0].fields[0].value)
-  if (reaction.partial) await reaction.fetch();
-  console.log(`${reaction.count} user(s) have given the same reaction to this message!`);
 });
 
 client.on('messageReactionRemove', async (reaction, user) => {
-  if (reaction.message.partial) await reaction.message.fetch();
-  const chan = reaction.message.embeds[0].fields[0].value
-  client.log.debug(`channel ID:${chan}`)
-  const ch = client.channels.cache.get(chan);
-  if (!ch.permissionOverwrites.get(user.id)) {
-    ch.createOverwrite([{
-      id: user.id,
-      deny: ['VIEW_CHANNEL'],
-      deny: ['SEND_MESSAGES']
-    }])
+  if (reaction.message.partial) {
+    await reaction.message.fetch();
+    if (user.bot) return;
+    const chan = reaction.message.embeds[0].fields[0].value
+    client.log.debug(`channel ID:${chan}`)
+    const ch = client.channels.cache.get(chan);
+    if (!ch.permissionOverwrites.get(user.id)) {
+      ch.createOverwrite([{
+        id: user.id,
+        deny: ['VIEW_CHANNEL'],
+        deny: ['SEND_MESSAGES']
+      }])
+    } else {
+      ch.overwritePermissions([{
+        id: user.id,
+        deny: ['VIEW_CHANNEL'],
+        deny: ['SEND_MESSAGES']
+      }])
+    }
+    console.log(reaction.message.embeds[0].fields[0].value)
+    if (reaction.partial) await reaction.fetch();
+    console.log(`${reaction.count} user(s) have given the same reaction to this message!`);
   } else {
-    ch.overwritePermissions([{
-      id: user.id,
-      deny: ['VIEW_CHANNEL'],
-      deny: ['SEND_MESSAGES']
-    }])
+    if (user.bot) return;
+    const chan = reaction.message.embeds[0].fields[0].value
+    client.log.debug(`channel ID:${chan}`)
+    const ch = client.channels.cache.get(chan);
+    if (!ch.permissionOverwrites.get(user.id)) {
+      ch.createOverwrite([{
+        id: user.id,
+        deny: ['VIEW_CHANNEL'],
+        deny: ['SEND_MESSAGES']
+      }])
+    } else {
+      ch.overwritePermissions([{
+        id: user.id,
+        deny: ['VIEW_CHANNEL'],
+        deny: ['SEND_MESSAGES']
+      }])
+    }
+    console.log(reaction.message.embeds[0].fields[0].value)
+    if (reaction.partial) await reaction.fetch();
+    console.log(`${reaction.count} user(s) have given the same reaction to this message!`);
   }
-  console.log(reaction.message.embeds[0].fields[0].value)
-  if (reaction.partial) await reaction.fetch();
-  console.log(`${reaction.count} user(s) have given the same reaction to this message!`);
 });
 
 client.login(client.config.token);
