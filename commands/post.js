@@ -6,7 +6,6 @@ exports.run = (client, message, args) => {
     var d = new Date();
     var postid;
     var roomname;
-    let id = `rs-` + message.author.id.toString().substr(0, 4) + message.author.discriminator + d.getDay();
 
     if (!message.member.roles.cache.find(r => r.id === client.config.memberRole)) {
         const noPerm = new client.Discord.MessageEmbed()
@@ -54,7 +53,6 @@ exports.run = (client, message, args) => {
                     .setAuthor(`<${client.user.username}>`, client.user.avatarURL)
                     .setColor(client.config.color)
                     .setTitle(client.starray.reqTitle)
-                    .addField("Post ID", `${id}`)
                     .addField("Event", `${event.name}`)
                     .setDescription(client.starray.reqTwo)
                     .setTimestamp()
@@ -86,7 +84,6 @@ exports.run = (client, message, args) => {
                         .setAuthor(`<${client.user.username}>`, client.user.avatarURL)
                         .setColor(client.config.color)
                         .setTitle(client.starray.reqTitle)
-                        .addField("Post ID", `${id}`)
                         .addField("Event", `${event.name}`)
                         .addField("Date", `${event.date}`)
                         .setDescription(client.starray.reqThree)
@@ -104,7 +101,6 @@ exports.run = (client, message, args) => {
                         .setAuthor(`<${client.user.username}>`, client.user.avatarURL)
                         .setColor(client.config.color)
                         .setTitle(client.starray.reqTitle)
-                        .addField("Post ID", `${id}`)
                         .addField("Event", `${event.name}`)
                         .addField("Date", `${event.date}`)
                         .setDescription(client.starray.reqThree)
@@ -119,7 +115,6 @@ exports.run = (client, message, args) => {
                 const embed4 = new client.Discord.MessageEmbed()
                     .setAuthor(`<${client.user.username}>`, client.user.avatarURL)
                     .setColor(client.config.color).setTitle(client.starray.reqTitle)
-                    .addField("Post ID", `${id}`)
                     .addField("Event", `${event.name}`)
                     .addField("Date", `${event.date}`)
                     .addField("Seeking # of Participants:", `${event.part}`)
@@ -134,7 +129,6 @@ exports.run = (client, message, args) => {
                     .setAuthor(`<${client.user.username}>`, client.user.avatarURL)
                     .setColor(client.config.color)
                     .setTitle(client.starray.reqTitle)
-                    .addField("Post ID", `${id}`)
                     .addField("Event", `${event.name}`)
                     .addField("Date", `${event.date}`)
                     .addField("Seeking # of Participants:", `${event.part}`)
@@ -151,7 +145,6 @@ exports.run = (client, message, args) => {
                     .setAuthor(`<${client.user.username}>`, client.user.avatarURL)
                     .setColor(client.config.color)
                     .setTitle(client.starray.reqTitle)
-                    .addField("Post ID", `${id}`)
                     .addField("Event", `${event.name}`)
                     .addField("Date", `${event.date}`)
                     .addField("Seeking # of Participants:", `${event.part}`)
@@ -172,7 +165,6 @@ exports.run = (client, message, args) => {
                     .setAuthor(`<${client.user.username}>`, client.user.avatarURL)
                     .setColor(client.config.color)
                     .setTitle(client.starray.reqTitle)
-                    .addField("Post ID", `${id}`)
                     .addField("Event", `${event.name}`)
                     .addField("Date", `${event.date}`)
                     .addField("Seeking # of Participants:", `${event.part}`)
@@ -213,7 +205,6 @@ exports.run = (client, message, args) => {
                 .setAuthor(`<${client.user.username}>`, client.user.avatarURL)
                 .setColor(client.config.color)
                 .setTitle(client.starray.reqTitle)
-                .addField("Post ID", `${id}`)
                 .addField("Event", `${event.name}`)
                 .addField("Date", `${event.date}`)
                 .addField("Seeking # of Participants:", `${event.part}`)
@@ -233,6 +224,7 @@ exports.run = (client, message, args) => {
                 }
                 // then, set permissions
             }).then(async c => {
+                postid = c.id;
                 c.setParent(client.config.roomCat);
                 c.createOverwrite(message.guild.roles.everyone, {
                     VIEW_CHANNEL: false,
@@ -250,7 +242,7 @@ exports.run = (client, message, args) => {
                         SEND_MESSAGES: false
                     })
                 }
-                
+
                 await c.send(client.starray.tagSupport.replace("{{role}}", `<@&${client.config.supportRole}>`));
                 await c.send(client.starray.reqCreated.replace("{{user}}", `<${message.author}>`))
 
@@ -258,7 +250,7 @@ exports.run = (client, message, args) => {
                     .setAuthor(`<${client.user.username}>`, client.user.avatarURL)
                     .setColor(client.config.color)
                     .setTitle(client.starray.reqTitle)
-                    .addField("Post ID", `${id}`)
+                    .addField("PostID", `${postid}`)
                     .addField("Event", `${event.name}`)
                     .addField("Date", `${event.date}`)
                     .addField("Seeking # of Participants:", `${event.part}`)
@@ -271,7 +263,7 @@ exports.run = (client, message, args) => {
                     .setAuthor(`<${client.user.username}>`, client.user.avatarURL)
                     .setColor(client.config.color)
                     .setTitle(client.starray.reqTitle)
-                    .addField("Post ID", `${id}`)
+                    .addField("PostID", `${postid}`)
                     .addField("Event", `${event.name}`)
                     .addField("Date", `${event.date}`)
                     .addField("Seeking # of Participants:", `${event.part}`)
@@ -282,12 +274,15 @@ exports.run = (client, message, args) => {
                     .setFooter(client.starray.footer.replace("{{version}}", `${client.version}`))
 
                 client.channels.cache.get(client.config.postChannel).send(created).then(sent => { // 'sent' is that message you just sent
-                    postid = sent.id;
+                    sent.react("☑️");
+                    sent.react("📢");
+                    sent.react("👁‍🗨");
                     console.log(postid);
                 });
                 let w = await c.send(welcome)
                 await w.pin();
                 await c.setTopic(`${postid} | ${message.author} | ${event.name}`);
+
             }).then(async c => {
 
                 // finally, close the channel

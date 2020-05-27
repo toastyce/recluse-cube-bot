@@ -9,15 +9,20 @@ Recluse Cube
 ###############################################################################################
 */
 
- const leeks = require('leeks.js'); //all log functions imported from external api
- const log = require(`leekslazylogger`);
- const { version, description, } = require('./package.json');
+const leeks = require('leeks.js'); //all log functions imported from external api
+const log = require(`leekslazylogger`);
+const {
+  version,
+  description,
+} = require('./package.json');
 
 const Discord = require("Discord.js");
 const Enmap = require("enmap");
 const fs = require("fs");
 
-const client = new Discord.Client();
+const client = new Discord.Client({
+  partials: ['MESSAGE', 'CHANNEL', 'REACTION']
+});
 const config = require("./res/config.json");
 const starray = require("./res/strings.json");
 // We also need to make sure we're attaching the config to the CLIENT so it's accessible everywhere!
@@ -58,6 +63,52 @@ log.info(`Starting up...`)
 process.on('beforeExit', (code) => {
   log.basic(client.log.colour.yellowBright(`Disconected from Discord API`));
   log.basic(`Exiting (${code})`);
+});
+
+client.on('messageReactionAdd', async (reaction, user) => {
+  if (reaction.message.partial) await reaction.message.fetch();
+  const chan = reaction.message.embeds[0].fields[0].value
+  client.log.debug(`channel ID:${chan}`)
+  const ch = client.channels.cache.get(chan);
+  if (!ch.permissionOverwrites.get(user.id)) {
+    ch.createOverwrite([{
+      id: user.id,
+      allow: ['VIEW_CHANNEL'],
+      allow: ['SEND_MESSAGES']
+    }])
+  } else {
+    ch.overwritePermissions([{
+      id: user.id,
+      allow: ['VIEW_CHANNEL'],
+      allow: ['SEND_MESSAGES']
+    }])
+  }
+  console.log(reaction.message.embeds[0].fields[0].value)
+  if (reaction.partial) await reaction.fetch();
+  console.log(`${reaction.count} user(s) have given the same reaction to this message!`);
+});
+
+client.on('messageReactionRemove', async (reaction, user) => {
+  if (reaction.message.partial) await reaction.message.fetch();
+  const chan = reaction.message.embeds[0].fields[0].value
+  client.log.debug(`channel ID:${chan}`)
+  const ch = client.channels.cache.get(chan);
+  if (!ch.permissionOverwrites.get(user.id)) {
+    ch.createOverwrite([{
+      id: user.id,
+      deny: ['VIEW_CHANNEL'],
+      deny: ['SEND_MESSAGES']
+    }])
+  } else {
+    ch.overwritePermissions([{
+      id: user.id,
+      deny: ['VIEW_CHANNEL'],
+      deny: ['SEND_MESSAGES']
+    }])
+  }
+  console.log(reaction.message.embeds[0].fields[0].value)
+  if (reaction.partial) await reaction.fetch();
+  console.log(`${reaction.count} user(s) have given the same reaction to this message!`);
 });
 
 client.login(client.config.token);

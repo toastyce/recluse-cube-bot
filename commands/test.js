@@ -8,20 +8,17 @@ exports.run = (client, message, args) => {
         return message.channel.send(noPerm);
     }
 
-    if (!message.member.roles.cache.find(r => r.topic === args[0])) {
+    client.log.debug(client.channels.cache.find(c => c.topic === (args[0])))
+    if (message.guild.channels.cache.find(c => c.topic === args[0])) {
         client.log.debug('success')
+        client.log.debug(r.id)
         const noPerm = new client.Discord.MessageEmbed()
             .setColor("#E74C3C")
             .setDescription(client.starray.noAffinity)
         return message.channel.send(noPerm);
     }
     // placeholder
-    if (!message.channel.name.startsWith('request-')) {
-        const noHelp = new client.Discord.MessageEmbed()
-            .setColor("#E74C3C")
-            .setDescription(client.starray.noHelp)
-        message.channel.send(noHelp);
-    }
+    
     client.log.console(args);
     // command ends here
 }
