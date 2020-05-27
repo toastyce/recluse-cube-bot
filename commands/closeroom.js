@@ -12,10 +12,15 @@ exports.run = (client, message, args) => {
         try {
             var split = message.channel.topic.split(' ');
             client.log.debug(split[0]);
-            client.channels.cache.get(client.config.postChannel).then(c => { c.messages.fetch(split[0])
-                .then(message.delete())
-                .catch(console.error);
+            client.channels.cache.get(client.config.postChannel).messages.fetch(split[0]).then(async m => {
+                try {
+                    await m.delete();
+                    console.log('Done.');
+                } catch (err) {
+                    console.error(err);
+                }
             })
+
             // log
             const embed = new client.Discord.MessageEmbed()
                 .setAuthor(`${client.user.username}`, client.user.avatarURL)
