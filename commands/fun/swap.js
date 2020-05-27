@@ -16,6 +16,7 @@ exports.run = (client, message, args) => {
         fromMem.roles.remove(`${fromMemRole.id}`).catch(client.log.error).then(
             toMem.roles.add(`${fromMemRole.id}`).catch(client.log.error).then(
                 toMem.roles.remove(`${toMemRole.id}`).catch(client.log.error).then())));
+
     const embed = new client.Discord.MessageEmbed()
         .setAuthor(`<${client.user.username}>`, client.user.avatarURL)
         .setTitle("Swappy")
@@ -23,6 +24,7 @@ exports.run = (client, message, args) => {
         .setDescription(client.starray.swappy.replace("{{a}}", `<@${toMem.id}>`).replace("{{b}}", `${fromMemRole.name}`).replace("{{c}}", `<@${fromMem.id}>`).replace("{{d}}", `${toMemRole.name}`))
         .setFooter(client.starray.footer.replace("{{version}}", `${client.version}`))
         .setTimestamp();
+
     const logEmbed = new client.Discord.MessageEmbed()
         .setAuthor(`<${client.user.username}>`, client.user.avatarURL)
         .setTitle("Swappy")
@@ -30,6 +32,7 @@ exports.run = (client, message, args) => {
         .setDescription(client.starray.logSwappy.replace("{{a}}", `<@${message.author.id}>`).replace("{{b}}", `<@${fromMem.id}>`).replace("{{c}}", `<@${toMem.id}>`))
         .setFooter(client.starray.footer.replace("{{version}}", `${client.version}`))
         .setTimestamp();
+        
     message.channel.send(embed).then(
         message.guild.channels.cache.get(client.config.logChannel).send(logEmbed).catch(client.log.error)
     )

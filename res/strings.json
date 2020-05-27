@@ -35,5 +35,15 @@
   "swappy": "{{a}} has become the {{b}}\n - and - \n {{c}} has become the {{d}}.",
   "logSwappy": "{{a}}\n has invoked the swappy command on\n\n{{b}} and {{c}}.",
   "ping": "Ping Pong!",
-  "oImg": "http://trailsinthedatabase.com/itp/1/pc/H_KAO031.png"
+  "oImg": "http://trailsinthedatabase.com/itp/1/pc/H_KAO031.png",
+  "_REQ_MESSAGES": "testing a new room request expansion",
+  "reqTitle": "Room Request Creation",
+  "reqOne": "Initializing Recluse Cube Request function...\n`What would you like to name your posting?`",
+  "reqTwo": "`When would you like to begin?`\nMM/DD/YYYY",
+  "reqTwoError": "❗️ That date has already passed! Defaulting to today.",
+  "reqThree": "`How many participants would you like?`",
+  "reqFour": "`Allow spectators by default? yes/no`",
+  "reqFive": "`Which Affinity are allowed to join? all/light/dark`",
+  "reqSix": "`Provide IC details for the posting:\nContact:\nLocation:\nDetails:`",  
+  "reqCreated": "Here's your room, {{user}}."
 }

@@ -25,6 +25,7 @@ exports.run = (client, message, args) => {
       client.channels.cache.get(client.config.logChannel).send({
         embed
       })
+      
       client.log.info(`${message.author.tag} closed a ticket (#${message.channel.name})`)
     } catch (error) {
       client.log.error(client.log.colour.red(error));
@@ -53,7 +54,8 @@ exports.run = (client, message, args) => {
       client.channels.cache.get(client.config.logChannel).send({
         embed
       })
-      client.log.info(`${message.author.tag} closed a ticket (#${message.channel.name})`)
+      clie
+      nt.log.info(`${message.author.tag} closed a ticket (#${message.channel.name})`)
     } catch (error) {
       client.log.error(client.log.colour.red(error));
     }
@@ -81,6 +83,7 @@ exports.run = (client, message, args) => {
       client.channels.cache.get(client.config.logChannel).send({
         embed
       })
+
       client.log.info(`${message.author.tag} closed a ticket (#${message.channel.name})`)
     } catch (error) {
       client.log.error(client.log.colour.red(error));

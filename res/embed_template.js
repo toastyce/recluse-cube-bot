@@ -13,3 +13,14 @@ if (!message.channel.name.startsWith('request-')) {
         .setDescription(client.starray.incorrectChannel)
     return message.channel.send(notTicket);
 }
+
+
+const embed = new client.Discord.MessageEmbed()
+.setAuthor(`<${client.user.username}>`, client.user.avatarURL)
+.setAuthor(`<${client.user.username}>`, client.user.avatarURL)
+.setColor(client.config.color)
+.setTitle(client.starray.reqTitle)
+.setDescription(client.starray.reqOne)
+.setTimestamp()
+.setFooter(client.starray.footer.replace("{{version}}", `${client.version}`))
+message.channel.send(embed)
