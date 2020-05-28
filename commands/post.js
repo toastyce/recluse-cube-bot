@@ -155,10 +155,10 @@ exports.run = (client, message, args) => {
                     .setFooter(client.starray.footer.replace("{{version}}", `${client.version}`))
                 message.channel.send(embed6)
 
-            } else if (event.desc === undefined && event.affinity !== undefined && event.spectators !== undefined && event.part !== undefined && event.date !== undefined && event.name !== undefined) { // if the description hasn't been defined yet
+            } else if (event.contact === undefined && event.affinity !== undefined && event.spectators !== undefined && event.part !== undefined && event.date !== undefined && event.name !== undefined) { // if the description hasn't been defined yet
                 console.log(m.content);
-                var desc = m.content;
-                event.desc = desc;
+                var contact = m.content;
+                event.contact = contact;
                 console.log("event description: ", event.desc);
                 // FIXME: get rid of unexpected token error
                 const embed7 = new client.Discord.MessageEmbed()
@@ -170,8 +170,50 @@ exports.run = (client, message, args) => {
                     .addField("Seeking # of Participants:", `${event.part}`)
                     .addField("Spectators", `${event.spectators}`)
                     .addField("Affinity:", `${event.affinity}`)
-                    .addField("Description", `${desc}`)
-                    .setDescription(`\`Is this correct? Type YES to confirm.\``)
+                    .addField("Description", `[Contact]: ${contact}`)
+                    .setDescription(client.starray.reqSeven)
+                    .setTimestamp()
+                    .setFooter(client.starray.footer.replace("{{version}}", `${client.version}`))
+                message.channel.send(embed7)
+
+            } else if (event.location === undefined && event.contact !== undefined && event.affinity !== undefined && event.spectators !== undefined && event.part !== undefined && event.date !== undefined && event.name !== undefined) { // if the description hasn't been defined yet
+                console.log(m.content);
+                var location = m.content;
+                event.location = location;
+                console.log("event description: ", event.desc);
+                // FIXME: get rid of unexpected token error
+                const embed7 = new client.Discord.MessageEmbed()
+                    .setAuthor(`<${client.user.username}>`, client.user.avatarURL)
+                    .setColor(client.config.color)
+                    .setTitle(client.starray.reqTitle)
+                    .addField("Event", `${event.name}`)
+                    .addField("Date", `${event.date}`)
+                    .addField("Seeking # of Participants:", `${event.part}`)
+                    .addField("Spectators", `${event.spectators}`)
+                    .addField("Affinity:", `${event.affinity}`)
+                    .addField("Description", `[Contact]: ${contact}\n[Location]: ${location}`)
+                    .setDescription(client.starray.reqEight)
+                    .setTimestamp()
+                    .setFooter(client.starray.footer.replace("{{version}}", `${client.version}`))
+                message.channel.send(embed7)
+
+            } else if (event.desc === undefined && event.location !== undefined && event.contact !== undefined && event.affinity !== undefined && event.spectators !== undefined && event.part !== undefined && event.date !== undefined && event.name !== undefined) { // if the description hasn't been defined yet
+                console.log(m.content);
+                var desc = m.content;
+                event.desc = desc.substring(0, 1000) + '\n\n[...]';
+                console.log("event description: ", event.desc);
+                // FIXME: get rid of unexpected token error
+                const embed7 = new client.Discord.MessageEmbed()
+                    .setAuthor(`<${client.user.username}>`, client.user.avatarURL)
+                    .setColor(client.config.color)
+                    .setTitle(client.starray.reqTitle)
+                    .addField("Event", `${event.name}`)
+                    .addField("Date", `${event.date}`)
+                    .addField("Seeking # of Participants:", `${event.part}`)
+                    .addField("Spectators", `${event.spectators}`)
+                    .addField("Affinity:", `${event.affinity}`)
+                    .addField("Description", `[Contact]: ${contact}\n[Location]: ${location}\n [Details]: ${desc}`)
+                    .setDescription(client.starray.reqEnd)
                     .setTimestamp()
                     .setFooter(client.starray.footer.replace("{{version}}", `${client.version}`))
                 message.channel.send(embed7)
@@ -210,10 +252,9 @@ exports.run = (client, message, args) => {
                 .addField("Seeking # of Participants:", `${event.part}`)
                 .addField("Spectators", `${event.spectators}`)
                 .addField("Affinity:", `${event.affinity}`)
-                .addField("Description", `${event.desc}`)
-                .setDescription(`✅ \`Posting has been created!\``)
+                .setDescription(`[Contact]: ${contact}\n[Location]: ${location}\n [Details]: ${desc}`)
                 .setFooter(client.starray.footer.replace("{{version}}", `${client.version}`))
-            message.channel.send(embeda)
+            message.channel.send(embeda).then(message.channel.send(client.starray.reqSuccess))
 
             // First, we need to create the room
             message.guild.channels.create(`rs-${roomname}`, {
@@ -256,7 +297,7 @@ exports.run = (client, message, args) => {
                     .addField("Seeking # of Participants:", `${event.part}`)
                     .addField("Spectators", `${event.spectators}`)
                     .addField("Affinity:", `${event.affinity}`)
-                    .setDescription(`${event.desc}`)
+                    .setDescription(`[Contact]: ${contact}\n[Location]: ${location}\n [Details]: ${desc}`)
                     .setFooter(client.starray.footer.replace("{{version}}", `${client.version}`))
 
                 const welcome = new client.Discord.MessageEmbed()
@@ -269,14 +310,12 @@ exports.run = (client, message, args) => {
                     .addField("Seeking # of Participants:", `${event.part}`)
                     .addField("Spectators", `${event.spectators}`)
                     .addField("Affinity:", `${event.affinity}`)
-                    .addField("Description", `${event.desc}`)
-                    .setDescription(`${event.desc}`)
+                    .setDescription(`[Contact]: ${contact}\n[Location]: ${location}\n [Details]: ${desc}`)
                     .setFooter(client.starray.footer.replace("{{version}}", `${client.version}`))
 
                 client.channels.cache.get(client.config.postChannel).send(created).then(sent => { // 'sent' is that message you just sent
                     sent.react("☑️");
-                    sent.react("📢");
-                    sent.react("👁‍🗨");
+                    //sent.react("👀");
                     console.log(postid);
                 });
                 let w = await c.send(welcome)

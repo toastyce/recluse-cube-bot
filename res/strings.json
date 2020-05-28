@@ -44,6 +44,10 @@
   "reqThree": "`How many participants would you like?`",
   "reqFour": "`Allow spectators by default? yes/no`",
   "reqFive": "`Which Affinity are allowed to join? all/light/dark`",
-  "reqSix": "`Provide IC details for the posting:\nContact:\nLocation:\nDetails:`",  
+  "reqSix": "`Provide IC details for the posting:\nContact:`",  
+  "reqSeven": "`Provide IC details for the posting:\nLocation:`",  
+  "reqEight": "`Provide IC details for the posting:\nDetails:`",  
+  "reqEnd": "`Is this correct? Type YES to confirm.`",  
+  "reqSuccess": "✅ `Posting has been created!`",  
   "reqCreated": "Here's your room, {{user}}."
 }
