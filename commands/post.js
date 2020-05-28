@@ -309,7 +309,7 @@ exports.run = (client, message, args) => {
                     })
                 }
 
-                await c.send(client.starray.tagSupport.replace("{{role}}", `<@&${client.config.supportRole}>`));
+                //await c.send(client.starray.tagSupport.replace("{{role}}", `<@&${client.config.supportRole}>`));
                 await c.send(client.starray.reqCreated.replace("{{user}}", `<${message.author}>`))
 
                 const created = new client.Discord.MessageEmbed()
