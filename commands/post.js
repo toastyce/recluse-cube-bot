@@ -203,7 +203,7 @@ exports.run = (client, message, args) => {
                     .addField("Seeking # of Participants:", `${event.part}`)
                     .addField("Spectators", `${event.spectators}`)
                     .addField("Affinity:", `${event.affinity}`)
-                    .addField("Description", `[Contact]: ${event.contact}\n[Location]: ${event.location}`)
+                    .addField("Description", `[Contact]: ${event.contact}\n\n[Location]: ${event.location}`)
                     .setDescription(client.starray.reqEight)
                     .setTimestamp()
                     .setFooter(client.starray.footer.replace("{{version}}", `${client.version}`))
@@ -226,7 +226,7 @@ exports.run = (client, message, args) => {
                     .addField("Seeking # of Participants:", `${event.part}`)
                     .addField("Spectators", `${event.spectators}`)
                     .addField("Affinity:", `${event.affinity}`)
-                    .addField("Description", `[Contact]: ${event.contact}\n[Location]: ${event.location}\n [Details]: ${event.desc}`)
+                    .addField("Description", `[Contact]: ${event.contact}\n\n[Location]: ${event.location}\n\n [Details]: ${event.desc}`)
                     .setDescription(client.starray.reqEnd)
                     .setTimestamp()
                     .setFooter(client.starray.footer.replace("{{version}}", `${client.version}`))
@@ -274,7 +274,7 @@ exports.run = (client, message, args) => {
                 .addField("Seeking # of Participants:", `${event.part}`)
                 .addField("Spectators", `${event.spectators}`)
                 .addField("Affinity:", `${event.affinity}`)
-                .setDescription(`[Contact]: ${event.contact}\n[Location]: ${event.location}\n [Details]: ${event.desc}`)
+                .setDescription(`[Contact]: ${event.contact}\n\n[Location]: ${event.location}\n\n[Details]: ${event.desc}`)
                 .setFooter(client.starray.footer.replace("{{version}}", `${client.version}`))
             message.channel.send(embeda).then(message.channel.send(client.starray.reqSuccess))
 
@@ -322,7 +322,7 @@ exports.run = (client, message, args) => {
                     .addField("Seeking # of Participants:", `${event.part}`)
                     .addField("Spectators", `${event.spectators}`)
                     .addField("Affinity:", `${event.affinity}`)
-                    .setDescription(`[Contact]: ${event.contact}\n[Location]: ${event.location}\n [Details]: ${event.desc}`)
+                    .setDescription(`[Contact]: ${event.contact}\n\n[Location]: ${event.location}\n\n[Details]: ${event.desc}`)
                     .setFooter(client.starray.footer.replace("{{version}}", `${client.version}`))
 
                 const welcome = new client.Discord.MessageEmbed()
@@ -335,7 +335,7 @@ exports.run = (client, message, args) => {
                     .addField("Seeking # of Participants:", `${event.part}`)
                     .addField("Spectators", `${event.spectators}`)
                     .addField("Affinity:", `${event.affinity}`)
-                    .setDescription(`[Contact]: ${event.contact}\n[Location]: ${event.location}\n [Details]: ${event.desc}`)
+                    .setDescription(`[Contact]: ${event.contact}\n\n[Location]: ${event.location}\n\n[Details]: ${event.desc}`)
                     .setFooter(client.starray.footer.replace("{{version}}", `${client.version}`))
 
                 client.channels.cache.get(client.config.postChannel).send(created).then(sent => {
