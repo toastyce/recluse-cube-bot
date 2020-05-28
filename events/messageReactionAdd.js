@@ -11,6 +11,7 @@ module.exports = async (client, reaction, user) => {
     if (reaction.message.author.id == client.config.botID) {
         const chan = reaction.message.embeds[0].fields[0].value
         client.log.debug(`channel ID:${chan}`)
+        if (!client.channels.cache.get(chan)) return;
         const ch = client.channels.cache.get(chan);
         if (ch.permissionOverwrites.get(user.id)) {
             ch.permissionOverwrites.get(user.id).delete();
