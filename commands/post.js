@@ -40,8 +40,10 @@ exports.run = (client, message, args) => {
         if (m.content === "exit") {
             forceEnd = true;
             collector.stop();
+
         } else {
-            if (event.name === undefined) { // if the event has not been given a name
+            if (event.name === undefined) {
+                // if the event has not been given a name
                 event.name = m.content;
                 // format topic string
                 roomname = event.name.replace(/\s/g, "-");
@@ -49,6 +51,7 @@ exports.run = (client, message, args) => {
                 for (var i = 0; i < specialChars.length; i++) {
                     roomname = roomname.replace(new RegExp("\\" + specialChars[i], "gi"), "");
                 }
+
                 const embed1 = new client.Discord.MessageEmbed()
                     .setAuthor(`<${client.user.username}>`, client.user.avatarURL)
                     .setColor(client.config.color)
@@ -66,6 +69,7 @@ exports.run = (client, message, args) => {
                 split[1] = parseInt(split[1]); //day
                 split[2] = parseInt(split[2]); //year
                 var currDate = new Date();
+
                 // check if date has already passed
                 if (split[2] < currDate.getFullYear() || (split[2] <= currDate.getFullYear() && (split[0] - 1) < currDate.getMonth()) || (split[2] <= currDate.getFullYear() && (split[0] - 1) <= currDate.getMonth() && split[1] < currDate.getDay())) {
                     const embed2e = new client.Discord.MessageEmbed()
@@ -80,6 +84,7 @@ exports.run = (client, message, args) => {
                     event.date = d.toDateString();
                     client.log.debug("Date: " + d.getMonth() + d.getDay() + d.getFullYear());
                     client.log.debug("Date: " + d.toDateString());
+
                     const embed2 = new client.Discord.MessageEmbed()
                         .setAuthor(`<${client.user.username}>`, client.user.avatarURL)
                         .setColor(client.config.color)
@@ -97,6 +102,7 @@ exports.run = (client, message, args) => {
                     event.date = d.toDateString();
                     client.log.debug("Date: " + d.getMonth() + d.getDay() + d.getFullYear());
                     client.log.debug("Date: " + d.toDateString());
+
                     const embed3 = new client.Discord.MessageEmbed()
                         .setAuthor(`<${client.user.username}>`, client.user.avatarURL)
                         .setColor(client.config.color)
@@ -109,7 +115,8 @@ exports.run = (client, message, args) => {
                     message.channel.send(embed3)
 
                 }
-            } else if (event.part === undefined && event.date !== undefined && event.name !== undefined) { // if the time hasn't been defined yet
+            } else if (event.part === undefined && event.date !== undefined && event.name !== undefined) {
+                // Number of participants
                 event.part = m.content;
 
                 const embed4 = new client.Discord.MessageEmbed()
@@ -123,8 +130,10 @@ exports.run = (client, message, args) => {
                     .setFooter(client.starray.footer.replace("{{version}}", `${client.version}`))
                 message.channel.send(embed4)
 
-            } else if (event.spectators === undefined && event.part !== undefined && event.date !== undefined && event.name !== undefined) { // duration of the event
+            } else if (event.spectators === undefined && event.part !== undefined && event.date !== undefined && event.name !== undefined) {
+                //  Allow spectators
                 event.spectators = m.content;
+
                 const embed5 = new client.Discord.MessageEmbed()
                     .setAuthor(`<${client.user.username}>`, client.user.avatarURL)
                     .setColor(client.config.color)
@@ -138,7 +147,8 @@ exports.run = (client, message, args) => {
                     .setFooter(client.starray.footer.replace("{{version}}", `${client.version}`))
                 message.channel.send(embed5)
 
-            } else if (event.affinity === undefined && event.spectators !== undefined && event.part !== undefined && event.date !== undefined && event.name !== undefined) { // the time the event will end
+            } else if (event.affinity === undefined && event.spectators !== undefined && event.part !== undefined && event.date !== undefined && event.name !== undefined) {
+                // Allowed affinities
                 event.affinity = m.content;
 
                 const embed6 = new client.Discord.MessageEmbed()
@@ -155,12 +165,13 @@ exports.run = (client, message, args) => {
                     .setFooter(client.starray.footer.replace("{{version}}", `${client.version}`))
                 message.channel.send(embed6)
 
-            } else if (event.contact === undefined && event.affinity !== undefined && event.spectators !== undefined && event.part !== undefined && event.date !== undefined && event.name !== undefined) { // if the description hasn't been defined yet
+            } else if (event.contact === undefined && event.affinity !== undefined && event.spectators !== undefined && event.part !== undefined && event.date !== undefined && event.name !== undefined) {
+                // if the contact hasn't been defined yet
                 console.log(m.content);
                 var contact = m.content;
                 event.contact = contact;
                 console.log("event description: ", event.desc);
-                // FIXME: get rid of unexpected token error
+
                 const embed7 = new client.Discord.MessageEmbed()
                     .setAuthor(`<${client.user.username}>`, client.user.avatarURL)
                     .setColor(client.config.color)
@@ -176,12 +187,13 @@ exports.run = (client, message, args) => {
                     .setFooter(client.starray.footer.replace("{{version}}", `${client.version}`))
                 message.channel.send(embed7)
 
-            } else if (event.location === undefined && event.contact !== undefined && event.affinity !== undefined && event.spectators !== undefined && event.part !== undefined && event.date !== undefined && event.name !== undefined) { // if the description hasn't been defined yet
+            } else if (event.location === undefined && event.contact !== undefined && event.affinity !== undefined && event.spectators !== undefined && event.part !== undefined && event.date !== undefined && event.name !== undefined) {
+                // if the location hasn't been defined yet
                 console.log(m.content);
                 var location = m.content;
                 event.location = location;
                 console.log("event description: ", event.desc);
-                // FIXME: get rid of unexpected token error
+
                 const embed7 = new client.Discord.MessageEmbed()
                     .setAuthor(`<${client.user.username}>`, client.user.avatarURL)
                     .setColor(client.config.color)
@@ -197,12 +209,14 @@ exports.run = (client, message, args) => {
                     .setFooter(client.starray.footer.replace("{{version}}", `${client.version}`))
                 message.channel.send(embed7)
 
-            } else if (event.desc === undefined && event.location !== undefined && event.contact !== undefined && event.affinity !== undefined && event.spectators !== undefined && event.part !== undefined && event.date !== undefined && event.name !== undefined) { // if the description hasn't been defined yet
+            } else if (event.desc === undefined && event.location !== undefined && event.contact !== undefined && event.affinity !== undefined && event.spectators !== undefined && event.part !== undefined && event.date !== undefined && event.name !== undefined) {
+                // if the description hasn't been defined yet
                 console.log(m.content);
                 var desc = m.content;
                 event.desc = desc.substring(0, 1000) + '\n\n[...]';
                 console.log("event description: ", event.desc);
                 // FIXME: get rid of unexpected token error
+
                 const embed7 = new client.Discord.MessageEmbed()
                     .setAuthor(`<${client.user.username}>`, client.user.avatarURL)
                     .setColor(client.config.color)
@@ -223,9 +237,13 @@ exports.run = (client, message, args) => {
             }
         }
     });
-    collector.on("end", c => { // when the collection has stopped
+
+    collector.on("end", c => {
+        // when the collection has stopped
         console.log(forceEnd);
-        if (forceEnd == true) { // if the collector has been forced to end
+        if (forceEnd == true) {
+            // if the collector has been forced to end
+
             const embed8 = new client.Discord.MessageEmbed()
                 .setAuthor(`<${client.user.username}>`, client.user.avatarURL)
                 .setColor(client.config.color)
@@ -233,7 +251,9 @@ exports.run = (client, message, args) => {
                 .setDescription("Event creation has been cancelled");
             message.channel.send(embed8)
 
-        } else if (Date.now() >= startTime + 1000000) { // if time ran out
+        } else if (Date.now() >= startTime + 1000000) {
+            // if time ran out
+
             const embed9 = new client.Discord.MessageEmbed()
                 .setAuthor(`<${client.user.username}>`, client.user.avatarURL)
                 .setColor(client.config.color)
@@ -242,7 +262,9 @@ exports.run = (client, message, args) => {
                 .setFooter(client.starray.footer.replace("{{version}}", `${client.version}`))
             message.channel.send(embed9)
 
-        } else { // if all the parameters have been given
+        } else {
+            // if all the parameters have been given
+
             const embeda = new client.Discord.MessageEmbed()
                 .setAuthor(`<${client.user.username}>`, client.user.avatarURL)
                 .setColor(client.config.color)
@@ -264,13 +286,16 @@ exports.run = (client, message, args) => {
                     SEND_MESSAGES: false
                 }
                 // then, set permissions
+            
             }).then(async c => {
+                
                 postid = c.id;
                 c.setParent(client.config.roomCat);
                 c.createOverwrite(message.guild.roles.everyone, {
                     VIEW_CHANNEL: false,
                     SEND_MESSAGES: false
                 })
+
                 c.createOverwrite(message.author.id, {
                     VIEW_CHANNEL: true,
                     SEND_MESSAGES: true
@@ -313,11 +338,13 @@ exports.run = (client, message, args) => {
                     .setDescription(`[Contact]: ${contact}\n[Location]: ${location}\n [Details]: ${desc}`)
                     .setFooter(client.starray.footer.replace("{{version}}", `${client.version}`))
 
-                client.channels.cache.get(client.config.postChannel).send(created).then(sent => { // 'sent' is that message you just sent
+                client.channels.cache.get(client.config.postChannel).send(created).then(sent => {
+                    // 'sent' is that message you just sent
                     sent.react("☑️");
                     //sent.react("👀");
                     console.log(postid);
                 });
+
                 let w = await c.send(welcome)
                 await w.pin();
                 await c.setTopic(`${postid} | ${message.author} | ${event.name}`);
@@ -353,7 +380,6 @@ exports.run = (client, message, args) => {
                 } catch (error) {
                     client.log.error(client.log.colour.red(error));
                 }
-
             });
         }
     });
