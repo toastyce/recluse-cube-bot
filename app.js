@@ -33,7 +33,6 @@ client.version = version;
 client.description = description;
 client.starray = starray;
 
-
 fs.readdir("./events/", (err, files) => {
   if (err) return console.error(err);
   files.forEach(file => {
