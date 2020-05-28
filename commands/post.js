@@ -288,7 +288,7 @@ exports.run = (client, message, args) => {
                 // then, set permissions
             
             }).then(async c => {
-                
+
                 postid = c.id;
                 c.setParent(client.config.roomCat);
                 c.createOverwrite(message.guild.roles.everyone, {
@@ -347,7 +347,7 @@ exports.run = (client, message, args) => {
 
                 let w = await c.send(welcome)
                 await w.pin();
-                await c.setTopic(`${postid} | ${message.author} | ${event.name}`);
+                await c.setTopic(`${message.author}|${postid}|${event.name}`);
 
             }).then(async c => {
 
