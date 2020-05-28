@@ -170,7 +170,7 @@ exports.run = (client, message, args) => {
                 console.log(m.content);
                 var contact = m.content;
                 event.contact = contact;
-                console.log("event description: ", event.desc);
+                console.log("event contact: ", event.contact);
 
                 const embed7 = new client.Discord.MessageEmbed()
                     .setAuthor(`<${client.user.username}>`, client.user.avatarURL)
@@ -192,7 +192,7 @@ exports.run = (client, message, args) => {
                 console.log(m.content);
                 var location = m.content;
                 event.location = location;
-                console.log("event description: ", event.desc);
+                console.log("event location: ", event.location);
 
                 const embed7 = new client.Discord.MessageEmbed()
                     .setAuthor(`<${client.user.username}>`, client.user.avatarURL)
@@ -274,7 +274,7 @@ exports.run = (client, message, args) => {
                 .addField("Seeking # of Participants:", `${event.part}`)
                 .addField("Spectators", `${event.spectators}`)
                 .addField("Affinity:", `${event.affinity}`)
-                .setDescription("Description", `[Contact]: ${event.contact}\n[Location]: ${event.location}\n [Details]: ${event.desc}`)
+                .setDescription(`[Contact]: ${event.contact}\n[Location]: ${event.location}\n [Details]: ${event.desc}`)
                 .setFooter(client.starray.footer.replace("{{version}}", `${client.version}`))
             message.channel.send(embeda).then(message.channel.send(client.starray.reqSuccess))
 
@@ -322,7 +322,7 @@ exports.run = (client, message, args) => {
                     .addField("Seeking # of Participants:", `${event.part}`)
                     .addField("Spectators", `${event.spectators}`)
                     .addField("Affinity:", `${event.affinity}`)
-                    .setDescription("Description", `[Contact]: ${event.contact}\n[Location]: ${event.location}\n [Details]: ${event.desc}`)
+                    .setDescription(`[Contact]: ${event.contact}\n[Location]: ${event.location}\n [Details]: ${event.desc}`)
                     .setFooter(client.starray.footer.replace("{{version}}", `${client.version}`))
 
                 const welcome = new client.Discord.MessageEmbed()
@@ -335,13 +335,13 @@ exports.run = (client, message, args) => {
                     .addField("Seeking # of Participants:", `${event.part}`)
                     .addField("Spectators", `${event.spectators}`)
                     .addField("Affinity:", `${event.affinity}`)
-                    .setDescription("Description", `[Contact]: ${event.contact}\n[Location]: ${event.location}\n [Details]: ${event.desc}`)
+                    .setDescription(`[Contact]: ${event.contact}\n[Location]: ${event.location}\n [Details]: ${event.desc}`)
                     .setFooter(client.starray.footer.replace("{{version}}", `${client.version}`))
 
                 client.channels.cache.get(client.config.postChannel).send(created).then(sent => {
                     // 'sent' is that message you just sent
                     sent.react("☑️");
-                    //sent.react("👀");
+                    sent.react("👀");
                     console.log(postid);
                 });
 
