@@ -49,5 +49,7 @@
   "reqEight": "`Provide IC details for the posting:\nDetails:`",  
   "reqEnd": "`Is this correct? Type YES to confirm.`",  
   "reqSuccess": "✅ `Posting has been created!`",  
+  "reqCancelled": "❗️ `Event creation has been cancelled`",  
+  "reqTimedOut": "❗️ `Event creation has timed out`",  
   "reqCreated": "Here's your room, {{user}}."
 }
