@@ -1,23 +1,22 @@
 const fs = require("fs");
-module.exports = async (reaction, user) => {
-
-//     await reaction.fetch();
-// 	// When we receive a reaction we check if the reaction is partial or not
-// 	if (reaction.partial) {
-// 		// If the message this reaction belongs to was removed the fetching might result in an API error, which we need to handle
-// 		try {
-// 			await reaction.fetch();
-// 		} catch (error) {
-// 			console.log('Something went wrong when fetching the message: ', error);
-// 			// Return as `reaction.message.author` may be undefined/null
-// 			return;
-// 		}
-// 	}
-// 	// Now the message has been cached and is fully available
-// 	console.log(`${reaction.message.author}'s message "${reaction.message.content}" gained a reaction!`);
-// 	// The reaction is now also fully available and the properties will be reflected accurately:
-// 	console.log(`${reaction.count} user(s) have given the same reaction to this message!`);
-
+module.exports = async (client, reaction, user) => {
+    if (reaction.message.partial) {
+        await reaction.message.fetch();
+      }
+      if (user.bot) return;
+      const chan = reaction.message.embeds[0].fields[0].value
+      client.log.debug(`channel ID:${chan}`)
+      const ch = client.channels.cache.get(chan);
+  if (ch.permissionOverwrites.get(user.id)) {
+    ch.permissionOverwrites.get(user.id).delete();
+  }
+  ch.createOverwrite(user.id, {
+    VIEW_CHANNEL: false,
+    SEND_MESSAGES: false
+  })
+  console.log(reaction.message.embeds[0].fields[0].value)
+  if (reaction.partial) await reaction.fetch();
+  console.log(`${reaction.count} user(s) have given the same reaction to this message!`);
  };
 ///sent.react("☑️");
 ///sent.react("📢");
