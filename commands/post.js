@@ -248,7 +248,7 @@ exports.run = (client, message, args) => {
                 .setAuthor(`<${client.user.username}>`, client.user.avatarURL)
                 .setColor(client.config.color)
                 .setTitle(client.starray.reqTitle)
-                .setDescription("Event creation has been cancelled");
+                .setDescription(client.starray.reqCancelled);
             message.channel.send(embed8)
 
         } else if (Date.now() >= startTime + 1000000) {
@@ -258,7 +258,7 @@ exports.run = (client, message, args) => {
                 .setAuthor(`<${client.user.username}>`, client.user.avatarURL)
                 .setColor(client.config.color)
                 .setTitle(client.starray.reqTitle)
-                .setDescription("Event creation has timed out")
+                .setDescription(client.starray.reqTimedOut)
                 .setFooter(client.starray.footer.replace("{{version}}", `${client.version}`))
             message.channel.send(embed9)
 
