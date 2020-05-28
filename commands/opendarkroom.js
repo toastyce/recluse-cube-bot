@@ -59,7 +59,6 @@ exports.run = (client, message, args) => {
             })
         )
 
-
         // if (spectators == 'allow') {
         //     let spectatorRole = message.guild.roles.cache.get(`${client.config.memberRole}`)
         //     c.createOverwrite(spectatorRole, {
