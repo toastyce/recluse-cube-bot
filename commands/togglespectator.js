@@ -17,8 +17,9 @@ exports.run = (client, message, args) => {
     try {
         let memberRole = message.guild.roles.cache.get(`${client.config.memberRole}`)
         console.log(`channel ID:${message.channel.id}`)
-        if (message.channel.permissionOverwrites.get(memberRole)) {
-            message.channel.permissionOverwrites.get(memberRole).delete();
+        console.log(`channel ID:${memberRole.id}`)
+        if (message.channel.permissionOverwrites.get(memberRole.id)) {
+            message.channel.permissionOverwrites.get(memberRole.id).delete();
             return;
         }
         message.channel.createOverwrite(memberRole, {
