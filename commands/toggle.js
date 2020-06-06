@@ -1,5 +1,4 @@
 exports.run = (client, message, args) => {
-    //TODO: A toggle for turning on and off spectators for a room
     // command starts here
     message.delete();
     const regex = new RegExp('"[^"]+"|[\\S]+', 'g');
