@@ -10,16 +10,18 @@ exports.run = (client, message, args) => {
 
     if (message.channel.name.startsWith('rs-')) {
         try {
-            var split = message.channel.topic.split(' ');
-            client.log.debug(split[0]);
-            client.channels.cache.get(client.config.postChannel).messages.fetch(split[0]).then(async m => {
-                try {
-                    await m.delete();
-                    console.log('Done.');
-                } catch (err) {
-                    console.error(err);
-                }
-            })
+            var split = message.channel.topic;
+            var sets = [];
+            const regex = new RegExp('"[^"]+"|[\\S]+', 'g');
+            split.match(regex).forEach(element => {
+                if (!element) return;
+                return sets.push(element.replace(/"/g, ''));
+            });
+            client.log.debug(sets[1]);
+            // FIXME
+            var ch = client.channels.cache.get(client.config.postChannel);
+            client.log.debug(ch.id);
+            ch.messages.fetch(`${sets[1]}`).then(m => {m.delete();})
 
             // log
             const embed = new client.Discord.MessageEmbed()
@@ -35,7 +37,7 @@ exports.run = (client, message, args) => {
             })
             client.log.info(`${message.author.tag} closed a ticket (#${message.channel.name})`)
         } catch (error) {
-            client.log.error(client.log.colour.red(error));
+            client.log.error(error);
         }
     } else {
         const noPerm = new client.Discord.MessageEmbed()

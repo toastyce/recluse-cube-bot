@@ -1,6 +1,6 @@
 const fs = require("fs");
 module.exports = (client, message) => {
-    if (message.author.bot) return;
+
     // log private channels
     if (message.channel.name.startsWith('ticket-')) {
         try {
@@ -58,6 +58,7 @@ module.exports = (client, message) => {
         });
     }
     // filter messages for commands
+    if (message.author.bot) return;
     if (message.content.startsWith(client.config.prefix)) {
         if (message.content.indexOf(client.config.prefix) !== 0) {
             if (message.channel.name.startsWith('registration-')) {
