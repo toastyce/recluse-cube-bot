@@ -170,6 +170,7 @@ exports.run = (client, message, args) => {
                 console.log(m.content);
                 var contact = m.content;
                 event.contact = contact;
+                event.contact = contact.substring(0, 25);
                 console.log("event contact: ", event.contact);
 
                 const embed7 = new client.Discord.MessageEmbed()
@@ -192,6 +193,7 @@ exports.run = (client, message, args) => {
                 console.log(m.content);
                 var location = m.content;
                 event.location = location;
+                event.location = locaiton.substring(0, 25);
                 console.log("event location: ", event.location);
 
                 const embed7 = new client.Discord.MessageEmbed()
@@ -213,7 +215,7 @@ exports.run = (client, message, args) => {
                 // if the description hasn't been defined yet
                 console.log(m.content);
                 var desc = m.content;
-                event.desc = desc.substring(0, 1000) + '\n\n[...]';
+                event.desc = desc.substring(0, 930) + '\n\n[...]';
                 console.log("event description: ", event.desc);
                 // FIXME: get rid of unexpected token error
 
