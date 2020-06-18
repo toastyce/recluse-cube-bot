@@ -193,7 +193,7 @@ exports.run = (client, message, args) => {
                 console.log(m.content);
                 var location = m.content;
                 event.location = location;
-                event.location = locaiton.substring(0, 25);
+                event.location = location.substring(0, 25);
                 console.log("event location: ", event.location);
 
                 const embed7 = new client.Discord.MessageEmbed()

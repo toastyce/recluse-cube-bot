@@ -57,6 +57,21 @@ module.exports = (client, message) => {
                 return client.log.error(err);
         });
     }
+
+    //clear discord invites
+    if (message.content.includes('discord.gg/' || 'discordapp.com/invite/')) { //if it contains an invite link
+        message.delete() //delete the message
+            .then(message.channel.send('Link Deleted:\n**Invite links are not permitted on this server**'))
+    }
+
+    //clear non links in twitter directory
+    if (message.channel.id == `${client.config.dirChannel}`) {
+        if (message.author.bot) return;
+        if (!message.content.includes('twitter.com/')) { //if it contains an invite link
+            message.delete() //delete the message
+                .then(message.channel.send('Message Deleted:\n**Only twitter links are allowed in this channel.**'))
+        }
+    }
     // filter messages for commands
     if (message.author.bot) return;
     if (message.content.startsWith(client.config.prefix)) {
