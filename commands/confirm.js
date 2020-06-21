@@ -1,13 +1,18 @@
 exports.run = (client, message, args) => {
     // command starts here
     message.delete();
-    if (!message.member.roles.cache.find(r => r.id=== client.config.supportRole)) {
+    if (!message.member.roles.cache.find(r => r.id === client.config.supportRole)) {
         const noPerm = new client.Discord.MessageEmbed()
             .setColor("#E74C3C")
             .setDescription(client.starray.noPerm)
         return message.channel.send(noPerm);
     }
-
+    if (!args[3]) {
+        args[3] = '#E74C3C';
+    }
+    if (!args[4]) {
+        args[4] = 'light';
+    }
     const newMember = args[0].replace('<@', '').replace('>', '').replace('!', '');
     const characterName = args[1];
     const roleName = args[2];
@@ -44,12 +49,12 @@ exports.run = (client, message, args) => {
         // Create a new role with data and a reason
         client.log.debug("creating role...");
         message.guild.roles.create({
-                data: {
-                    name: roleName,
-                    color: roleColor,
-                },
-                reason: `New Registration for ${characterName}`,
-            })
+            data: {
+                name: roleName,
+                color: roleColor,
+            },
+            reason: `New Registration for ${characterName}`,
+        })
             .then(
                 role => member.roles.add(role))
             .catch(client.log.error);
