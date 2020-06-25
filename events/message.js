@@ -58,10 +58,12 @@ module.exports = (client, message) => {
         });
     }
 
-    //clear discord invites
+    //clear discord invites -- except by mods
     if (message.content.includes('discord.gg/' || 'discordapp.com/invite/')) { //if it contains an invite link
-        message.delete() //delete the message
-            .then(message.channel.send('Link Deleted:\n**Invite links are not permitted on this server**'))
+        if (!message.member.roles.cache.find(r => r.id === client.config.supportRole)) {
+            message.delete() //delete the message
+                .then(message.channel.send('Link Deleted:\n**Invite links are not permitted on this server**'))
+        }
     }
 
     //clear non links in twitter directory
