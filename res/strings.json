@@ -30,6 +30,7 @@
   "noUserSpecified": "You must include at least one user.",
   "noAffinity": "Please specify either light or dark affinity.",
   "noPerm": "You do not have permission to use this command.",
+  "chDel": "A sealing stone has been auto removed.",
   "changeChar": "To change your character, please use !support to contact our Administrative team.",
   "noHelp": "No Help commanded implemented yet. Please consult our administrative team for help.",
   "swappy": "{{a}} has become the {{b}}\n - and - \n {{c}} has become the {{d}}.",

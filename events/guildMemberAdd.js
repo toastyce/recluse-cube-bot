@@ -16,9 +16,9 @@ module.exports = (client, member) => {
     .setTimestamp();
 
     let topic = `${member.id}`;
-    let id = message.author.id.toString().substr(0, 4) + message.author.discriminator;
+    let id = member.id.toString().substr(0, 4);
 
-    message.guild.channels.create(`sealing-stone-${id}`, {
+    member.guild.channels.create(`sealing-stone-${id}`, {
       type: 'text',
       permissions: {
         VIEW_CHANNEL: false,
@@ -26,13 +26,13 @@ module.exports = (client, member) => {
       }
     }).then(async c => {
       c.setParent(client.config.ticketsCat);
-      let supportRole = message.guild.roles.cache.get(client.config.supportRole)
-      if (!supportRole) return message.channel.send(client.starray.noSupportRoleErr);
-      c.createOverwrite(message.guild.roles.everyone, {
+      let supportRole = member.guild.roles.cache.get(client.config.supportRole)
+      if (!supportRole) return member.channel.send(client.starray.noSupportRoleErr);
+      c.createOverwrite(member.guild.roles.everyone, {
         VIEW_CHANNEL: false,
         SEND_MESSAGES: false
       })
-      c.createOverwrite(message.member, {
+      c.createOverwrite(member, {
         VIEW_CHANNEL: true,
         SEND_MESSAGES: true
       })
@@ -41,9 +41,9 @@ module.exports = (client, member) => {
         SEND_MESSAGES: true
       })
   
-      c.setTopic(`${message.author} | ${topic}`);
+      c.setTopic(`${member} | ${topic}`);
       await c.send(client.starray.tagSupport.replace("{{role}}", `<@&${client.config.supportRole}>`));
-      await c.send(client.starray.registerCreated.replace("{{user}}", `<${message.author}>`))
+      await c.send(client.starray.registerCreated.replace("{{user}}", `<${topic}>`))
   
       const created = new client.Discord.MessageEmbed()
         .setColor(client.config.colour)
@@ -56,7 +56,6 @@ module.exports = (client, member) => {
         .setDescription(client.starray.registerDesc.replace("{{topic}}", `${topic}`))
         .setFooter(client.starray.footer.replace("{{version}}", `${client.version}`))
   
-      message.channel.send(created)
       let w = await c.send(welcome)
       await w.pin();
   
