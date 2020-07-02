@@ -66,14 +66,14 @@ exports.run = (client, message, args) => {
       .setTitle("New registration")
       .setColor(client.config.colour)
       .setDescription(`\`${topic}\`\n` + client.starray.registerNext + `\n` + client.starray.closeNext)
-      .addField("Username", message.author, true)
+      .addField("Username", topic, true)
       .addField("Channel", c, true)
       .setFooter(client.starray.footer.replace("{{version}}", `${client.version}`))
       .setTimestamp();
     client.channels.cache.get(client.config.logChannel).send({
       embed
     });
-    client.log.info(`${message.author.tag} created a new registration (#sealing-stone-${id})`)
+    client.log.info(`${topic} created a new registration (#sealing-stone-${id})`)
   })
   // command ends here
 }
