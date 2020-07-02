@@ -25,6 +25,7 @@
   "confirmRoomNext": "__**!confirmroom**__: Use this to confirm a room request. Specify allow to allow spectators, and @mention one user to be the room manager.\n(`!confirmroom \"allow\" @mention`)",
   "_MISC_MESSAGES": "Ready event messages",
   "fullyRest": "HP and EP fully restored!",
+  "needNumber": "HP and EP fully restored!",
   "roomNameSet": "The room name has been set.",
   "roomClosed": "The room has been closed.",
   "noUserSpecified": "You must include at least one user.",
