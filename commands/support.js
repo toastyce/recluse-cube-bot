@@ -11,13 +11,13 @@ exports.run = (client, message, args) => {
   let id = message.author.id.toString().substr(0, 4) + message.author.discriminator;
   let chan = `ticket-${id}`;
 
-  if (message.guild.channels.cache.find(c => c.topic.startsWith(args[0]))) {
-    const debug = new client.Discord.MessageEmbed()
+  if (message.guild.channels.cache.find(channel => channel.name === chan)) {
+    const err1 = new client.Discord.MessageEmbed()
       .setColor("#E74C3C")
       .setDescription(client.starray.openExist)
       .setFooter(client.starray.footer.replace("{{version}}", `${client.version}`));
-    return message.channel.send(debug)
-  };
+    return message.channel.send(err1)
+};
 
   message.guild.channels.create(`ticket-${id}`, {
     type: 'text',
