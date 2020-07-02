@@ -15,7 +15,7 @@ module.exports = (client, member) => {
     .setFooter(client.starray.footer.replace("{{version}}", `${client.version}`))
     .setTimestamp();
 
-    let topic = `${member.id}`;
+    let topic = `<@${member.id}>`;
     let id = message.author.id.toString().substr(0, 4) + message.author.discriminator;
 
     message.guild.channels.create(`sealing-stone-${id}`, {
