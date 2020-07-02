@@ -82,7 +82,7 @@ exports.run = (client, message, args) => {
   }
   let timer = 0;
   let fishLines = 0;
-  
+
   function sleep(milliseconds) {
     const date = Date.now();
     let currentDate = null;
@@ -97,7 +97,7 @@ exports.run = (client, message, args) => {
   for (var i = 0; i < gameCount; i++) {
     fishLines = getRandomInt(10)
     for (var n = 0; n < fishLines; n++) {
-      timer = 5000 + ((getRandomInt(10) + 1) * 1000);
+      timer = 5000 //+ ((getRandomInt(10) + 1) * 1000);
       sleep(timer);
       currentLine = fishArray[getRandomInt(24)];
       message.channel.send(currentLine);
