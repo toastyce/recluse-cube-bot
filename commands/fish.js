@@ -33,8 +33,8 @@ exports.run = (client, message, args) => {
       return message.channel.send(noPerm);
     }
     const gameCount = parseInt(args[0]);
-    const fishChance = client.emojis.find(emoji => emoji.name === "srpgshock");
-    const fishhit = client.emojis.find(emoji => emoji.name === "fishhit");
+    const fishChance = client.emojis.cache.find(emoji => emoji.name === "srpgshock");
+    const fishhit = client.emojis.cache.find(emoji => emoji.name === "fishhit");
     const time = 60000 //amount of time to collect for in milliseconds
     if (!isNaN(gameCount)) {
       const needNumber = new client.Discord.MessageEmbed()
