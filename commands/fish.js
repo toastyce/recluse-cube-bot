@@ -36,7 +36,7 @@ exports.run = (client, message, args) => {
     const fishChance = client.emojis.cache.find(emoji => emoji.name === "srpgshock");
     const fishhit = client.emojis.cache.find(emoji => emoji.name === "fishhit");
     const time = 60000 //amount of time to collect for in milliseconds
-    if (!isNaN(gameCount)) {
+    if (isNaN(gameCount)) {
       const needNumber = new client.Discord.MessageEmbed()
         .setColor("#E74C3C")
         .setDescription(client.starray.needNumber)
