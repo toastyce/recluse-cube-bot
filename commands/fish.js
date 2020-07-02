@@ -52,7 +52,7 @@ exports.run = (client, message, args) => {
       fishLines = getRandomInt(10)
       for (var n = 0; n < fishLines; n++) {
         timer = 5 + getRandomInt(10)
-        currentLine = fishArray(getRandomInt(24))
+        currentLine = fishArray[getRandomInt(24)]
         message.channel.send(currentLine);
       }
       const filter = (reaction, user) => {
