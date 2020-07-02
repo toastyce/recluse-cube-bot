@@ -82,6 +82,14 @@ exports.run = (client, message, args) => {
   }
   let timer = 0;
   let fishLines = 0;
+  
+  function sleep(milliseconds) {
+    const date = Date.now();
+    let currentDate = null;
+    do {
+      currentDate = Date.now();
+    } while (currentDate - date < milliseconds);
+  }
 
   function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
@@ -89,7 +97,8 @@ exports.run = (client, message, args) => {
   for (var i = 0; i < gameCount; i++) {
     fishLines = getRandomInt(10)
     for (var n = 0; n < fishLines; n++) {
-      timer = 50000 + ((getRandomInt(10) + 1) * 10000);
+      timer = 5000 + ((getRandomInt(10) + 1) * 1000);
+      sleep(timer);
       currentLine = fishArray[getRandomInt(24)];
       message.channel.send(currentLine);
     }
