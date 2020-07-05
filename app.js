@@ -24,6 +24,7 @@ const client = new Discord.Client({
   partials: ['MESSAGE', 'CHANNEL', 'REACTION']
 });
 const config = require("./res/config.json");
+const fish = require("./res/fish.json");
 const starray = require("./res/strings.json");
 // We also need to make sure we're attaching the config to the CLIENT so it's accessible everywhere!
 client.config = config;
@@ -32,6 +33,7 @@ client.Discord = Discord;
 client.version = version;
 client.description = description;
 client.starray = starray;
+client.fish = fish;
 
 fs.readdir("./events/", (err, files) => {
   if (err) return console.error(err);
