@@ -107,9 +107,8 @@ exports.run = (client, message, args) => {
 
   message.channel.send('<:srpgshock:714448190908399626>');
 
-
-
-
+  //TODO: reactions and scoring
+  
   //.then(async () => {
   // try {
   //   message.awaitReactions({
