@@ -1,7 +1,6 @@
 exports.run = (client, message, args) => {
   // command starts here
   message.delete();
-  const filter = (reaction, user) => reaction.emoji.name === ':fishhit:'
   const fishArray = [
     "*Waves crash over your lure, displacing it ever so slightly.*",
     "*Under the water, you spot a shadow moving ever closer. Will it chance upon your bait?*",
@@ -73,7 +72,6 @@ exports.run = (client, message, args) => {
     return message.channel.send(noPerm);
   }
   const gameCount = parseInt(args[0]);
-  const time = 60000 //amount of time to collect for in milliseconds
   if (isNaN(gameCount)) {
     const needNumber = new client.Discord.MessageEmbed()
       .setColor("#E74C3C")
@@ -94,28 +92,29 @@ exports.run = (client, message, args) => {
   function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
   }
+  const filter = (reaction, user) => {return reaction.emoji.id === 714000390722420756 && !user.bot}
   for (var i = 0; i < gameCount; i++) {
     fishLines = getRandomInt(10)
     for (var n = 0; n < fishLines; n++) {
-      timer = 5000 + (getRandomInt(10) * 1000);
+      timer = 5000 + (getRandomInt(5) * 1000);
       currentLine = fishArray[getRandomInt(24)];
       message.channel.send(currentLine);
       sleep(timer);
     }
-
+    message.channel.send('<:srpgshock:714448190908399626>').then(() => {
+      message.awaitReactions(filter, {
+          max: 1,
+          time: 10000,
+          errors: ['time']
+        })
+        .then(collected => {
+          message.channel.send(`${collected.first().author} wins this round with the biggest fish!`);
+        })
+        .catch(collected => {
+          message.channel.send('Miss...');
+        });
+    })
   };
-  message.channel.send('<:srpgshock:714448190908399626>').then(() => {
-    message.awaitReactions(filter, {
-        max: 1,
-        time: 10000,
-        errors: ['time']
-      })
-      .then(collected => {
-        message.channel.send(`${collected.first().author} wins this round with the biggest fish!`);
-      })
-      .catch(collected => {
-        message.channel.send('Miss...');
-      });
-  })
+ 
   // command ends here
 }
