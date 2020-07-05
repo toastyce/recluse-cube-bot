@@ -74,33 +74,41 @@ exports.run = (client, message, args) => {
     return message.channel.send(noPerm);
   }
 
-  var timer = 0;
-  var fishLines = getRandomInt(10);
-  var counter = 0;
+  var counter = getRandomInt(1 + 10);
+  var output = [];
 
   function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
   }
 
-  function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
+  client.log.debug(`${counter}`);
+
+  output.push(fishArray[0])
+  for (var i = 0; i < counter; i++) {
+    output.push(fishArray[1 + getRandomInt(23)])
   }
 
-  message.channel.send(`${fishArray[0]}`);
-
-  while (counter < fishLines) {
-
-    sleep(timer).then(() => {
-      timer = parseInt(5000 + (getRandomInt(5) * 1000));
-      message.channel.send(`${fishArray[1 + getRandomInt(23)]}`);
-      counter++;
-      client.log.debug(`${timer}`);
-      client.log.debug(`${counter}`);
-      if (counter > fishLines) { return message.channel.send('<:srpgshock:714448190908399626>') };
-    });
+  function sleep(delay) {
+    var start = new Date().getTime();
+    while (new Date().getTime() < start + delay);
   }
 
- 
+  output.forEach(async (item) => {
+    try {
+      var timer = 5000 + (getRandomInt(5) * 1000);
+      client.log.debug(`${timer}`);      
+      await message.channel.send(item).then(client.log.debug(item));
+      sleep(timer);  
+    }
+    catch (error) {
+      client.log.error(error);
+    }
+  })
+
+  message.channel.send('<:srpgshock:714448190908399626>');
+
+
+
 
   //.then(async () => {
   // try {
