@@ -3,7 +3,7 @@ exports.run = (client, message, args) => {
   message.delete();
   const values = Object.values(client.fish)
 
-  if (!message.member.roles.cache.find(r => r.id === client.config.memberRole)) {
+  if (!message.member.roles.cache.find(r => r.id === client.config.fishRole)) {
     const noPerm = new client.Discord.MessageEmbed()
       .setColor("#E74C3C")
       .setDescription(client.starray.noPerm)
