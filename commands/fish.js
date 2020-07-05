@@ -2,6 +2,7 @@ exports.run = (client, message, args) => {
   // command starts here
   message.delete();
   const fishArray = [
+    "*The lines are cast!*",
     "*Waves crash over your lure, displacing it ever so slightly.*",
     "*Under the water, you spot a shadow moving ever closer. Will it chance upon your bait?*",
     "*The wind howls for a moment. You keep concentration in hopes of landing a catch.*",
@@ -65,56 +66,60 @@ exports.run = (client, message, args) => {
     "*Just think about how great it will feel once you finally catch one of these!*",
     "*...*"
   ]
+
   if (!message.member.roles.cache.find(r => r.id === client.config.memberRole)) {
     const noPerm = new client.Discord.MessageEmbed()
       .setColor("#E74C3C")
       .setDescription(client.starray.noPerm)
     return message.channel.send(noPerm);
   }
-  const gameCount = parseInt(args[0]);
-  if (isNaN(gameCount)) {
-    const needNumber = new client.Discord.MessageEmbed()
-      .setColor("#E74C3C")
-      .setDescription(client.starray.needNumber)
-    return message.channel.send(needNumber);
-  }
-  let timer = 0;
-  let fishLines = 0;
 
-  function sleep(milliseconds) {
-    const date = Date.now();
-    let currentDate = null;
-    do {
-      currentDate = Date.now();
-    } while (currentDate - date < milliseconds);
-  }
+  var timer = 0;
+  var fishLines = getRandomInt(10);
+  var counter = 0;
 
   function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
   }
-  const filter = (reaction, user) => {return reaction.emoji.id === 714000390722420756 && !user.bot}
-  for (var i = 0; i < gameCount; i++) {
-    fishLines = getRandomInt(10)
-    for (var n = 0; n < fishLines; n++) {
-      timer = 5000 + (getRandomInt(5) * 1000);
-      currentLine = fishArray[getRandomInt(24)];
-      message.channel.send(currentLine);
-      sleep(timer);
-    }
-    message.channel.send('<:srpgshock:714448190908399626>').then(() => {
-      message.awaitReactions(filter, {
-          max: 1,
-          time: 10000,
-          errors: ['time']
-        })
-        .then(collected => {
-          message.channel.send(`${collected.first().author} wins this round with the biggest fish!`);
-        })
-        .catch(collected => {
-          message.channel.send('Miss...');
-        });
-    })
-  };
+
+  function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
+  message.channel.send(`${fishArray[0]}`);
+
+  while (counter < fishLines) {
+
+    sleep(timer).then(() => {
+      timer = parseInt(5000 + (getRandomInt(5) * 1000));
+      message.channel.send(`${fishArray[1 + getRandomInt(23)]}`);
+      counter++;
+      client.log.debug(`${timer}`);
+      client.log.debug(`${counter}`);
+      if (counter > fishLines) { return message.channel.send('<:srpgshock:714448190908399626>') };
+    });
+  }
+
  
+
+  //.then(async () => {
+  // try {
+  //   message.awaitReactions({
+  //     max: 1,
+  //     time: 10000,
+  //     errors: ['time']
+  //   })
+  //     .then(collected => {
+  //       message.channel.send(`${collected.first().author} wins this round with the biggest fish!`);
+  //     })
+  //     .catch(collected => {
+  //       message.channel.send('Miss...');
+  //       client.log.debug(collected);
+  //     });
+  // }
+  // catch (error) {
+  //   client.log.error(error)
+
+
+};
   // command ends here
-}
