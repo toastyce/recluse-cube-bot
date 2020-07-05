@@ -9,6 +9,7 @@ module.exports = async (client, reaction, user) => {
     if (user.bot) return;
     client.log.debug(`${reaction.message.author.id}`)
     if (reaction.message.author.id == client.config.botID) {
+        try {
         const chan = reaction.message.embeds[0].fields[0].value
         client.log.debug(`channel ID:${chan}`)
         if (!client.channels.cache.get(chan)) return;
@@ -23,6 +24,10 @@ module.exports = async (client, reaction, user) => {
         console.log(reaction.message.embeds[0].fields[0].value)
         if (reaction.partial) await reaction.fetch();
         console.log(`${reaction.count} user(s) have given the same reaction to this message!`);
+    }
+    catch (error) {
+        client.log.error(error);
+    }
     }
 };
 ///sent.react("☑️");
