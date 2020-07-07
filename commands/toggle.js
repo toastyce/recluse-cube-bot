@@ -8,7 +8,8 @@ exports.run = (client, message, args) => {
     return message.channel.send(noPerm);
   }
   optRole = args[0];
-  const toggle = member.id;
+  const toggle = message.member.id;
+  client.log.debug(toggle);
   switch (toggle) {
     case 49670556760408064:
       client.log.debug("Musse");
@@ -29,7 +30,7 @@ exports.run = (client, message, args) => {
       client.log.debug("Wazy");
       // code block
       break;
-    case 710429131128700968:
+    case "710429131128700968":
       client.log.debug("Anelace");
       if (optRole === "Anelace") {
         const notTicket = new client.Discord.MessageEmbed()
@@ -58,16 +59,5 @@ exports.run = (client, message, args) => {
       client.log.debug("No Role");
   }
 
-  const embed = new client.Discord.MessageEmbed()
-    .setAuthor(`<${client.user.username}>`, client.user.avatarURL)
-    .setTitle(client.starray.ping)
-    .setColor(client.config.colour)
-    .setTimestamp()
-    .addField("API Latency", `${Math.round(message.client.ws.ping)}ms`, true)
-    .setImage(client.starray.oImg)
-    .setFooter(client.starray.footer.replace("{{version}}", `${client.version}`))
-  message.channel.send({
-    embed
-  })
   // command ends here
 }
