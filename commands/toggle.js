@@ -58,7 +58,7 @@ exports.run = (client, message, args) => {
                     ).then(message.member.setNickname("Anelace Elfead").catch(client.log.error))
 
         return message.channel.send(notTicket);
-      } else if (optRole === "Ries") {
+      } else if (optRole === "ries") {
         const notTicket = new client.Discord.MessageEmbed()
         .setColor("#E74C3C")
         .setDescription(client.starray.roleUp)
