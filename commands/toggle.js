@@ -56,7 +56,16 @@ exports.run = (client, message, args) => {
 
         return message.channel.send(notTicket);
       } else if (optRole === "Ries") {
+        const notTicket = new client.Discord.MessageEmbed()
+        .setColor("#E74C3C")
+        .setDescription(client.starray.roleUp)
+      message.guild.roles.fetch('729921961043427404')
+        .then(role => role.setPosition(roleLength.length - 3)
+          .then(updated => console.log(`Role position: ${updated.position}`))
+          .catch(console.error)
+        ).then(member.setNickname("Ries Argent").catch(client.log.error))
 
+      return message.channel.send(notTicket);
       } else {
         const notTicket = new client.Discord.MessageEmbed()
           .setColor("#E74C3C")
