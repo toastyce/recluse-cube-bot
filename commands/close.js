@@ -54,8 +54,7 @@ exports.run = (client, message, args) => {
       client.channels.cache.get(client.config.logChannel).send({
         embed
       })
-      clie
-      nt.log.info(`${message.author.tag} closed a ticket (#${message.channel.name})`)
+      client.log.info(`${message.author.tag} closed a ticket (#${message.channel.name})`)
     } catch (error) {
       client.log.error(client.log.colour.red(error));
     }
