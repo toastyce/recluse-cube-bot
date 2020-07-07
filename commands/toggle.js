@@ -40,7 +40,7 @@ exports.run = (client, message, args) => {
       client.log.debug("Wazy");
       // code block
       break;
-      
+
       // Anelace / Ries
     case "710429131128700968":
       client.log.debug("Anelace");
@@ -48,6 +48,12 @@ exports.run = (client, message, args) => {
         const notTicket = new client.Discord.MessageEmbed()
           .setColor("#E74C3C")
           .setDescription(client.starray.roleUp)
+        message.guild.roles.fetch('725382368784810014')
+          .then(role => role.setPosition(roleLength.length - 3)
+            .then(updated => console.log(`Role position: ${updated.position}`))
+            .catch(console.error)
+          ).then(member.setNickname("Anelace Elfead").catch(client.log.error))
+
         return message.channel.send(notTicket);
       } else if (optRole === "Ries") {
 
@@ -62,9 +68,9 @@ exports.run = (client, message, args) => {
     default:
       client.log.debug("No Role");
       const notTicket = new client.Discord.MessageEmbed()
-      .setColor("#E74C3C")
-      .setDescription(client.starray.noMulti)
-    return message.channel.send(notTicket);
+        .setColor("#E74C3C")
+        .setDescription(client.starray.noMulti)
+      return message.channel.send(notTicket);
   }
 
   // command ends here
