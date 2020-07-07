@@ -7,8 +7,8 @@ exports.run = (client, message, args) => {
   return message.channel.send(noPerm);
   }
 
-  let topic = `${member.id}`;
-  let id = member.id.toString().substr(0, 4);
+  let topic = `${message.member.id}`;
+  let id = message.member.id.toString().substr(0, 4);
   let chan = `sealing-stone-${id}`;
 
   if (message.guild.channels.cache.find(channel => channel.name === chan)) {
