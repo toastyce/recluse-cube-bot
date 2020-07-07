@@ -66,7 +66,7 @@ exports.run = (client, message, args) => {
         .then(role => role.setPosition(roleLength.length - 3)
           .then(updated => console.log(`Role position: ${updated.position}`))
           .catch(console.error)
-        ).then(member.setNickname("Ries Argent").catch(client.log.error))
+        ).then(message.member.setNickname("Ries Argent").catch(client.log.error))
 
       return message.channel.send(notTicket);
       } else {
