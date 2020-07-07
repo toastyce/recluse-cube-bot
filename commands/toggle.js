@@ -1,32 +1,73 @@
 exports.run = (client, message, args) => {
-    // command starts here
-    message.delete();
-    const regex = new RegExp('"[^"]+"|[\\S]+', 'g');
-    const topic = [];
-    message.channel.topic.match(regex).forEach(element => {
-        if (!element) return;
-        return topic.push(element.replace(/"/g, ''));
-    });
-    if (!message.author.id == topic[0].replace('<@', '').replace('>', '').replace('!', '')) {
-        const noPerm = new client.Discord.MessageEmbed()
-            .setColor("#E74C3C")
-            .setDescription(client.starray.noPerm)
-        return message.channel.send(noPerm);
-    }
-    try {
-        let memberRole = message.guild.roles.cache.get(`${client.config.memberRole}`)
-        console.log(`channel ID:${message.channel.id}`)
-        console.log(`channel ID:${memberRole.id}`)
-        if (message.channel.permissionOverwrites.get(memberRole.id)) {
-            message.channel.permissionOverwrites.get(memberRole.id).delete();
-            return;
-        }
-        message.channel.createOverwrite(memberRole, {
-            VIEW_CHANNEL: true,
-            SEND_MESSAGES: false
-        })
-    } catch (err) {
-        client.log.debug(err)
-    }
-    // command ends here
+  // command starts here
+  message.delete();
+  if (!message.member.roles.cache.find(r => r.id === client.config.memberRole)) {
+    const noPerm = new client.Discord.MessageEmbed()
+      .setColor("#E74C3C")
+      .setDescription(client.starray.noPerm)
+    return message.channel.send(noPerm);
+  }
+  optRole = args[0];
+  const toggle = member.id;
+  switch (toggle) {
+    case 49670556760408064:
+      client.log.debug("Musse");
+      break;
+    case 157348124346679297:
+      client.log.debug("Estelle");
+      // code block
+      break;
+    case 705964980847116299:
+      client.log.debug("Fie");
+      // code block
+      break;
+    case 142787202609446913:
+      client.log.debug("Millium");
+      // code block
+      break;
+    case 338614712566677505:
+      client.log.debug("Wazy");
+      // code block
+      break;
+    case 710429131128700968:
+      client.log.debug("Anelace");
+      if (optRole === "Anelace") {
+        const notTicket = new client.Discord.MessageEmbed()
+          .setColor("#E74C3C")
+          .setDescription(client.starray.footer)
+        return message.channel.send(notTicket);
+      } else if (optRole === "Ries") {
+
+      } else {
+        const notTicket = new client.Discord.MessageEmbed()
+          .setColor("#E74C3C")
+          .setDescription(client.starray.incorrectChannel)
+        return message.channel.send(notTicket);
+
+      }
+      // 'Anelace'
+      // -- Set nickname : "Anelace Elfead"
+      // -- fetch role for Anelace
+      // -- set role position to top
+      // 'Ries'
+      // -- Set nickname : "Ries Argent"
+      // -- fetch role for Ries
+      // -- set role position to top
+      break;
+    default:
+      client.log.debug("No Role");
+  }
+
+  const embed = new client.Discord.MessageEmbed()
+    .setAuthor(`<${client.user.username}>`, client.user.avatarURL)
+    .setTitle(client.starray.ping)
+    .setColor(client.config.colour)
+    .setTimestamp()
+    .addField("API Latency", `${Math.round(message.client.ws.ping)}ms`, true)
+    .setImage(client.starray.oImg)
+    .setFooter(client.starray.footer.replace("{{version}}", `${client.version}`))
+  message.channel.send({
+    embed
+  })
+  // command ends here
 }
