@@ -10,6 +10,7 @@ exports.run = (client, message, args) => {
   var roleLength = [];
   message.guild.roles.cache.forEach(role => roleLength.push(`${role.name}`));
   client.log.info(`Position: ${roleLength.length}`);
+  if (args[0] == null) return;
   optRole = args[0].toLowerCase();
   const toggle = message.member.id;
   client.log.debug(toggle);
@@ -21,6 +22,7 @@ exports.run = (client, message, args) => {
     case "49670556760408064":
       client.log.debug("Musse");
       break;
+
     //Estelle / Juna  
     case "157348124346679297":
       client.log.debug("Estelle");
@@ -55,6 +57,40 @@ exports.run = (client, message, args) => {
       }
       break;
 
+      
+    //Ash / Ashley 
+    case "180429866166910976":
+        client.log.debug("Ash");
+        if (optRole === "ash") {
+          const notTicket = new client.Discord.MessageEmbed()
+            .setColor("#E74C3C")
+            .setDescription(client.starray.roleUp)
+          message.guild.roles.fetch('723023539078168597')
+            .then(role => role.setPosition(roleLength.length - 3)
+              .then(updated => console.log(`Role position: ${updated.position}`))
+              .catch(console.error)
+            ).then(message.member.setNickname("Ash Carbide").catch(client.log.error))
+  
+          return message.channel.send(notTicket);
+        } else if (optRole === "ashley") {
+          const notTicket = new client.Discord.MessageEmbed()
+            .setColor("#E74C3C")
+            .setDescription(client.starray.roleUp)
+          message.guild.roles.fetch('723088413460398130')
+            .then(role => role.setPosition(roleLength.length - 3)
+              .then(updated => console.log(`Role position: ${updated.position}`))
+              .catch(console.error)
+            ).then(message.member.setNickname("Ashley Carbide").catch(client.log.error))
+  
+          return message.channel.send(notTicket);
+        } else {
+          const notTicket = new client.Discord.MessageEmbed()
+            .setColor("#E74C3C")
+            .setDescription(client.starray.wrongRole)
+          return message.channel.send(notTicket);
+  
+        }
+        break;
       // Fie / Sara / Ries
     case "705964980847116299":
       client.log.debug("Fie");
@@ -133,7 +169,18 @@ exports.run = (client, message, args) => {
           .then(role => role.setPosition(roleLength.length - 3)
             .then(updated => console.log(`Role position: ${updated.position}`))
             .catch(console.error)
-          ).then(message.member.setNickname("Rean Schwarzer [CS2]").catch(client.log.error))
+          ).then(message.member.setNickname("Rean Schwarzer [Sketch]").catch(client.log.error))
+
+        return message.channel.send(notTicket);
+      } else if (optRole === "sora") {
+        const notTicket = new client.Discord.MessageEmbed()
+          .setColor("#E74C3C")
+          .setDescription(client.starray.roleUp)
+        message.guild.roles.fetch('730493748080803961')
+          .then(role => role.setPosition(roleLength.length - 3)
+            .then(updated => console.log(`Role position: ${updated.position}`))
+            .catch(console.error)
+          ).then(message.member.setNickname("Sora Ikushima").catch(client.log.error))
 
         return message.channel.send(notTicket);
       } else {
@@ -159,15 +206,15 @@ exports.run = (client, message, args) => {
           ).then(message.member.setNickname("Wazy Hemisphere").catch(client.log.error))
 
         return message.channel.send(notTicket);
-      } else if (optRole === "ries") {
+      } else if (optRole === "angelica") {
         const notTicket = new client.Discord.MessageEmbed()
           .setColor("#E74C3C")
           .setDescription(client.starray.roleUp)
-        message.guild.roles.fetch('729921961043427404')
+        message.guild.roles.fetch('729935623636516956')
           .then(role => role.setPosition(roleLength.length - 3)
             .then(updated => console.log(`Role position: ${updated.position}`))
             .catch(console.error)
-          ).then(message.member.setNickname("Ries Argent").catch(client.log.error))
+          ).then(message.member.setNickname("Angelica Rogner").catch(client.log.error))
 
         return message.channel.send(notTicket);
       } else {
