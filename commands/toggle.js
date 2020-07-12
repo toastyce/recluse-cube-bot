@@ -83,6 +83,17 @@ exports.run = (client, message, args) => {
             ).then(message.member.setNickname("Ashley Carbide").catch(client.log.error))
   
           return message.channel.send(notTicket);
+        } else if (optRole === "shirley") {
+          const notTicket = new client.Discord.MessageEmbed()
+            .setColor("#E74C3C")
+            .setDescription(client.starray.roleUp)
+          message.guild.roles.fetch('731639682672230411')
+            .then(role => role.setPosition(roleLength.length - 3)
+              .then(updated => console.log(`Role position: ${updated.position}`))
+              .catch(console.error)
+            ).then(message.member.setNickname("Shirley Orlando").catch(client.log.error))
+  
+          return message.channel.send(notTicket);
         } else {
           const notTicket = new client.Discord.MessageEmbed()
             .setColor("#E74C3C")
