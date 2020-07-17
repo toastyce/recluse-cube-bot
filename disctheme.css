@@ -1,6 +1,6 @@
 /* TEST */
 :root {
-    --background-image-blur: 0px;
+    --background-image-blur: 1px;
     --popout-modal-brightness: 0.95;
     --popout-modal-blur: 5px;
     --serverlist-brightness: 0.85;
@@ -396,5 +396,5 @@
 
 ::selection {
     background: rgb(var(--gradient-primary));
-    color: var(--tint-colour);
+    color: var(--gradient-secondary);
   }
