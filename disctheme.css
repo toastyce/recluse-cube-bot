@@ -93,15 +93,31 @@
 }
 
 /* Unread Popout p.s. hecc u discord */
-.tutorial-3w5I9h, .container-enaOkj, .messages-3G3erD, .channelHeader-3Gd2xq{background-color: var(--backgroundColor);}
+.tutorial-3w5I9h, .container-enaOkj, .messages-3G3erD, .channelHeader-3Gd2xq{background-color: var(--tint-colour);}
 .messages-3G3erD, .channelHeader-3Gd2xq{padding-right: 10px;padding-left: 20px;}
 .collapseButton-2ZsEjz{padding-left: 10px;}
 .messageContainer-1ei2zM:hover .jumpButton-3vBz5U{background-color: transparent;}
-.icon-1Itzco{backgroundColor: var(--backgroundColor); color: #fff;}
-.tertiary-aMXF0g{background-color: var(--themeColor1); color: white;}
-.tertiary-aMXF0g:hover{background-color: var(--themeColor2); color: white;
+.icon-1Itzco{background-Color: var(--tint-colour); color: #fff;}
+.tertiary-aMXF0g{background-color: var(--gradient-primary); color: white;}
+.tertiary-aMXF0g:hover{background-color: var(--gradient-secondary); color: white;
 }
 
 /* I hate discord too man */
-.theme-dark .body-3iLsc4, .theme-dark .footer-1fjuF6{background-color: var(--backgroundColor);
+.theme-dark .body-3iLsc4, .theme-dark .footer-1fjuF6{background-color: var(--tint-colour);
+}
+
+.tooltipGrey-1hnvTt {
+    background-color: var(--tint-colour) !important
+}
+
+.tooltipGrey-1hnvTt .tooltipPointer-3ZfirK {
+    border-top-color: var(--tint-colour) !important
+}
+
+.tooltipBrand-g03Nz8 {
+    background: var(--gradient-primary) !important
+}
+
+.tooltipBrand-g03Nz8 .tooltipPointer-3ZfirK {
+    border-top-color: var(--gradient-primary) !important
 }
