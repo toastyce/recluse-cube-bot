@@ -193,3 +193,17 @@
 /* I hate discord too man */
 .theme-dark .body-3iLsc4, .theme-dark .footer-1fjuF6{background-color: var(--tint-colour);
 }
+
+#app-mount .cozy-3raOZG .header-23xsNx {
+    margin-left: 0;
+    padding-left: 0;
+    position: relative;
+    z-index: 2;
+    padding: 19px 8px 5px 16px;
+    text-align: center;
+    letter-spacing: 1px;
+    color: #e6e6e6;
+    border-bottom-width: 2px;
+    border-style: solid;
+    border-image: linear-gradient(to right, transparent, var(--gradient-primary), var(--gradient-secondary), transparent) 1
+  }
