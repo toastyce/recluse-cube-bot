@@ -2,6 +2,7 @@
 :root {
 --popout-modal-brightness: 0.95;
 --tint-brightness: 70;
+--popout-modal-image: url('https://www.publicdomainpictures.net/pictures/190000/velka/black-background-1468370534d5s.jpg');
 }
 /* X */
 .winButton-iRh8-Z:hover{background-color: rgba(195, 91, 91, 0.4)!important;}
@@ -131,7 +132,7 @@
 }
 
 .userPopout-3XzG_A {
-    background-color: var(--gradient-primary);
+    background-color: var(--gradient-primary) !important;
     box-shadow: 0 2px 10px 0 rgba(0, 0, 0, .2) !important
 }
 
@@ -191,4 +192,11 @@
 
 #app-mount .tooltipBlack-PPG47z .tooltipPointer-3ZfirK {
     display: block;
+  }
+
+  #app-mount .tooltip-2QfLtc {
+    color: var(--text-normal);
+    background-color: var(--gradient-primary) !important;
+    text-align: center;
+    font-weight: 600;
   }
