@@ -195,15 +195,16 @@
 }
 
 #app-mount .cozy-3raOZG .header-23xsNx {
-    /* margin-left: 0;
+    margin-left: 0;
     padding: 0px 0px 0px 0px;
-    padding-left: 0; */
+    padding-left: 0; 
     position: relative;
     z-index: 2;
     text-align: left;
     letter-spacing: 1px;
     color: #e6e6e6;
     border-bottom-width: 1px;
+    background-size:50% 3px;
     border-style: solid;
     border-image: linear-gradient(to right, transparent, var(--gradient-primary), var(--gradient-secondary), transparent) 1
   }
