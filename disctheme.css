@@ -397,3 +397,27 @@
     background: rgb(var(--gradient-primary));
     color: var(--gradient-secondary);
   }
+
+  .jumpButton-3DTcS_ {
+    background-color: var(--gradient-primary);
+    background-image: linear-gradient(to bottom right, var(--gradient-primary), var(--gradient-secondary))
+}
+
+.colorDefault-2K3EoJ .checkbox-3s5GYZ,
+.colorDefault-2K3EoJ .radioSelection-1HmrQS,
+.colorDefault-2K3EoJ.focused-3afm-j .check-1JyqgN {
+    color: var(--gradient-primary)
+}
+
+
+.checkboxWrapper-SkhIWG .checkbox-1ix_J3.checked-3_4uQ9 {
+    background-color: var(--gradient-primary) !important;
+    background-image: linear-gradient(to bottom right, var(--gradient-primary), var(--gradient-secondary));
+    border: 1px solid rgba(0, 0, 0, .5) !important
+}
+
+.item-26Dhrx[style*="rgb(114, 137, 218)"] {
+    background-color: var(--gradient-primary) !important;
+    background-image: linear-gradient(to bottom right, var(--gradient-primary), var(--gradient-secondary));
+    border: 1px solid rgba(0, 0, 0, .5) !important
+}
