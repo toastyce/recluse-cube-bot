@@ -3,7 +3,7 @@
 --popout-modal-brightness: 0.95;
 --tint-brightness: 70;
 --popout-modal-image: url('https://www.publicdomainpictures.net/pictures/190000/velka/black-background-1468370534d5s.jpg');
---show-gift-gif-buttons: block;
+--show-gift-gif-buttons: block !important; 
 }
 /* X */
 .winButton-iRh8-Z:hover{background-color: rgba(195, 91, 91, 0.4)!important;}
