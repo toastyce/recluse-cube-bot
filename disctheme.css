@@ -9,8 +9,7 @@
     --right-brightness: 0.45;
     --popout-modal-brightness: 0.65;
     --font: 'Droid Sans', sans-serif;
-    --tint-colour: 255, 51, 159;
-    --tint-brightness: 0;
+    --bg-colour: 50, 51, 159;
     --tint-brightness: 70;
     --popout-modal-image: url('https://www.publicdomainpictures.net/pictures/190000/velka/black-background-1468370534d5s.jpg');
     --show-gift-gif-buttons: block !important;
@@ -47,11 +46,11 @@
 
 /* Custom CSS Editor */
 .ace-monokai {
-    background-color: var(--tint-colour) !important;
+    background-color: var(--bg-colour) !important;
 }
 
 .ace-monokai .ace_gutter {
-    background-color: var(--tint-colour) !important;
+    background-color: var(--bg-colour) !important;
 }
 
 .ace-monokai .ace_gutter-active-line {
@@ -69,7 +68,7 @@
 
 .contentRegion-3nDuYy #bd-customcss-attach-controls,
 #bd-customcss-detach-container #bd-customcss-attach-controls {
-    background-color: var(--tint-colour);
+    background-color: var(--bg-colour);
     box-shadow: none;
 }
 
@@ -86,7 +85,7 @@
 }
 
 #bd-customcss-attach-controls .help-text .inline {
-    background: var(--tint-colour);
+    background: var(--bg-colour);
 }
 
 .ace_scrollbar-h {
@@ -190,7 +189,7 @@
 
 /* Audit Log Filters */
 .theme-dark .popoutList-T9CKZQ {
-    background-color: var(--tint-colour);
+    background-color: var(--bg-colour);
 }
 
 .selectableItem-1MP3MQ.selected-31soGA {
@@ -204,7 +203,7 @@
 /* View Reactions */
 .theme-dark .sidebar-1-SQro,
 .theme-dark .reactors-Blmlhw {
-    background-color: var(--tint-colour);
+    background-color: var(--bg-colour);
 }
 
 .theme-dark .reactionSelected-1pqISm {
@@ -249,7 +248,7 @@
 
 .diversitySelectorPopout-3FiGaM {
     background-color: rgba(0, 0, 0, 0.7) !important;
-    border-color: var(--tint-colour);
+    border-color: var(--bg-colour);
 }
 
 .diversityEmojiItem-L6_IXw:hover,
@@ -322,7 +321,7 @@
 /* Role Permission Options */
 .theme-dark .item-3T2z1R {
     background-color: rgba(0, 0, 0, 0.7) !important;
-    border-color: var(--tint-colour);
+    border-color: var(--bg-colour);
 }
 
 .theme-dark .denySelected-1mh2mZ {
