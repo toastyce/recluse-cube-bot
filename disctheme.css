@@ -1,15 +1,10 @@
 /* TEST */
-:root {
---rs-small-spacing: 2px;
---rs-large-spacing: 3px;
---rs-width: 2px;
---rs-avatar-shape: 50%;
---rs-online-color: #43b581;
---rs-idle-color: #faa61a;
---rs-dnd-color: #f04747;
---rs-streaming-color: #643da7;
---rs-offline-color: #636b75;
---rs-invisible-color: #747f8d;
+/* Unread Channels */
+.wrapper-1ucjTd.modeUnread-1zpFdA .content-3at_AU .icon-1_QxNX,
+.wrapper-1ucjTd.modeUnread-1zpFdA .content-3at_AU .name-3_Dsmg {
+    background: -webkit-linear-gradient(90deg, #56fff1, #67c2ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 
