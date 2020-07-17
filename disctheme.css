@@ -203,7 +203,7 @@
     text-align: left;
     letter-spacing: 1px;
     color: #e6e6e6;
-    border-bottom-width: 1px;
+    border-bottom-width: 2px;
     border-style: solid;
     border-image: linear-gradient(to right, transparent 0%, var(--gradient-primary) 5%, var(--gradient-secondary) 10%, transparent 20%) 1;
   }
