@@ -205,5 +205,5 @@
     color: #e6e6e6;
     border-bottom-width: 1px;
     border-style: solid;
-    border-image: linear-gradient(to right, rgba(2,0,36,0) 0%, var(--gradient-primary) 5%, var(--gradient-secondary) 25%, rgba(0,212,255,0) 30%);
+    border-image: linear-gradient(to right, rgba(2,0,36,0) 0%, var(--gradient-primary) 5%, var(--gradient-secondary) 25%, rgba(0,212,255,0) 30%) 1;
   }
