@@ -94,7 +94,9 @@
     text-shadow: 0 1.5px 3px rgba(0, 0, 0, .75)
 }
 
-#app-mount .userPopout-3XzG_A .headerNormal-T_seeN {
-    background: solid;
-  }
+.tooltip-2QfLtc {
+    background: rgba(0,0,0,0.5) !important;
+}
+
+
 
