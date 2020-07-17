@@ -68,7 +68,7 @@
 
 .contentRegion-3nDuYy #bd-customcss-attach-controls,
 #bd-customcss-detach-container #bd-customcss-attach-controls {
-    background-color: var(--bg-colour);
+    background-color: rgba(0, 0, 0, .5);
     box-shadow: none;
 }
 
@@ -85,7 +85,7 @@
 }
 
 #bd-customcss-attach-controls .help-text .inline {
-    background: var(--bg-colour);
+    background: rgba(0, 0, 0, .5);
 }
 
 .ace_scrollbar-h {
@@ -189,7 +189,7 @@
 
 /* Audit Log Filters */
 .theme-dark .popoutList-T9CKZQ {
-    background-color: var(--bg-colour);
+    background-color: rgba(0, 0, 0, .5);
 }
 
 .selectableItem-1MP3MQ.selected-31soGA {
@@ -203,7 +203,7 @@
 /* View Reactions */
 .theme-dark .sidebar-1-SQro,
 .theme-dark .reactors-Blmlhw {
-    background-color: var(--bg-colour);
+    background-color: rgba(0, 0, 0, .5);
 }
 
 .theme-dark .reactionSelected-1pqISm {
@@ -248,7 +248,7 @@
 
 .diversitySelectorPopout-3FiGaM {
     background-color: rgba(0, 0, 0, 0.7) !important;
-    border-color: var(--bg-colour);
+    border-color: rgba(0, 0, 0, .5);
 }
 
 .diversityEmojiItem-L6_IXw:hover,
@@ -321,7 +321,7 @@
 /* Role Permission Options */
 .theme-dark .item-3T2z1R {
     background-color: rgba(0, 0, 0, 0.7) !important;
-    border-color: var(--bg-colour);
+    border-color: rgba(0, 0, 0, .5);
 }
 
 .theme-dark .denySelected-1mh2mZ {
@@ -420,4 +420,9 @@
     background-color: var(--gradient-primary) !important;
     background-image: linear-gradient(to bottom right, var(--gradient-primary), var(--gradient-secondary));
     border: 1px solid rgba(0, 0, 0, .5) !important
+}
+
+.jumpToPresentBar-9P20AM {
+    background-color: rgba(0, 0, 0, .5);
+    opacity: .8
 }
