@@ -400,7 +400,9 @@
 
   .jumpButton-3DTcS_ {
     background-color: var(--gradient-primary);
-    background-image: linear-gradient(to bottom right, var(--gradient-primary), var(--gradient-secondary))
+    background-image: linear-gradient(to bottom right, var(--gradient-primary), var(--gradient-secondary));
+    display: block;
+    padding: 10px;
 }
 
 .colorDefault-2K3EoJ .checkbox-3s5GYZ,
