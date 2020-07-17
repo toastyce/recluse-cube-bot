@@ -205,5 +205,5 @@
     color: #e6e6e6;
     border-bottom-width: 1px;
     border-style: solid;
-    border-image: linear-gradient(to right, transparent 0%, var(--gradient-primary) 5%, var(--gradient-secondary) 20%, transparent 30%) 1;
+    border-image: linear-gradient(to right, transparent 0%, var(--gradient-primary) 5%, var(--gradient-secondary) 10%, transparent 20%) 1;
   }
