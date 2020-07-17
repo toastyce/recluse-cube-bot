@@ -19,7 +19,7 @@
     --scrollbar-colour: rgba(255, 255, 255, 0.05);
     --link-colour: #00b0f4;
     --update-notice-1: none;
-
+  
     --rs-small-spacing: 2px;
     --rs-large-spacing: 3px;
     --rs-width: 2px;
@@ -393,3 +393,8 @@
     border-style: solid;
     border-image: linear-gradient(to right, transparent 0%, var(--gradient-primary) 5%, var(--gradient-secondary) 10%, transparent 20%) 1;
 }
+
+::selection {
+    background: rgb(var(--tint-color));
+    color: var(--gradient-primary);
+  }
