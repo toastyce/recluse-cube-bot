@@ -446,3 +446,7 @@
 .searchPage-3GKAdT .search-1iTphC .searchBox-2_mAlO:focus-within {
     border-color: var(--gradient-primary)
 }
+
+.jumpButton-2dvRSC{
+    z-index:0
+}
