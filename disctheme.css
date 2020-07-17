@@ -260,70 +260,121 @@
     display: none;
 }
 
-#app-mount .cozy-3raOZG .header-23xsNx {
-    margin-left: 0;
-    padding: 0px 0px 0px 0px;
-    padding-left: 0;
-    position: relative;
-    z-index: 2;
-    text-align: left;
-    letter-spacing: 1px;
-    color: #e6e6e6;
-    border-bottom-width: 2px;
-    border-style: solid;
-    border-image: linear-gradient(to right, transparent 0%, var(--gradient-primary) 5%, var(--gradient-secondary) 10%, transparent 20%) 1;
+/* In place when dragging Server or Folder */
+.dragInner-_SHftW {
+    background: rgba(0, 0, 0, 0.7) !important;
 }
 
-::selection {
-    background: rgb(var(--gradient-primary));
-    color: var(--gradient-secondary);
-  }
+/* Account Credit */
+.premiumSubscriptionAccountCredit-25i0tQ {
+    background: rgba(0, 0, 0, 0.7) !important;
+}
 
-  .jumpButton-3DTcS_ {
+/* Emoji Picker Nitro will Expire soon */
+.premiumRetentionNotice-1MsjHe {
+    background: rgba(0, 0, 0, 0.7) !important;
+}
+
+/* NOBODY IS ACTIVE RIGHT NOW */
+.emptyCard-1RJw8n {
+    background: rgba(0, 0, 0, 0.7) !important;
+}
+
+/* New Context Server Dropdown */
+.colorDefault-2K3EoJ:active:not(.hideInteraction-1iHO1O) {
     background-color: var(--gradient-primary);
-    background-image: linear-gradient(to bottom right, var(--gradient-primary), var(--gradient-secondary));
-    display: block;
-    padding: 10px;
 }
 
-.colorDefault-2K3EoJ .checkbox-3s5GYZ,
-.colorDefault-2K3EoJ .radioSelection-1HmrQS,
-.colorDefault-2K3EoJ.focused-3afm-j .check-1JyqgN {
-    color: var(--gradient-primary)
+.styleFixed-sX-yHV {
+    background: rgba(0, 0, 0, 0.7) !important;
 }
 
-
-.checkboxWrapper-SkhIWG .checkbox-1ix_J3.checked-3_4uQ9 {
-    background-color: var(--gradient-primary) !important;
-    background-image: linear-gradient(to bottom right, var(--gradient-primary), var(--gradient-secondary));
-    border: 1px solid rgba(0, 0, 0, .5) !important
+/* New Join Module */
+.size16-1P40sf {
+    font-size: 15px;
+    font-weight: 200;
 }
 
-.item-26Dhrx[style*="rgb(114, 137, 218)"] {
-    background-color: var(--gradient-primary) !important;
-    background-image: linear-gradient(to bottom right, var(--gradient-primary), var(--gradient-secondary));
-    border: 1px solid rgba(0, 0, 0, .5) !important
+.theme-light .input-UJ9Tr3,
+.theme-light .input-1mgnkM {
+    color: #e3e5e8;
 }
 
-.jumpToPresentBar-9P20AM {
-    background-color: rgba(0, 0, 0, .5);
-    opacity: .8
+/* Invite to server Module */
+.input-cIJ7To {
+    background: rgba(0, 0, 0, 0.7) !important;
 }
 
-.css-123uooi-menu,
-.css-1b86x2o-control,
-.css-1o55ng5-control,
-.search-1iTphC .searchBox-2_mAlO,
-.searchPage-3GKAdT .search-1iTphC .searchBox-2_mAlO {
-    background-color: rgba(0, 0, 0, .5);
+/* New welcome to server */
+.card-1yV8cG {
+    background: rgba(0, 0, 0, 0.7) !important;
 }
 
-.search-1iTphC .searchBox-2_mAlO:focus,
-.search-1iTphC .searchBox-2_mAlO:focus-within {
-    box-shadow: none
+.card-1yV8cG:hover {
+    background-color: var(--gradient-primary);
 }
 
-.searchPage-3GKAdT .search-1iTphC .searchBox-2_mAlO:focus,
-.searchPage-3GKAdT .search-1iTphC .searchBox-2_mAlO:focus-within {
-    border-color: var(--gradient-primary)
+.channelTextArea-2VhZ6z.highlighted-2eSV1B {
+    box-shadow: 0 0 0 4px var(--gradient-primary);
+}
+
+/* Role Permission Options */
+.theme-dark .item-3T2z1R {
+    background-color: rgba(0, 0, 0, 0.7) !important;
+    border-color: rgba(0, 0, 0, .5);
+}
+
+.theme-dark .denySelected-1mh2mZ {
+    background-color: #f04747;
+}
+
+.theme-dark .allowSelected-25S_i5 {
+    background-color: #43b581;
+}
+
+.theme-dark .passthroughSelected-1Eq0Kl {
+    background-color: var(--gradient-primary);
+}
+
+/* Unread Popout p.s. hecc u discord */
+.tutorial-3w5I9h,
+.container-enaOkj,
+.messages-3G3erD,
+.channelHeader-3Gd2xq {
+    background-color: rgba(0, 0, 0, 0.7) !important;
+}
+
+.messages-3G3erD,
+.channelHeader-3Gd2xq {
+    padding-right: 10px;
+    padding-left: 20px;
+}
+
+.collapseButton-2ZsEjz {
+    padding-left: 10px;
+}
+
+.messageContainer-1ei2zM:hover .jumpButton-3vBz5U {
+    background-color: transparent;
+}
+
+.icon-1Itzco {
+    background-color: rgba(0, 0, 0, 0.7) !important;
+    color: #fff;
+}
+
+.tertiary-aMXF0g {
+    background-color: var(--gradient-primary);
+    color: white;
+}
+
+.tertiary-aMXF0g:hover {
+    background-color: var(--gradient-secondary);
+    color: white;
+}
+
+/* I hate discord too man */
+.theme-dark .body-3iLsc4,
+.theme-dark .footer-1fjuF6 {
+    background-color: rgba(0, 0, 0, 0.7) !important;
 }
