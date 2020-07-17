@@ -10,18 +10,18 @@
 .winButtonMinMax-PBQ2gm:hover{background-color: rgba(156, 156, 156, 0.1)!important;}
 
 /* Custom CSS Editor */
-.ace-monokai {background-color: var(--backgroundColor)!important;}
-.ace-monokai .ace_gutter {background-color: var(--backgroundColor)!important;}
+.ace-monokai {background-color: var(--tint-colour)!important;}
+.ace-monokai .ace_gutter {background-color: var(--tint-colour)!important;}
 .ace-monokai .ace_gutter-active-line{background-color: transparent;}
 .ace-monokai .ace_marker-layer .ace_selection{background-color: rgba(0,0,0,0.6) !important;}
 .ace-monokai .ace_gutter-active-line, .ace-monokai .ace_marker-layer .ace_active-line {background-color: rgba(0, 0, 0, 0.8)!important;}
-.contentRegion-3nDuYy #bd-customcss-attach-controls, #bd-customcss-detach-container #bd-customcss-attach-controls {background-color: var(--backgroundColor); box-shadow: none;}
+.contentRegion-3nDuYy #bd-customcss-attach-controls, #bd-customcss-detach-container #bd-customcss-attach-controls {background-color: var(--tint-colour); box-shadow: none;}
 .standardSidebarView-3F1I7i #bd-customcss-attach-controls button, .bd-detached-css-editor #bd-customcss-attach-controls button {background: rgba(0, 0, 0, 0.3); border-color: rgba(0, 0, 0, 0.0) !important;}
-.standardSidebarView-3F1I7i #bd-customcss-attach-controls button:hover, .bd-detached-css-editor #bd-customcss-attach-controls button:hover {background-color: rgba(0, 0, 0, 0.8); border: 2px solid var(--themeColor1) !important;}
-#bd-customcss-attach-controls .help-text .inline{background: var(--backgroundColor);}
+.standardSidebarView-3F1I7i #bd-customcss-attach-controls button:hover, .bd-detached-css-editor #bd-customcss-attach-controls button:hover {background-color: rgba(0, 0, 0, 0.8); border: 2px solid var(--gradient-primary) !important;}
+#bd-customcss-attach-controls .help-text .inline{background: var(--tint-colour);}
 .ace_scrollbar-h{background-color: rgba(0, 0, 0, 0.3); height: 14px !important;}
 #bd-customcss-detach-container{background-color: transparent;}
-.checkbox-3kaeSU .checkboxInner-3yjcPe .checkboxElement-1qV33p:checked+span{background-color: var(--themeColor1);border-color: var(--themeColor1);
+.checkbox-3kaeSU .checkboxInner-3yjcPe .checkboxElement-1qV33p:checked+span{background-color: var(--themeColor1);border-color: var(--gradient-primary);
 }
 
 .winButton-iRh8-Z svg * {
@@ -178,4 +178,18 @@
 .theme-dark .denySelected-1mh2mZ{background-color: #f04747;}
 .theme-dark .allowSelected-25S_i5{background-color: #43b581;}
 .theme-dark .passthroughSelected-1Eq0Kl{background-color: var(--gradient-primary);
+}
+
+/* Unread Popout p.s. hecc u discord */
+.tutorial-3w5I9h, .container-enaOkj, .messages-3G3erD, .channelHeader-3Gd2xq{background-color: var(--tint-colour);}
+.messages-3G3erD, .channelHeader-3Gd2xq{padding-right: 10px;padding-left: 20px;}
+.collapseButton-2ZsEjz{padding-left: 10px;}
+.messageContainer-1ei2zM:hover .jumpButton-3vBz5U{background-color: transparent;}
+.icon-1Itzco{backgroundColor: var(--tint-colour); color: #fff;}
+.tertiary-aMXF0g{background-color: var(--gradient-primary); color: white;}
+.tertiary-aMXF0g:hover{background-color: var(--gradient-secondary); color: white;
+}
+
+/* I hate discord too man */
+.theme-dark .body-3iLsc4, .theme-dark .footer-1fjuF6{background-color: var(--tint-colour);
 }
