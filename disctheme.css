@@ -1,6 +1,6 @@
 /* TEST */
 :root {
-    --background-image-blur: 5px;
+    --background-image-blur: 0px;
     --popout-modal-brightness: 0.95;
     --popout-modal-blur: 5px;
     --serverlist-brightness: 0.85;
