@@ -206,5 +206,5 @@
     border-bottom-width: 1px;
     background-size:30% 3px;
     border-style: solid;
-    border-image: linear-gradient(to right, transparent, var(--gradient-primary), var(--gradient-secondary), transparent) 1
+    border-image: linear-gradient(to right, transparent, var(--gradient-primary), var(--gradient-secondary), transparent, transparent, transparent, transparent, transparent) 1
   }
