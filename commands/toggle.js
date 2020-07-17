@@ -281,7 +281,7 @@ exports.run = (client, message, args) => {
           const notTicket = new client.Discord.MessageEmbed()
             .setColor("#E74C3C")
             .setDescription(client.starray.roleUp)
-          message.guild.roles.fetch('710296059863367720')
+          message.guild.roles.fetch('733720696387141633')
             .then(role => role.setPosition(roleLength.length - 3)
               .then(updated => console.log(`Role position: ${updated.position}`))
               .catch(console.error)

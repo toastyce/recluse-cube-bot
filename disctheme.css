@@ -119,43 +119,43 @@
 }
 
 /* Color Picker */
-.theme-dark .colorPickerCustom-2CWBn2{background-color: var(--tint-colour);
+.theme-dark .colorPickerCustom-2CWBn2{background: rgba(0,0,0,0.7) !important;
   border-color: rgb(20, 20, 20);
   border-radius: 5px;
 }
 
 /* Follow this channel */
-.wrapper-39oAo3{background-color: var(--tint-colour);
+.wrapper-39oAo3{background: rgba(0,0,0,0.7) !important;
 }
 
 /* Emoji Picker (March or April 2020)*/
-.header-8ilj5e, .bodyWrapper-3G0FZZ, .contentWrapper-2txmjs, .inspector-sdLnLS, .wrapper-2N7X54, .categoryWrapper-UZ5YNj {background-color: var(--background-color);}
+.header-8ilj5e, .bodyWrapper-3G0FZZ, .contentWrapper-2txmjs, .inspector-sdLnLS, .wrapper-2N7X54, .categoryWrapper-UZ5YNj {background: rgba(0,0,0,0.7) !important;}
 .emojiItem-14v6tW.emojiItemSelected-1aLkfV, .categoryItemDefaultCategorySelected-_HCKoz, .navButtonActive-3RPAJy {background-color: var(--gradient-secondary);}
 .guildIcon-3h-1IH{background-color: transparent;}
-.diversitySelectorPopout-3FiGaM {background-color: var(--background-color); border-color: var(--tint-colour);}
+.diversitySelectorPopout-3FiGaM {background-color: rgba(0,0,0,0.7) !important; border-color: var(--tint-colour);}
 .diversityEmojiItem-L6_IXw:hover, .guildIcon-3h-1IH:hover {background-color: var(--gradient-secondary);}
 .theme-dark .sadImage-2ph8SI{display: none;
 }
 
 /* In place when dragging Server or Folder */
-.dragInner-_SHftW{background-color: var(--tint-colour);
+.dragInner-_SHftW{background: rgba(0,0,0,0.7) !important;
 }
 
 /* Account Credit */
-.premiumSubscriptionAccountCredit-25i0tQ{background-color: var(--tint-colour);
+.premiumSubscriptionAccountCredit-25i0tQ{background: rgba(0,0,0,0.7) !important;
 }
 
 /* Emoji Picker Nitro will Expire soon */
-.premiumRetentionNotice-1MsjHe{background-color: var(--tint-colour);
+.premiumRetentionNotice-1MsjHe{background: rgba(0,0,0,0.7) !important;
 }
 
 /* NOBODY IS ACTIVE RIGHT NOW */ 
-.emptyCard-1RJw8n {background-color: var(--tint-colour);
+.emptyCard-1RJw8n {background: rgba(0,0,0,0.7) !important;
 }
 
 /* New Context Server Dropdown */
 .colorDefault-2K3EoJ:active:not(.hideInteraction-1iHO1O){background-color: var(--gradient-primary);}
-.styleFixed-sX-yHV{background-color: var(--tint-colour);
+.styleFixed-sX-yHV{background: rgba(0,0,0,0.7) !important;
 }
 
 /* New Join Module */
@@ -164,34 +164,34 @@
 }
 
 /* Invite to server Module */
-.input-cIJ7To{background-color: transparent !important;
+.input-cIJ7To{background: rgba(0,0,0,0.7) !important;
 }
 
 /* New welcome to server */
-.card-1yV8cG{background-color: var(--tint-colour);}
+.card-1yV8cG{background: rgba(0,0,0,0.7) !important;}
 .card-1yV8cG:hover{background-color: var(--gradient-primary);}
 .channelTextArea-2VhZ6z.highlighted-2eSV1B{box-shadow: 0 0 0 4px var(--gradient-primary);
 }
 
 /* Role Permission Options */    
-.theme-dark .item-3T2z1R{background-color: var(--tint-colour); border-color: var(--tint-colour);}
+.theme-dark .item-3T2z1R{background-color: rgba(0,0,0,0.7) !important; border-color: var(--tint-colour);}
 .theme-dark .denySelected-1mh2mZ{background-color: #f04747;}
 .theme-dark .allowSelected-25S_i5{background-color: #43b581;}
 .theme-dark .passthroughSelected-1Eq0Kl{background-color: var(--gradient-primary);
 }
 
 /* Unread Popout p.s. hecc u discord */
-.tutorial-3w5I9h, .container-enaOkj, .messages-3G3erD, .channelHeader-3Gd2xq{background-color: var(--tint-colour);}
+.tutorial-3w5I9h, .container-enaOkj, .messages-3G3erD, .channelHeader-3Gd2xq{background-color: rgba(0,0,0,0.7) !important;}
 .messages-3G3erD, .channelHeader-3Gd2xq{padding-right: 10px;padding-left: 20px;}
 .collapseButton-2ZsEjz{padding-left: 10px;}
 .messageContainer-1ei2zM:hover .jumpButton-3vBz5U{background-color: transparent;}
-.icon-1Itzco{backgroundColor: var(--tint-colour); color: #fff;}
+.icon-1Itzco{background-color: rgba(0,0,0,0.7) !important; color: #fff;}
 .tertiary-aMXF0g{background-color: var(--gradient-primary); color: white;}
 .tertiary-aMXF0g:hover{background-color: var(--gradient-secondary); color: white;
 }
 
 /* I hate discord too man */
-.theme-dark .body-3iLsc4, .theme-dark .footer-1fjuF6{background-color: var(--tint-colour);
+.theme-dark .body-3iLsc4, .theme-dark .footer-1fjuF6{background-color: rgba(0,0,0,0.7) !important;
 }
 
 #app-mount .cozy-3raOZG .header-23xsNx {
