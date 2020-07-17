@@ -1,9 +1,38 @@
 /* TEST */
 :root {
+    --background-image-blur: 5px;
 --popout-modal-brightness: 0.95;
+--popout-modal-blur: 5px;
+--serverlist-brightness: 0.85;
+--left-brightness: 0.85;
+--middle-brightness: 0.65;
+--right-brightness: 0.45;
+--popout-modal-brightness: 0.65;
+--font: 'Droid Sans', sans-serif;
+--tint-colour: 255, 51, 159;
+--tint-brightness: 0;
 --tint-brightness: 70;
 --popout-modal-image: url('https://www.publicdomainpictures.net/pictures/190000/velka/black-background-1468370534d5s.jpg');
 --show-gift-gif-buttons: block !important; 
+--window-padding: 0px;
+--window-roundness: 0px;
+--scrollbar-colour: rgba(255,255,255,0.05);
+--link-colour: #00b0f4;
+--update-notice-1: none;
+
+--rs-small-spacing: 2px;
+--rs-large-spacing: 3px;
+--rs-width: 2px;
+--rs-avatar-shape: 50%;
+--rs-online-color: #43b581;
+--rs-idle-color: #faa61a;
+--rs-dnd-color: #f04747;
+--rs-streaming-color: #643da7;
+--rs-offline-color: #636b75;
+--rs-invisible-color: #747f8d;
+
+--HSL-server-icon-size: 40px;
+--HSL-server-spacing: 10px;
 }
 /* X */
 .winButton-iRh8-Z:hover{background-color: rgba(195, 91, 91, 0.4)!important;}
