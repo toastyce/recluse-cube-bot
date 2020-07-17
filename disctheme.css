@@ -92,3 +92,16 @@
     text-shadow: 0 1.5px 3px rgba(0, 0, 0, .75)
 }
 
+/* Unread Popout p.s. hecc u discord */
+.tutorial-3w5I9h, .container-enaOkj, .messages-3G3erD, .channelHeader-3Gd2xq{background-color: var(--backgroundColor);}
+.messages-3G3erD, .channelHeader-3Gd2xq{padding-right: 10px;padding-left: 20px;}
+.collapseButton-2ZsEjz{padding-left: 10px;}
+.messageContainer-1ei2zM:hover .jumpButton-3vBz5U{background-color: transparent;}
+.icon-1Itzco{backgroundColor: var(--backgroundColor); color: #fff;}
+.tertiary-aMXF0g{background-color: var(--themeColor1); color: white;}
+.tertiary-aMXF0g:hover{background-color: var(--themeColor2); color: white;
+}
+
+/* I hate discord too man */
+.theme-dark .body-3iLsc4, .theme-dark .footer-1fjuF6{background-color: var(--backgroundColor);
+}
