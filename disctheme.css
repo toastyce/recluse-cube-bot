@@ -79,4 +79,13 @@
 
 }
 
+.wrapper-CU3qI5 .icon-WnO6o2,
+.wrapper-CU3qI5 .name-IbjUBS,
+.wrapper-CU3qI5.muted-1NRuDm:hover .icon-WnO6o2,
+.wrapper-CU3qI5.muted-1NRuDm:hover .name-IbjUBS,
+.wrapper-CU3qI5:hover .icon-WnO6o2,
+.wrapper-CU3qI5:hover .name-IbjUBS {
+    color: var(--gradient-primary);
+    text-shadow: 0 1.5px 3px rgba(0, 0, 0, .75)
+}
 
