@@ -1,4 +1,7 @@
 /* TEST */
+:root {
+--popout-modal-brightness: 0.95;
+}
 /* X */
 .winButton-iRh8-Z:hover{background-color: rgba(195, 91, 91, 0.4)!important;}
 /* Square + -*/
