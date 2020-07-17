@@ -199,11 +199,11 @@
     padding-left: 0;
     position: relative;
     z-index: 2;
-    padding: 19px 8px 5px 16px;
-    text-align: center;
-    letter-spacing: 1px;
+    padding: 0px 0px 0px 0px;
+    text-align: start;
+    letter-spacing: 0px;
     color: #e6e6e6;
-    border-bottom-width: 2px;
+    border-bottom-width: 1px;
     border-style: solid;
     border-image: linear-gradient(to right, transparent, var(--gradient-primary), var(--gradient-secondary), transparent) 1
   }
