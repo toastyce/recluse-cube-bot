@@ -395,6 +395,6 @@
 }
 
 ::selection {
-    background: rgb(var(--tint-color));
+    background: rgb(var(--tint-colour));
     color: var(--gradient-primary);
   }
