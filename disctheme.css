@@ -294,37 +294,3 @@
 .wrapper-39oAo3 {
     background: rgba(0, 0, 0, 0.7) !important;
 }
-
-/* Emoji Picker (March or April 2020)*/
-.header-8ilj5e,
-.bodyWrapper-3G0FZZ,
-.contentWrapper-2txmjs,
-.inspector-sdLnLS,
-.wrapper-2N7X54,
-.categoryWrapper-UZ5YNj {
-    background: rgba(0, 0, 0, 0.7) !important;
-}
-
-.emojiItem-14v6tW.emojiItemSelected-1aLkfV,
-.categoryItemDefaultCategorySelected-_HCKoz,
-.navButtonActive-3RPAJy {
-    background-color: var(--gradient-secondary);
-}
-
-.guildIcon-3h-1IH {
-    background-color: transparent;
-}
-
-.diversitySelectorPopout-3FiGaM {
-    background-color: rgba(0, 0, 0, 0.7) !important;
-    border-color: rgba(0, 0, 0, .5);
-}
-
-.diversityEmojiItem-L6_IXw:hover,
-.guildIcon-3h-1IH:hover {
-    background-color: var(--gradient-secondary);
-}
-
-.theme-dark .sadImage-2ph8SI {
-    display: none;
-}
