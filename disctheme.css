@@ -426,3 +426,21 @@
     background-color: rgba(0, 0, 0, .5);
     opacity: .8
 }
+
+.css-123uooi-menu,
+.css-1b86x2o-control,
+.css-1o55ng5-control,
+.search-1iTphC .searchBox-2_mAlO,
+.searchPage-3GKAdT .search-1iTphC .searchBox-2_mAlO {
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.search-1iTphC .searchBox-2_mAlO:focus,
+.search-1iTphC .searchBox-2_mAlO:focus-within {
+    box-shadow: none
+}
+
+.searchPage-3GKAdT .search-1iTphC .searchBox-2_mAlO:focus,
+.searchPage-3GKAdT .search-1iTphC .searchBox-2_mAlO:focus-within {
+    border-color: var(--gradient-primary)
+}
