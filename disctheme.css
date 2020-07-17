@@ -171,7 +171,7 @@
 }
 
 .attachPopoutRow-3iqqu1:hover {
-    background-color: var(--tint-colour) !important;
+    background-color: var(--gradient-primary) !important;
     box-shadow: inset 0 0 0 1000000px rgba(0, 0, 0, .5)
 }
 
@@ -180,13 +180,13 @@
 .footer-2gL1pp,
 .message-2qRu38,
 .messagesPopoutWrap-1MQ1bW {
-    background-color: var(--tint-colour) !important;
+    background-color: var(--gradient-primary) !important;
     border: none !important
 }
 
 .popout-38lTFE,
 .wrapper-3D2qGf {
-    background-color: var(--tint-colour) !important
+    background-color: var(--gradient-primary) !important
 }
 
 #app-mount .tooltipBlack-PPG47z .tooltipPointer-3ZfirK {
