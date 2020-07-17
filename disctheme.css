@@ -188,3 +188,7 @@
 .wrapper-3D2qGf {
     background-color: var(--tint-colour) !important
 }
+
+#app-mount .tooltipBlack-PPG47z .tooltipPointer-3ZfirK {
+    display: block;
+  }
