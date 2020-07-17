@@ -18,7 +18,7 @@
   "adminChannel": "replaceme",
   "guestChannel": "replaceme",
   "colour": "#009999",
-  "playing": "Hermit's Garden(!help)",
+  "playing": "Hermit's Garden",
   "activityType": "PLAYING",
   "status": "ONLINE"
 }

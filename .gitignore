@@ -4,3 +4,4 @@ logs/
 *.log
 node_modules/
 res/config.json
+res/twitconfig.json

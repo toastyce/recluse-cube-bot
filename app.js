@@ -18,22 +18,29 @@ const {
 
 const Discord = require("Discord.js");
 const Enmap = require("enmap");
+const Twitter = require('twit');
 const fs = require("fs");
 
 const client = new Discord.Client({
   partials: ['MESSAGE', 'CHANNEL', 'REACTION']
 });
 const config = require("./res/config.json");
+const twitterConf = require("./res/twitconfig.json")
 const fish = require("./res/fish.json");
 const starray = require("./res/strings.json");
+//const twitterClient = new Twitter(twitterConf);
 // We also need to make sure we're attaching the config to the CLIENT so it's accessible everywhere!
 client.config = config;
 client.log = log;
 client.Discord = Discord;
+//client.Twitter = twitterClient;
 client.version = version;
 client.description = description;
 client.starray = starray;
 client.fish = fish;
+//const stream = twitterClient.stream('statuses/filter', {
+//  follow: '2899773086', // @Every3Minutes, specify whichever Twitter ID you want to follow
+//});
 
 fs.readdir("./events/", (err, files) => {
   if (err) return console.error(err);
