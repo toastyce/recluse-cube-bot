@@ -18,8 +18,8 @@
     --scrollbar-colour: rgba(255, 255, 255, 0.05);
     --link-colour: #00b0f4;
     --update-notice-1: none;
-    --theme1: var(--theme1) ;
-    --theme2: var(--theme2);
+    --theme1: var(--gradient-primary) ;
+    --theme2: var(--gradient-secondary);
   
     --rs-small-spacing: 2px;
     --rs-large-spacing: 3px;
@@ -100,8 +100,8 @@
 }
 
 .checkbox-3kaeSU .checkboxInner-3yjcPe .checkboxElement-1qV33p:checked+span {
-    background-color: var(--themeColor1);
-    border-color: var(--theme1);;
+    background-color: var(--theme1);
+    border-color: var(--theme2);;
 }
 
 .winButton-iRh8-Z svg * {
