@@ -245,26 +245,3 @@
 
 
 
-/* View Reactions */
-.theme-dark .sidebar-1-SQro,
-.theme-dark .reactors-Blmlhw {
-    background-color: rgba(0, 0, 0, .5);
-}
-
-.theme-dark .reactionSelected-1pqISm {
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-.theme-dark .reactionDefault-GBA58K:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-/* Color Picker */
-.theme-dark .colorPickerCustom-2CWBn2 {
-    background: rgba(0, 0, 0, 0.7) !important;
-    border-color: rgb(20, 20, 20);
-    border-radius: 5px;
-}
-
-
-
