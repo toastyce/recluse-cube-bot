@@ -447,3 +447,17 @@
 .searchPage-3GKAdT .search-1iTphC .searchBox-2_mAlO:focus-within {
     border-color: rgb(var(--gradient-primary));
 }
+
+.container-ZRw2kD .emojiSection-3Fb9ix {
+    background-color: rgba(0, 0, 0, .5);
+    padding: 4px
+}
+
+.emojiContainer-1u-_sQ {
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.emojiItem-14v6tW.emojiItemSelected-1aLkfV,
+.categoryItemDefaultCategorySelected-_HCKoz:hover {
+    background: rgba(0, 0, 0, .5);
+}
