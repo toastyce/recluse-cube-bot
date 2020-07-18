@@ -18,6 +18,8 @@
     --scrollbar-colour: rgba(255, 255, 255, 0.05);
     --link-colour: #00b0f4;
     --update-notice-1: none;
+    --theme1: var(--theme1) ;
+    --theme2: var(--theme2);
   
     --rs-small-spacing: 2px;
     --rs-large-spacing: 3px;
@@ -81,7 +83,7 @@
 .standardSidebarView-3F1I7i #bd-customcss-attach-controls button:hover,
 .bd-detached-css-editor #bd-customcss-attach-controls button:hover {
     background-color: rgba(0, 0, 0, 0.8);
-    border: 2px solid rgb(var(--gradient-primary)); !important;
+    border: 2px solid var(--theme1); !important;
 }
 
 #bd-customcss-attach-controls .help-text .inline {
@@ -99,7 +101,7 @@
 
 .checkbox-3kaeSU .checkboxInner-3yjcPe .checkboxElement-1qV33p:checked+span {
     background-color: var(--themeColor1);
-    border-color: rgb(var(--gradient-primary));;
+    border-color: var(--theme1);;
 }
 
 .winButton-iRh8-Z svg * {
@@ -158,7 +160,7 @@
     color: #e6e6e6;
     border-bottom-width: 2px;
     border-style: solid;
-    border-image: linear-gradient(to right, transparent, rgb(var(--gradient-primary));, rgb(var(--gradient-secondary));, transparent) 1
+    border-image: linear-gradient(to right, transparent, var(--theme1);, var(--theme2);, transparent) 1
 }
 
 .wrapper-CU3qI5 .icon-WnO6o2,
@@ -167,7 +169,7 @@
 .wrapper-CU3qI5.muted-1NRuDm:hover .name-IbjUBS,
 .wrapper-CU3qI5:hover .icon-WnO6o2,
 .wrapper-CU3qI5:hover .name-IbjUBS {
-    color: rgb(var(--gradient-primary));;
+    color: var(--theme1);;
     text-shadow: 0 1.5px 3px rgba(0, 0, 0, .75)
 }
 
@@ -193,7 +195,7 @@
 }
 
 .selectableItem-1MP3MQ.selected-31soGA {
-    background-color: rgb(var(--gradient-secondary)); !important;
+    background-color: var(--theme2); !important;
 }
 
 .theme-dark .selectableItem-1MP3MQ:hovers {
@@ -239,7 +241,7 @@
 .emojiItem-14v6tW.emojiItemSelected-1aLkfV,
 .categoryItemDefaultCategorySelected-_HCKoz,
 .navButtonActive-3RPAJy {
-    background-color: rgb(var(--gradient-secondary));;
+    background-color: var(--theme2);;
 }
 
 .guildIcon-3h-1IH {
@@ -253,7 +255,7 @@
 
 .diversityEmojiItem-L6_IXw:hover,
 .guildIcon-3h-1IH:hover {
-    background-color: rgb(var(--gradient-secondary));;
+    background-color: var(--theme2);;
 }
 
 .theme-dark .sadImage-2ph8SI {
@@ -282,7 +284,7 @@
 
 /* New Context Server Dropdown */
 .colorDefault-2K3EoJ:active:not(.hideInteraction-1iHO1O) {
-    background-color: rgb(var(--gradient-primary));;
+    background-color: var(--theme1);;
 }
 
 .styleFixed-sX-yHV {
@@ -311,11 +313,11 @@
 }
 
 .card-1yV8cG:hover {
-    background-color: rgb(var(--gradient-primary));;
+    background-color: var(--theme1);;
 }
 
 .channelTextArea-2VhZ6z.highlighted-2eSV1B {
-    box-shadow: 0 0 0 4px rgb(var(--gradient-primary));;
+    box-shadow: 0 0 0 4px var(--theme1);;
 }
 
 /* Role Permission Options */
@@ -333,7 +335,7 @@
 }
 
 .theme-dark .passthroughSelected-1Eq0Kl {
-    background-color: rgb(var(--gradient-primary));;
+    background-color: var(--theme1);;
 }
 
 /* Unread Popout p.s. hecc u discord */
@@ -364,12 +366,12 @@
 }
 
 .tertiary-aMXF0g {
-    background-color: rgb(var(--gradient-primary));;
+    background-color: var(--theme1);;
     color: white;
 }
 
 .tertiary-aMXF0g:hover {
-    background-color: rgb(var(--gradient-secondary));;
+    background-color: var(--theme2);;
     color: white;
 }
 
@@ -390,17 +392,17 @@
     color: #e6e6e6;
     border-bottom-width: 2px;
     border-style: solid;
-    border-image: linear-gradient(to right, transparent 0%, rgb(var(--gradient-primary)); 5%, rgb(var(--gradient-secondary)); 10%, transparent 20%) 1;
+    border-image: linear-gradient(to right, transparent 0%, var(--theme1); 5%, var(--theme2); 10%, transparent 20%) 1;
 }
 
 ::selection {
-    background: rgb(rgb(var(--gradient-primary)););
-    color: rgb(var(--gradient-secondary));;
+    background: rgb(var(--theme1););
+    color: var(--theme2);;
   }
 
   .jumpButton-3DTcS_ {
-    background-color: rgb(var(--gradient-primary));;
-    background-image: linear-gradient(to bottom right, rgb(var(--gradient-primary));, rgb(var(--gradient-secondary)););
+    background-color: var(--theme1);;
+    background-image: linear-gradient(to bottom right, var(--theme1);, var(--theme2););
     display: block;
     padding: 10px;
 }
@@ -408,19 +410,19 @@
 .colorDefault-2K3EoJ .checkbox-3s5GYZ,
 .colorDefault-2K3EoJ .radioSelection-1HmrQS,
 .colorDefault-2K3EoJ.focused-3afm-j .check-1JyqgN {
-    color: rgb(var(--gradient-primary));
+    color: var(--theme1);
 }
 
 
 .checkboxWrapper-SkhIWG .checkbox-1ix_J3.checked-3_4uQ9 {
-    background-color: rgb(var(--gradient-primary)); !important;
-    background-image: linear-gradient(to bottom right, rgb(var(--gradient-primary));, rgb(var(--gradient-secondary)););
+    background-color: var(--theme1); !important;
+    background-image: linear-gradient(to bottom right, var(--theme1);, var(--theme2););
     border: 1px solid rgba(0, 0, 0, .5) !important
 }
 
 .item-26Dhrx[style*="rgb(114, 137, 218)"] {
-    background-color: rgb(var(--gradient-primary)); !important;
-    background-image: linear-gradient(to bottom right, rgb(var(--gradient-primary));, rgb(var(--gradient-secondary)););
+    background-color: var(--theme1); !important;
+    background-image: linear-gradient(to bottom right, var(--theme1);, var(--theme2););
     border: 1px solid rgba(0, 0, 0, .5) !important
 }
 
@@ -444,5 +446,5 @@
 
 .searchPage-3GKAdT .search-1iTphC .searchBox-2_mAlO:focus,
 .searchPage-3GKAdT .search-1iTphC .searchBox-2_mAlO:focus-within {
-    border-color: rgb(var(--gradient-primary));
+    border-color: var(--theme1);
 }
