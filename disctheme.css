@@ -151,7 +151,7 @@
 
 .membersGroup-v9BXpm {
     position: relative;
-    z-index: 1;
+    z-index: -1;
     padding: 19px 8px 5px 16px;
     text-align: center;
     letter-spacing: 1px;
