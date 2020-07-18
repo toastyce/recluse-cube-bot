@@ -83,7 +83,7 @@
 .standardSidebarView-3F1I7i #bd-customcss-attach-controls button:hover,
 .bd-detached-css-editor #bd-customcss-attach-controls button:hover {
     background-color: rgba(0, 0, 0, 0.8);
-    border: 2px solid var(--theme1); !important;
+    border: 2px solid var(--theme1) !important;
 }
 
 #bd-customcss-attach-controls .help-text .inline {
@@ -160,7 +160,7 @@
     color: #e6e6e6;
     border-bottom-width: 2px;
     border-style: solid;
-    border-image: linear-gradient(to right, transparent, var(--theme1);, var(--theme2);, transparent) 1
+    border-image: linear-gradient(to right, transparent, var(--theme1), var(--theme2), transparent) 1
 }
 
 .wrapper-CU3qI5 .icon-WnO6o2,
@@ -195,7 +195,7 @@
 }
 
 .selectableItem-1MP3MQ.selected-31soGA {
-    background-color: var(--theme2); !important;
+    background-color: var(--theme2) !important;
 }
 
 .theme-dark .selectableItem-1MP3MQ:hovers {
@@ -392,17 +392,17 @@
     color: #e6e6e6;
     border-bottom-width: 2px;
     border-style: solid;
-    border-image: linear-gradient(to right, transparent 0%, var(--theme1); 5%, var(--theme2); 10%, transparent 20%) 1;
+    border-image: linear-gradient(to right, transparent 0%, var(--theme1) 5%, var(--theme2) 10%, transparent 20%) 1;
 }
 
 ::selection {
-    background: rgb(var(--theme1););
+    background: rgb(var(--theme1));
     color: var(--theme2);;
   }
 
   .jumpButton-3DTcS_ {
     background-color: var(--theme1);;
-    background-image: linear-gradient(to bottom right, var(--theme1);, var(--theme2););
+    background-image: linear-gradient(to bottom right, var(--theme1), var(--theme2));
     display: block;
     padding: 10px;
 }
@@ -415,14 +415,14 @@
 
 
 .checkboxWrapper-SkhIWG .checkbox-1ix_J3.checked-3_4uQ9 {
-    background-color: var(--theme1); !important;
-    background-image: linear-gradient(to bottom right, var(--theme1);, var(--theme2););
+    background-color: var(--theme1) !important;
+    background-image: linear-gradient(to bottom right, var(--theme1), var(--theme2));
     border: 1px solid rgba(0, 0, 0, .5) !important
 }
 
 .item-26Dhrx[style*="rgb(114, 137, 218)"] {
-    background-color: var(--theme1); !important;
-    background-image: linear-gradient(to bottom right, var(--theme1);, var(--theme2););
+    background-color: var(--theme1) !important;
+    background-image: linear-gradient(to bottom right, var(--theme1), var(--theme2));
     border: 1px solid rgba(0, 0, 0, .5) !important
 }
 
