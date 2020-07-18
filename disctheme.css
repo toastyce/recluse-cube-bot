@@ -245,40 +245,51 @@
 
 
 
+/* Inline CodeBlock */
+.after_inlineCode-1KfVgj,
+.before_inlineCode-1G9rTK,
+.inlineCode-2ngu6Y {
+    background-color: rgba(0, 0, 0, .5);
+}
 
+/* Careful - you have unsaved changes! */
+.theme-dark .elevationHigh-1PneE4 {
+    background-color: rgba(0, 0, 0, .5) !important;
+}
 
+/* Audit Log Filters */
+.theme-dark .popoutList-T9CKZQ {
+    background-color: rgba(0, 0, 0, .5);
+}
 
-/* Emoji Picker (March or April 2020)*/
-.header-8ilj5e,
-.bodyWrapper-3G0FZZ,
-.contentWrapper-2txmjs,
-.inspector-sdLnLS,
-.wrapper-2N7X54,
-.categoryWrapper-UZ5YNj {
+.selectableItem-1MP3MQ.selected-31soGA {
+    background-color: var(--gradient-secondary) !important;
+}
+
+.theme-dark .selectableItem-1MP3MQ:hovers {
+    background-color: rgba(0, 0, 0, .5);
+}
+
+/* View Reactions */
+.theme-dark .sidebar-1-SQro,
+.theme-dark .reactors-Blmlhw {
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.theme-dark .reactionSelected-1pqISm {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.theme-dark .reactionDefault-GBA58K:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Color Picker */
+.theme-dark .colorPickerCustom-2CWBn2 {
     background: rgba(0, 0, 0, 0.7) !important;
+    border-color: rgb(20, 20, 20);
+    border-radius: 5px;
 }
 
-.emojiItem-14v6tW.emojiItemSelected-1aLkfV,
-.categoryItemDefaultCategorySelected-_HCKoz,
-.navButtonActive-3RPAJy {
-    background-color: var(--gradient-secondary);
-}
 
-.guildIcon-3h-1IH {
-    background-color: transparent;
-}
-
-.diversitySelectorPopout-3FiGaM {
-    background-color: rgba(0, 0, 0, 0.7) !important;
-    border-color: rgba(0, 0, 0, .5);
-}
-
-.diversityEmojiItem-L6_IXw:hover,
-.guildIcon-3h-1IH:hover {
-    background-color: var(--gradient-secondary);
-}
-
-.theme-dark .sadImage-2ph8SI {
-    display: none;
-}
 
