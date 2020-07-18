@@ -47,11 +47,11 @@
 
 /* Custom CSS Editor */
 .ace-monokai {
-    background-color: var(--bg-colour) !important;
+    background-color: rgb(var(--bg-colour)) !important;
 }
 
 .ace-monokai .ace_gutter {
-    background-color: var(--bg-colour) !important;
+    background-color: rgb(var(--bg-colour)) !important;
 }
 
 .ace-monokai .ace_gutter-active-line {
