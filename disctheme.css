@@ -245,31 +245,6 @@
 
 
 
-/* Inline CodeBlock */
-.after_inlineCode-1KfVgj,
-.before_inlineCode-1G9rTK,
-.inlineCode-2ngu6Y {
-    background-color: rgba(0, 0, 0, .5);
-}
-
-/* Careful - you have unsaved changes! */
-.theme-dark .elevationHigh-1PneE4 {
-    background-color: rgba(0, 0, 0, .5) !important;
-}
-
-/* Audit Log Filters */
-.theme-dark .popoutList-T9CKZQ {
-    background-color: rgba(0, 0, 0, .5);
-}
-
-.selectableItem-1MP3MQ.selected-31soGA {
-    background-color: var(--gradient-secondary) !important;
-}
-
-.theme-dark .selectableItem-1MP3MQ:hovers {
-    background-color: rgba(0, 0, 0, .5);
-}
-
 /* View Reactions */
 .theme-dark .sidebar-1-SQro,
 .theme-dark .reactors-Blmlhw {
