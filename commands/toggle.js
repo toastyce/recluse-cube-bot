@@ -95,6 +95,41 @@ exports.run = (client, message, args) => {
         break;
 
 
+      //Joshua / Kurt  
+      case "696634710146809917":
+        client.log.debug("Joshua");
+        if (optRole === "joshua") {
+          const notTicket = new client.Discord.MessageEmbed()
+            .setColor("#E74C3C")
+            .setDescription(client.starray.roleUp)
+          message.guild.roles.fetch('724785664331087933')
+            .then(role => role.setPosition(roleLength.length - 3)
+              .then(updated => console.log(`Role position: ${updated.position}`))
+              .catch(console.error)
+            ).then(message.member.setNickname("Joshua Bright").catch(client.log.error))
+
+          return message.channel.send(notTicket);
+        } else if (optRole === "kurt") {
+          const notTicket = new client.Discord.MessageEmbed()
+            .setColor("#E74C3C")
+            .setDescription(client.starray.roleUp)
+          message.guild.roles.fetch('734049886701486080')
+            .then(role => role.setPosition(roleLength.length - 3)
+              .then(updated => console.log(`Role position: ${updated.position}`))
+              .catch(console.error)
+            ).then(message.member.setNickname("Kurt Vander").catch(client.log.error))
+
+          return message.channel.send(notTicket);
+        }else {
+          const notTicket = new client.Discord.MessageEmbed()
+            .setColor("#E74C3C")
+            .setDescription(client.starray.wrongRole)
+          return message.channel.send(notTicket);
+
+        }
+        break;
+
+
         //Ash / Ashley 
       case "180429866166910976":
         client.log.debug("Ash");
@@ -150,7 +185,7 @@ exports.run = (client, message, args) => {
             .then(role => role.setPosition(roleLength.length - 3)
               .then(updated => console.log(`Role position: ${updated.position}`))
               .catch(console.error)
-            ).then(message.member.setNickname("Fie Claussell").catch(client.log.error))
+            ).then(message.member.setNickname("Sara Valestein").catch(client.log.error))
 
           return message.channel.send(notTicket);
         } else if (optRole === "sara") {
@@ -274,7 +309,7 @@ exports.run = (client, message, args) => {
           }
         break;
 
-                // Wazy / Angelica
+                // Rean / Lechter
       case "224923884565168138":
         client.log.debug("Rean-Xmas");
         if (optRole === "rean") {
@@ -309,28 +344,83 @@ exports.run = (client, message, args) => {
         break;
 
         // Anelace / Ries
-      case "710429131128700968":
-        client.log.debug("Anelace");
-        if (optRole === "anelace") {
+        case "710429131128700968":
+          client.log.debug("Anelace");
+          if (optRole === "anelace") {
+            const notTicket = new client.Discord.MessageEmbed()
+              .setColor("#E74C3C")
+              .setDescription(client.starray.roleUp)
+            message.guild.roles.fetch('725382368784810014')
+              .then(role => role.setPosition(roleLength.length - 3)
+                .then(updated => console.log(`Role position: ${updated.position}`))
+                .catch(console.error)
+              ).then(message.member.setNickname("Anelace Elfead").catch(client.log.error))
+  
+            return message.channel.send(notTicket);
+          } else if (optRole === "ries") {
+            const notTicket = new client.Discord.MessageEmbed()
+              .setColor("#E74C3C")
+              .setDescription(client.starray.roleUp)
+            message.guild.roles.fetch('729921961043427404')
+              .then(role => role.setPosition(roleLength.length - 3)
+                .then(updated => console.log(`Role position: ${updated.position}`))
+                .catch(console.error)
+              ).then(message.member.setNickname("Ries Argent").catch(client.log.error))
+  
+            return message.channel.send(notTicket);
+          } else {
+            const notTicket = new client.Discord.MessageEmbed()
+              .setColor("#E74C3C")
+              .setDescription(client.starray.wrongRole)
+            return message.channel.send(notTicket);
+  
+          }
+          break;
+                  // Sharon / Campanella
+      case "277980829387456512":
+        client.log.debug("Sharon");
+        if (optRole === "sharon") {
           const notTicket = new client.Discord.MessageEmbed()
             .setColor("#E74C3C")
             .setDescription(client.starray.roleUp)
-          message.guild.roles.fetch('725382368784810014')
+          message.guild.roles.fetch('728254793818046545')
             .then(role => role.setPosition(roleLength.length - 3)
               .then(updated => console.log(`Role position: ${updated.position}`))
               .catch(console.error)
-            ).then(message.member.setNickname("Anelace Elfead").catch(client.log.error))
+            ).then(message.member.setNickname("Sharon Krueger").catch(client.log.error))
 
           return message.channel.send(notTicket);
-        } else if (optRole === "ries") {
+        } else if (optRole === "camp") {
           const notTicket = new client.Discord.MessageEmbed()
             .setColor("#E74C3C")
             .setDescription(client.starray.roleUp)
-          message.guild.roles.fetch('729921961043427404')
+          message.guild.roles.fetch('734368922698252288')
             .then(role => role.setPosition(roleLength.length - 3)
               .then(updated => console.log(`Role position: ${updated.position}`))
               .catch(console.error)
-            ).then(message.member.setNickname("Ries Argent").catch(client.log.error))
+            ).then(message.member.setNickname("Campanella").catch(client.log.error))
+
+          return message.channel.send(notTicket);
+        } else if (optRole === "campy") {
+          const notTicket = new client.Discord.MessageEmbed()
+            .setColor("#E74C3C")
+            .setDescription(client.starray.roleUp)
+          message.guild.roles.fetch('734368922698252288')
+            .then(role => role.setPosition(roleLength.length - 3)
+              .then(updated => console.log(`Role position: ${updated.position}`))
+              .catch(console.error)
+            ).then(message.member.setNickname("Campanella").catch(client.log.error))
+
+          return message.channel.send(notTicket);
+        } else if (optRole === "campanella") {
+          const notTicket = new client.Discord.MessageEmbed()
+            .setColor("#E74C3C")
+            .setDescription(client.starray.roleUp)
+          message.guild.roles.fetch('734368922698252288')
+            .then(role => role.setPosition(roleLength.length - 3)
+              .then(updated => console.log(`Role position: ${updated.position}`))
+              .catch(console.error)
+            ).then(message.member.setNickname("Campanella").catch(client.log.error))
 
           return message.channel.send(notTicket);
         } else {

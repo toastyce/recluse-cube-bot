@@ -21,7 +21,9 @@ exports.run = (client, message, args) => {
             // FIXME
             var ch = client.channels.cache.get(client.config.postChannel);
             client.log.debug(ch.id);
-            ch.messages.fetch(`${sets[1]}`).then(m => {m.delete();})
+            ch.messages.fetch(`${sets[1]}`).then(m => {
+                m.delete();
+            })
 
             // log
             const embed = new client.Discord.MessageEmbed()
@@ -54,7 +56,7 @@ exports.run = (client, message, args) => {
             let juniorRole = message.guild.roles.cache.get(client.config.juniorRole)
             message.channel.overwritePermissions([{
                     id: memberRole,
-                    deny: ['VIEW_CHANNEL'],
+                    allow: ['VIEW_CHANNEL'],
                 },
                 {
                     id: juniorRole,
@@ -65,12 +67,7 @@ exports.run = (client, message, args) => {
                     allow: ['VIEW_CHANNEL'],
                 },
             ])
-            message.channel.members.forEach(m =>
-                c.createOverwrite(m, {
-                    VIEW_CHANNEL: true,
-                    SEND_MESSAGES: false
-                })
-            )
+
 
             c.setTopic(`${message.channel.topic} [ARCHIVED]`);
 

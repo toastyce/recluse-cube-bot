@@ -43,7 +43,7 @@ module.exports = (client, member) => {
   
       c.setTopic(`${member} | ${topic}`);
       await c.send(client.starray.tagSupport.replace("{{role}}", `<@&${client.config.supportRole}>`));
-      await c.send(client.starray.registerCreated.replace("{{user}}", `<${topic}>`))
+      await c.send(client.starray.registerCreated.replace("{{user}}", `<@!${member.id}>`))
   
       const created = new client.Discord.MessageEmbed()
         .setColor(client.config.colour)
@@ -63,7 +63,7 @@ module.exports = (client, member) => {
         .setAuthor(`${client.user.username}`, client.user.avatarURL)
         .setTitle("New registration")
         .setColor(client.config.colour)
-        .setDescription(`\`${topic}\`\n` + client.starray.registerNext + `\n` + client.starray.closeNext)
+        .setDescription(`\`<@!${member.id}>\`\n` + client.starray.registerNext + `\n` + client.starray.closeNext)
         .addField("Username", topic, true)
         .addField("Channel", c, true)
         .setFooter(client.starray.footer.replace("{{version}}", `${client.version}`))
