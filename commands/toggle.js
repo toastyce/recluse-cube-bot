@@ -14,8 +14,22 @@ exports.run = (client, message, args) => {
   optRole = args[0].toLowerCase();
   const toggle = message.member.id;
   client.log.debug(toggle);
+  
+  // Log
+  const embed = new client.Discord.MessageEmbed()
+  .setAuthor(`${client.user.username}`, client.user.avatarURL)
+  .setTitle("Toggle activated")
+  .setColor(client.config.colour)
+  .addField("Username", message.author, true)
+  .addField("Role:", optRole, true)
+  .addField("Channel", message.channel.name, true)
+  .setFooter(client.starray.footer.replace("{{version}}", `${client.version}`))
+  .setTimestamp();
+client.channels.cache.get(client.config.logChannel).send({
+  embed
+})
 
-  // Begin switch/case
+// Begin switch/case
   switch (toggle) {
 
     // Musse
