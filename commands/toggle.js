@@ -280,6 +280,17 @@ client.channels.cache.get(client.config.logChannel).send({
             ).then(message.member.setNickname("Sora Ikushima").catch(client.log.error))
 
           return message.channel.send(notTicket);
+        } else if (optRole === "alisa") {
+          const notTicket = new client.Discord.MessageEmbed()
+            .setColor("#E74C3C")
+            .setDescription(client.starray.roleUp)
+          message.guild.roles.fetch('738588958224547850')
+            .then(role => role.setPosition(roleL7ength.length - 3)
+              .then(updated => console.log(`Role position: ${updated.position}`))
+              .catch(console.error)
+            ).then(message.member.setNickname("Alisa Reinford").catch(client.log.error))
+
+          return message.channel.send(notTicket);
         } else {
           const notTicket = new client.Discord.MessageEmbed()
             .setColor("#E74C3C")
