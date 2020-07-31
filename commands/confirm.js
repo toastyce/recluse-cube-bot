@@ -12,7 +12,13 @@ exports.run = (client, message, args) => {
     const characterName = args[1];
     const roleName = args[2];
     const roleColor = args[3];
-    const roleAffinity = args[4].toLowerCase();
+    let roleAffinity = "light";
+    if (!args[4]) {
+        roleAffinity = "light"; 
+    }
+    else {
+        roleAffinity = args[4].toLowerCase();
+    }
     let member = message.mentions.members.first();
 
     // error checks

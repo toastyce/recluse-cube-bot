@@ -285,10 +285,10 @@ client.channels.cache.get(client.config.logChannel).send({
             .setColor("#E74C3C")
             .setDescription(client.starray.roleUp)
           message.guild.roles.fetch('738588958224547850')
-            .then(role => role.setPosition(roleL7ength.length - 3)
+            .then(role => role.setPosition(roleLength.length - 3)
               .then(updated => console.log(`Role position: ${updated.position}`))
               .catch(console.error)
-            ).then(message.member.setNickname("Alisa Reinford").catch(client.log.error))
+            ).then(message.member.setNickname("Alisa Reinford [Sketch]").catch(client.log.error))
 
           return message.channel.send(notTicket);
         } else {
