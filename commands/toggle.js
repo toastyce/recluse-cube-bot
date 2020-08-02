@@ -120,7 +120,7 @@ client.channels.cache.get(client.config.logChannel).send({
             .then(role => role.setPosition(roleLength.length - 3)
               .then(updated => console.log(`Role position: ${updated.position}`))
               .catch(console.error)
-            ).then(message.member.setNickname("Joshua Bright").catch(client.log.error))
+            ).then(message.member.setNickname("Joshua Bright [Bialga]").catch(client.log.error))
 
           return message.channel.send(notTicket);
         } else if (optRole === "kurt") {
