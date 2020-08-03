@@ -52,6 +52,7 @@ exports.run = (client, message, args) => {
         .then(async c => {
 
             let supportRole = message.guild.roles.cache.get(client.config.supportRole)
+            let specRole = message.guild.roles.cache.get(client.config.specRole)
             let memberRole = message.guild.roles.cache.get(client.config.memberRole)
             let juniorRole = message.guild.roles.cache.get(client.config.juniorRole)
             message.channel.overwritePermissions([{
@@ -64,6 +65,9 @@ exports.run = (client, message, args) => {
                 },
                 {
                     id: supportRole,
+                    allow: ['VIEW_CHANNEL'],
+                },                {
+                    id: specRole,
                     allow: ['VIEW_CHANNEL'],
                 },
             ])

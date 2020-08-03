@@ -298,10 +298,12 @@ exports.run = (client, message, args) => {
                     SEND_MESSAGES: false
                 })
 
-                c.createOverwrite(message.author.id, {
+                let specRole = message.guild.roles.cache.get(`${client.config.SpecRole}`)
+                c.createOverwrite(specRole, {
                     VIEW_CHANNEL: true,
-                    SEND_MESSAGES: true
+                    SEND_MESSAGES: false
                 })
+
 
                 if (event.spectators.toLowerCase() == 'yes') {
                     let spectatorRole = message.guild.roles.cache.get(`${client.config.memberRole}`)
