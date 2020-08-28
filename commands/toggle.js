@@ -43,7 +43,7 @@ client.channels.cache.get(client.config.logChannel).send({
             .then(updated => console.log(`Role position: ${updated.position}`))
             .catch(console.error)
           ).then(message.member.setNickname("Musse Egret").catch(client.log.error))
-        return message.channel.send(notTicket);
+        return message.channel.send(notTicket).then(r => r.delete({ timeout: 5000 }));
       } else if (optRole === "mildine") {
         const notTicket = new client.Discord.MessageEmbed()
           .setColor("#9dee74")
@@ -53,15 +53,134 @@ client.channels.cache.get(client.config.logChannel).send({
             .then(updated => console.log(`Role position: ${updated.position}`))
             .catch(console.error)
           ).then(message.member.setNickname("Mildine Juzalith de Cayenne").catch(client.log.error))
-        return message.channel.send(notTicket);
+        return message.channel.send(notTicket).then(r => r.delete({ timeout: 5000 }));
       } else {
         const notTicket = new client.Discord.MessageEmbed()
           .setColor("#E74C3C")
           .setDescription(client.starray.wrongRole)
-        return message.channel.send(notTicket);
+        return message.channel.send(notTicket).then(r => r.delete({ timeout: 5000 }));
 
       }
       break;
+
+          // duvalie
+    case "442377941670952982":
+      if (optRole === "duvalie") {
+        const notTicket = new client.Discord.MessageEmbed()
+          .setColor("#9dee74")
+          .setDescription(client.starray.roleUp)
+        message.guild.roles.fetch('710843767061479484')
+          .then(role => role.setPosition(roleLength.length - 4)
+            .then(updated => console.log(`Role position: ${updated.position}`))
+            .catch(console.error)
+          ).then(message.member.setNickname("Duvalie The Swift").catch(client.log.error))
+        return message.channel.send(notTicket).then(r => r.delete({ timeout: 5000 }));
+      } else if (optRole === "doobs") {
+        const notTicket = new client.Discord.MessageEmbed()
+          .setColor("#9dee74")
+          .setDescription(client.starray.roleUp)
+        message.guild.roles.fetch('710843767061479484')
+          .then(role => role.setPosition(roleLength.length - 4)
+            .then(updated => console.log(`Role position: ${updated.position}`))
+            .catch(console.error)
+          ).then(message.member.setNickname("Duvalie The Swift").catch(client.log.error))
+        return message.channel.send(notTicket).then(r => r.delete({ timeout: 5000 }));
+      }else if (optRole === "noel") {
+        const notTicket = new client.Discord.MessageEmbed()
+          .setColor("#9dee74")
+          .setDescription(client.starray.roleUp)
+        message.guild.roles.fetch('744772391313604680')
+          .then(role => role.setPosition(roleLength.length - 4)
+            .then(updated => console.log(`Role position: ${updated.position}`))
+            .catch(console.error)
+          ).then(message.member.setNickname("Noel Seeker").catch(client.log.error))
+        return message.channel.send(notTicket).then(r => r.delete({ timeout: 5000 }));
+      } else {
+        const notTicket = new client.Discord.MessageEmbed()
+          .setColor("#E74C3C")
+          .setDescription(client.starray.wrongRole)
+        return message.channel.send(notTicket).then(r => r.delete({ timeout: 5000 }));
+
+      }
+      break;
+
+            //Renne / Altina
+            case "294526351300493314":
+              client.log.debug("Renne");
+              if (optRole === "renne") {
+                const notTicket = new client.Discord.MessageEmbed()
+                  .setColor("#E74C3C")
+                  .setDescription(client.starray.roleUp)
+                message.guild.roles.fetch('710058944634290226')
+                  .then(role => role.setPosition(roleLength.length - 3)
+                    .then(updated => console.log(`Role position: ${updated.position}`))
+                    .catch(console.error)
+                  ).then(message.member.setNickname("Renne Bright").catch(client.log.error))
+      
+                return message.channel.send(notTicket).then(r => r.delete({ timeout: 5000 }));
+              } else if (optRole === "altina") {
+                const notTicket = new client.Discord.MessageEmbed()
+                  .setColor("#E74C3C")
+                  .setDescription(client.starray.roleUp)
+                message.guild.roles.fetch('710296422020415580')
+                  .then(role => role.setPosition(roleLength.length - 3)
+                    .then(updated => console.log(`Role position: ${updated.position}`))
+                    .catch(console.error)
+                  ).then(message.member.setNickname("Altina Orion").catch(client.log.error))
+      
+                return message.channel.send(notTicket).then(r => r.delete({ timeout: 5000 }));
+              }else {
+                const notTicket = new client.Discord.MessageEmbed()
+                  .setColor("#E74C3C")
+                  .setDescription(client.starray.wrongRole)
+                return message.channel.send(notTicket).then(r => r.delete({ timeout: 5000 }));
+      
+              }
+              break;        
+               //Renne / Altina
+      case "172857701255086080":
+        client.log.debug("Renne");
+        if (optRole === "crow") {
+          const notTicket = new client.Discord.MessageEmbed()
+            .setColor("#E74C3C")
+            .setDescription(client.starray.roleUp)
+          message.guild.roles.fetch('739630229215117414')
+            .then(role => role.setPosition(roleLength.length - 3)
+              .then(updated => console.log(`Role position: ${updated.position}`))
+              .catch(console.error)
+            ).then(message.member.setNickname("Crow Armbrust").catch(client.log.error))
+
+          return message.channel.send(notTicket).then(r => r.delete({ timeout: 5000 }));
+        } else if (optRole === "alfin") {
+          const notTicket = new client.Discord.MessageEmbed()
+            .setColor("#E74C3C")
+            .setDescription(client.starray.roleUp)
+          message.guild.roles.fetch('729402685782229063')
+            .then(role => role.setPosition(roleLength.length - 3)
+              .then(updated => console.log(`Role position: ${updated.position}`))
+              .catch(console.error)
+            ).then(message.member.setNickname("Alfin Reise Arnor").catch(client.log.error))
+
+          return message.channel.send(notTicket).then(r => r.delete({ timeout: 5000 }));
+        }else if (optRole === "swin") {
+          const notTicket = new client.Discord.MessageEmbed()
+            .setColor("#E74C3C")
+            .setDescription(client.starray.roleUp)
+          message.guild.roles.fetch('748504737825161306')
+            .then(role => role.setPosition(roleLength.length - 3)
+              .then(updated => console.log(`Role position: ${updated.position}`))
+              .catch(console.error)
+            ).then(message.member.setNickname("Swin Abel").catch(client.log.error))
+
+          return message.channel.send(notTicket).then(r => r.delete({ timeout: 5000 }));
+        }else {
+          const notTicket = new client.Discord.MessageEmbed()
+            .setColor("#E74C3C")
+            .setDescription(client.starray.wrongRole)
+          return message.channel.send(notTicket).then(r => r.delete({ timeout: 5000 }));
+
+        }
+        break;
 
       //Estelle / Juna  
       case "157348124346679297":
@@ -76,7 +195,7 @@ client.channels.cache.get(client.config.logChannel).send({
               .catch(console.error)
             ).then(message.member.setNickname("Estelle Bright").catch(client.log.error))
 
-          return message.channel.send(notTicket);
+          return message.channel.send(notTicket).then(r => r.delete({ timeout: 5000 }));
         } else if (optRole === "juna") {
           const notTicket = new client.Discord.MessageEmbed()
             .setColor("#E74C3C")
@@ -87,23 +206,23 @@ client.channels.cache.get(client.config.logChannel).send({
               .catch(console.error)
             ).then(message.member.setNickname("Juna Crawford").catch(client.log.error))
 
-          return message.channel.send(notTicket);
-        }else if (optRole === "elie") {
+          return message.channel.send(notTicket).then(r => r.delete({ timeout: 5000 }));
+        }else if (optRole === "oli") {
           const notTicket = new client.Discord.MessageEmbed()
             .setColor("#E74C3C")
             .setDescription(client.starray.roleUp)
-          message.guild.roles.fetch('733449978252361809')
+          message.guild.roles.fetch('714881982110367794')
             .then(role => role.setPosition(roleLength.length - 4)
               .then(updated => console.log(`Role position: ${updated.position}`))
               .catch(console.error)
-            ).then(message.member.setNickname("Elie MacDowell").catch(client.log.error))
+            ).then(message.member.setNickname("Olivert Reise Arnor").catch(client.log.error))
 
-          return message.channel.send(notTicket);
+          return message.channel.send(notTicket).then(r => r.delete({ timeout: 5000 }));
         } else {
           const notTicket = new client.Discord.MessageEmbed()
             .setColor("#E74C3C")
             .setDescription(client.starray.wrongRole)
-          return message.channel.send(notTicket);
+          return message.channel.send(notTicket).then(r => r.delete({ timeout: 5000 }));
 
         }
         break;
@@ -122,7 +241,7 @@ client.channels.cache.get(client.config.logChannel).send({
               .catch(console.error)
             ).then(message.member.setNickname("Joshua Bright [Bialga]").catch(client.log.error))
 
-          return message.channel.send(notTicket);
+          return message.channel.send(notTicket).then(r => r.delete({ timeout: 5000 }));
         } else if (optRole === "kurt") {
           const notTicket = new client.Discord.MessageEmbed()
             .setColor("#E74C3C")
@@ -133,17 +252,17 @@ client.channels.cache.get(client.config.logChannel).send({
               .catch(console.error)
             ).then(message.member.setNickname("Kurt Vander").catch(client.log.error))
 
-          return message.channel.send(notTicket);
+          return message.channel.send(notTicket).then(r => r.delete({ timeout: 5000 }));
         }else {
           const notTicket = new client.Discord.MessageEmbed()
             .setColor("#E74C3C")
             .setDescription(client.starray.wrongRole)
-          return message.channel.send(notTicket);
+          return message.channel.send(notTicket).then(r => r.delete({ timeout: 5000 }));
 
         }
         break;
 
-      //Joshua / Kurt  
+      //Joshua / Rixia / Randy  
       case "160150246934970368":
         client.log.debug("Joshua");
         if (optRole === "joshua") {
@@ -156,7 +275,7 @@ client.channels.cache.get(client.config.logChannel).send({
               .catch(console.error)
             ).then(message.member.setNickname("Joshua Bright [Grapey]").catch(client.log.error))
 
-          return message.channel.send(notTicket);
+          return message.channel.send(notTicket).then(r => r.delete({ timeout: 5000 }));
         } else if (optRole === "rixia") {
           const notTicket = new client.Discord.MessageEmbed()
             .setColor("#E74C3C")
@@ -167,12 +286,23 @@ client.channels.cache.get(client.config.logChannel).send({
               .catch(console.error)
             ).then(message.member.setNickname("Rixia Mao [Grapey]").catch(client.log.error))
 
-          return message.channel.send(notTicket);
+          return message.channel.send(notTicket).then(r => r.delete({ timeout: 5000 }));
+        }else if (optRole === "randy") {
+          const notTicket = new client.Discord.MessageEmbed()
+            .setColor("#E74C3C")
+            .setDescription(client.starray.roleUp)
+          message.guild.roles.fetch('729841536359071865')
+            .then(role => role.setPosition(roleLength.length - 4)
+              .then(updated => console.log(`Role position: ${updated.position}`))
+              .catch(console.error)
+            ).then(message.member.setNickname("Randy Orlando [Grapey]").catch(client.log.error))
+
+          return message.channel.send(notTicket).then(r => r.delete({ timeout: 5000 }));
         }else {
           const notTicket = new client.Discord.MessageEmbed()
             .setColor("#E74C3C")
             .setDescription(client.starray.wrongRole)
-          return message.channel.send(notTicket);
+          return message.channel.send(notTicket).then(r => r.delete({ timeout: 5000 }));
 
         }
         break;
@@ -191,7 +321,7 @@ client.channels.cache.get(client.config.logChannel).send({
               .catch(console.error)
             ).then(message.member.setNickname("Ash Carbide").catch(client.log.error))
 
-          return message.channel.send(notTicket);
+          return message.channel.send(notTicket).then(r => r.delete({ timeout: 5000 }));
         } else if (optRole === "ashley") {
           const notTicket = new client.Discord.MessageEmbed()
             .setColor("#E74C3C")
@@ -202,7 +332,7 @@ client.channels.cache.get(client.config.logChannel).send({
               .catch(console.error)
             ).then(message.member.setNickname("Ashley Carbide").catch(client.log.error))
 
-          return message.channel.send(notTicket);
+          return message.channel.send(notTicket).then(r => r.delete({ timeout: 5000 }));
         } else if (optRole === "shirley") {
           const notTicket = new client.Discord.MessageEmbed()
             .setColor("#E74C3C")
@@ -213,12 +343,23 @@ client.channels.cache.get(client.config.logChannel).send({
               .catch(console.error)
             ).then(message.member.setNickname("Shirley Orlando").catch(client.log.error))
 
-          return message.channel.send(notTicket);
+          return message.channel.send(notTicket).then(r => r.delete({ timeout: 5000 }));
+        }else if (optRole === "nadia") {
+          const notTicket = new client.Discord.MessageEmbed()
+            .setColor("#E74C3C")
+            .setDescription(client.starray.roleUp)
+          message.guild.roles.fetch('723042835397607475')
+            .then(role => role.setPosition(roleLength.length - 4)
+              .then(updated => console.log(`Role position: ${updated.position}`))
+              .catch(console.error)
+            ).then(message.member.setNickname("Nadia Rayne").catch(client.log.error))
+
+          return message.channel.send(notTicket).then(r => r.delete({ timeout: 5000 }));
         } else {
           const notTicket = new client.Discord.MessageEmbed()
             .setColor("#E74C3C")
             .setDescription(client.starray.wrongRole)
-          return message.channel.send(notTicket);
+          return message.channel.send(notTicket).then(r => r.delete({ timeout: 5000 }));
 
         }
         break;
@@ -235,7 +376,7 @@ client.channels.cache.get(client.config.logChannel).send({
               .catch(console.error)
             ).then(message.member.setNickname("Fie Claussell").catch(client.log.error))
 
-          return message.channel.send(notTicket);
+          return message.channel.send(notTicket).then(r => r.delete({ timeout: 5000 }));
         } else if (optRole === "sara") {
           const notTicket = new client.Discord.MessageEmbed()
             .setColor("#E74C3C")
@@ -246,7 +387,7 @@ client.channels.cache.get(client.config.logChannel).send({
               .catch(console.error)
             ).then(message.member.setNickname("Sara Valestein").catch(client.log.error))
 
-          return message.channel.send(notTicket);
+          return message.channel.send(notTicket).then(r => r.delete({ timeout: 5000 }));
         } else if (optRole === "toval") {
           const notTicket = new client.Discord.MessageEmbed()
             .setColor("#E74C3C")
@@ -257,7 +398,7 @@ client.channels.cache.get(client.config.logChannel).send({
               .catch(console.error)
             ).then(message.member.setNickname("Toval Randonneur").catch(client.log.error))
 
-          return message.channel.send(notTicket);
+          return message.channel.send(notTicket).then(r => r.delete({ timeout: 5000 }));
         } else if (optRole === "lavot") {
           const notTicket = new client.Discord.MessageEmbed()
             .setColor("#E74C3C")
@@ -268,7 +409,7 @@ client.channels.cache.get(client.config.logChannel).send({
               .catch(console.error)
             ).then(message.member.setNickname("lavoT ruennodnaR").catch(client.log.error))
 
-          return message.channel.send(notTicket);
+          return message.channel.send(notTicket).then(r => r.delete({ timeout: 5000 }));
         } else if (optRole === "renne") {
           const notTicket = new client.Discord.MessageEmbed()
             .setColor("#E74C3C")
@@ -279,12 +420,12 @@ client.channels.cache.get(client.config.logChannel).send({
               .catch(console.error)
             ).then(message.member.setNickname("Renne Claussell").catch(client.log.error))
 
-          return message.channel.send(notTicket);
+          return message.channel.send(notTicket).then(r => r.delete({ timeout: 5000 }));
         } else {
           const notTicket = new client.Discord.MessageEmbed()
             .setColor("#E74C3C")
             .setDescription(client.starray.wrongRole)
-          return message.channel.send(notTicket);
+          return message.channel.send(notTicket).then(r => r.delete({ timeout: 5000 }));
 
         }
         break;
@@ -302,7 +443,7 @@ client.channels.cache.get(client.config.logChannel).send({
               .catch(console.error)
             ).then(message.member.setNickname("Millium Orion [Sketch]").catch(client.log.error))
 
-          return message.channel.send(notTicket);
+          return message.channel.send(notTicket).then(r => r.delete({ timeout: 5000 }));
         } else if (optRole === "rean") {
           const notTicket = new client.Discord.MessageEmbed()
             .setColor("#E74C3C")
@@ -313,7 +454,7 @@ client.channels.cache.get(client.config.logChannel).send({
               .catch(console.error)
             ).then(message.member.setNickname("Rean Schwarzer [Sketch]").catch(client.log.error))
 
-          return message.channel.send(notTicket);
+          return message.channel.send(notTicket).then(r => r.delete({ timeout: 5000 }));
         } else if (optRole === "sora") {
           const notTicket = new client.Discord.MessageEmbed()
             .setColor("#E74C3C")
@@ -324,7 +465,7 @@ client.channels.cache.get(client.config.logChannel).send({
               .catch(console.error)
             ).then(message.member.setNickname("Sora Ikushima").catch(client.log.error))
 
-          return message.channel.send(notTicket);
+          return message.channel.send(notTicket).then(r => r.delete({ timeout: 5000 }));
         } else if (optRole === "alisa") {
           const notTicket = new client.Discord.MessageEmbed()
             .setColor("#E74C3C")
@@ -335,12 +476,12 @@ client.channels.cache.get(client.config.logChannel).send({
               .catch(console.error)
             ).then(message.member.setNickname("Alisa Reinford [Sketch]").catch(client.log.error))
 
-          return message.channel.send(notTicket);
+          return message.channel.send(notTicket).then(r => r.delete({ timeout: 5000 }));
         } else {
           const notTicket = new client.Discord.MessageEmbed()
             .setColor("#E74C3C")
             .setDescription(client.starray.wrongRole)
-          return message.channel.send(notTicket);
+          return message.channel.send(notTicket).then(r => r.delete({ timeout: 5000 }));
 
         }
         break;
@@ -358,7 +499,7 @@ client.channels.cache.get(client.config.logChannel).send({
                 .catch(console.error)
               ).then(message.member.setNickname("Wazy Hemisphere").catch(client.log.error))
   
-            return message.channel.send(notTicket);
+            return message.channel.send(notTicket).then(r => r.delete({ timeout: 5000 }));
           } else if (optRole === "angelica") {
             const notTicket = new client.Discord.MessageEmbed()
               .setColor("#E74C3C")
@@ -369,7 +510,7 @@ client.channels.cache.get(client.config.logChannel).send({
                 .catch(console.error)
               ).then(message.member.setNickname("Angelica Rogner").catch(client.log.error))
   
-            return message.channel.send(notTicket);
+            return message.channel.send(notTicket).then(r => r.delete({ timeout: 5000 }));
           }else if (optRole === "lloyd") {
             const notTicket = new client.Discord.MessageEmbed()
               .setColor("#E74C3C")
@@ -380,12 +521,12 @@ client.channels.cache.get(client.config.logChannel).send({
                 .catch(console.error)
               ).then(message.member.setNickname("Lloyd Bannings [Syoudre]").catch(client.log.error))
   
-            return message.channel.send(notTicket);
+            return message.channel.send(notTicket).then(r => r.delete({ timeout: 5000 }));
           } else {
             const notTicket = new client.Discord.MessageEmbed()
               .setColor("#E74C3C")
               .setDescription(client.starray.wrongRole)
-            return message.channel.send(notTicket);
+            return message.channel.send(notTicket).then(r => r.delete({ timeout: 5000 }));
   
           }
         break;
@@ -403,7 +544,7 @@ client.channels.cache.get(client.config.logChannel).send({
               .catch(console.error)
             ).then(message.member.setNickname("Rean Schwarzer [Xmas]").catch(client.log.error))
 
-          return message.channel.send(notTicket);
+          return message.channel.send(notTicket).then(r => r.delete({ timeout: 5000 }));
         } else if (optRole === "lechter") {
           const notTicket = new client.Discord.MessageEmbed()
             .setColor("#E74C3C")
@@ -414,7 +555,7 @@ client.channels.cache.get(client.config.logChannel).send({
               .catch(console.error)
             ).then(message.member.setNickname("Lechter Arundel").catch(client.log.error))
 
-          return message.channel.send(notTicket);
+          return message.channel.send(notTicket).then(r => r.delete({ timeout: 5000 }));
         }else if (optRole === "jusis") {
           const notTicket = new client.Discord.MessageEmbed()
             .setColor("#E74C3C")
@@ -425,12 +566,12 @@ client.channels.cache.get(client.config.logChannel).send({
               .catch(console.error)
             ).then(message.member.setNickname("Jusis Albarea").catch(client.log.error))
 
-          return message.channel.send(notTicket);
+          return message.channel.send(notTicket).then(r => r.delete({ timeout: 5000 }));
         } else {
           const notTicket = new client.Discord.MessageEmbed()
             .setColor("#E74C3C")
             .setDescription(client.starray.wrongRole)
-          return message.channel.send(notTicket);
+          return message.channel.send(notTicket).then(r => r.delete({ timeout: 5000 }));
 
         }
         break;
@@ -448,7 +589,7 @@ client.channels.cache.get(client.config.logChannel).send({
                 .catch(console.error)
               ).then(message.member.setNickname("Anelace Elfead").catch(client.log.error))
   
-            return message.channel.send(notTicket);
+            return message.channel.send(notTicket).then(r => r.delete({ timeout: 5000 }));
           } else if (optRole === "ries") {
             const notTicket = new client.Discord.MessageEmbed()
               .setColor("#E74C3C")
@@ -459,12 +600,12 @@ client.channels.cache.get(client.config.logChannel).send({
                 .catch(console.error)
               ).then(message.member.setNickname("Ries Argent").catch(client.log.error))
   
-            return message.channel.send(notTicket);
+            return message.channel.send(notTicket).then(r => r.delete({ timeout: 5000 }));
           } else {
             const notTicket = new client.Discord.MessageEmbed()
               .setColor("#E74C3C")
               .setDescription(client.starray.wrongRole)
-            return message.channel.send(notTicket);
+            return message.channel.send(notTicket).then(r => r.delete({ timeout: 5000 }));
   
           }
           break;
@@ -481,7 +622,7 @@ client.channels.cache.get(client.config.logChannel).send({
               .catch(console.error)
             ).then(message.member.setNickname("Sharon Krueger").catch(client.log.error))
 
-          return message.channel.send(notTicket);
+          return message.channel.send(notTicket).then(r => r.delete({ timeout: 5000 }));
         } else if (optRole === "camp") {
           const notTicket = new client.Discord.MessageEmbed()
             .setColor("#E74C3C")
@@ -492,7 +633,7 @@ client.channels.cache.get(client.config.logChannel).send({
               .catch(console.error)
             ).then(message.member.setNickname("Campanella").catch(client.log.error))
 
-          return message.channel.send(notTicket);
+          return message.channel.send(notTicket).then(r => r.delete({ timeout: 5000 }));
         } else if (optRole === "campy") {
           const notTicket = new client.Discord.MessageEmbed()
             .setColor("#E74C3C")
@@ -503,7 +644,7 @@ client.channels.cache.get(client.config.logChannel).send({
               .catch(console.error)
             ).then(message.member.setNickname("Campanella").catch(client.log.error))
 
-          return message.channel.send(notTicket);
+          return message.channel.send(notTicket).then(r => r.delete({ timeout: 5000 }));
         } else if (optRole === "campanella") {
           const notTicket = new client.Discord.MessageEmbed()
             .setColor("#E74C3C")
@@ -514,7 +655,7 @@ client.channels.cache.get(client.config.logChannel).send({
               .catch(console.error)
             ).then(message.member.setNickname("Campanella").catch(client.log.error))
 
-          return message.channel.send(notTicket);
+          return message.channel.send(notTicket).then(r => r.delete({ timeout: 5000 }));
         } else if (optRole === "vita") {
           const notTicket = new client.Discord.MessageEmbed()
             .setColor("#E74C3C")
@@ -525,12 +666,12 @@ client.channels.cache.get(client.config.logChannel).send({
               .catch(console.error)
             ).then(message.member.setNickname("Vita Clotilde").catch(client.log.error))
 
-          return message.channel.send(notTicket);
+          return message.channel.send(notTicket).then(r => r.delete({ timeout: 5000 }));
         } else {
           const notTicket = new client.Discord.MessageEmbed()
             .setColor("#E74C3C")
             .setDescription(client.starray.wrongRole)
-          return message.channel.send(notTicket);
+          return message.channel.send(notTicket).then(r => r.delete({ timeout: 5000 }));
 
         }
         break;
@@ -539,7 +680,7 @@ client.channels.cache.get(client.config.logChannel).send({
         const notTicket = new client.Discord.MessageEmbed()
           .setColor("#E74C3C")
           .setDescription(client.starray.noMulti)
-        return message.channel.send(notTicket);
+        return message.channel.send(notTicket).then(r => r.delete({ timeout: 5000 }));
   }
 
   // command ends here

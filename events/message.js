@@ -56,6 +56,20 @@ module.exports = (client, message) => {
             if (err)
                 return client.log.error(err);
         });
+    } 
+     if (message.channel.name.startsWith('azoth')) {
+        try {
+            if (!fs.existsSync(`./../OneDrive/${message.channel.name}.csv`)) {
+                fs.createWriteStream(`./../OneDrive/${message.channel.name}.csv`);; //file created
+            }
+        } catch (err) {
+            client.log.debug(err)
+        }
+        var m1 = message.content.match(/([^,]*),(.*)/)
+        fs.appendFile(`./../OneDrive/${message.channel.name}.csv`, `\n` + `"${m1[1]}"` + `,` + `"${m1[2]}"`, function (err)  {
+            if (err)
+                return client.log.error(err);
+        });
     }
 
     //clear discord invites -- except by mods
@@ -74,6 +88,8 @@ module.exports = (client, message) => {
                 .then(message.channel.send('Message Deleted:\n**Only twitter links are allowed in this channel.**'))
         }
     }
+
+
     // filter messages for commands
     if (message.author.bot) return;
     if (message.content.startsWith(client.config.prefix)) {

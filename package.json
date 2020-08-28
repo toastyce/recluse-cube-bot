@@ -8,9 +8,10 @@
   },
   "dependencies": {
     "discord.js": "^12.2.0",
+    "enmap": "^5.2.4",
     "leekslazylogger": "^1.1.9",
     "twit": "2.2.11",
-    "enmap": "^5.2.4"
+    "webhook-discord": "^3.7.5"
   },
   "repository": {
     "type": "git",

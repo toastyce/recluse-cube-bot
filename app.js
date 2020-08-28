@@ -20,7 +20,7 @@ const Discord = require("Discord.js");
 const Enmap = require("enmap");
 const Twitter = require('twit');
 const fs = require("fs");
-
+const webhook = require("webhook-discord")
 const client = new Discord.Client({
   partials: ['MESSAGE', 'CHANNEL', 'REACTION']
 });
@@ -38,6 +38,7 @@ client.version = version;
 client.description = description;
 client.starray = starray;
 client.fish = fish;
+client.msghook = webhook;
 //const stream = twitterClient.stream('statuses/filter', {
 //  follow: '2899773086', // @Every3Minutes, specify whichever Twitter ID you want to follow
 //});
