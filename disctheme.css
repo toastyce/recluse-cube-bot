@@ -466,7 +466,11 @@
     color: rgb(var(--gradient-primary));
 }
 
-.unread-2lAfLh da-unread {
+.da-modeUnread {
+    color: rgb(var(--gradient-primary));
+}
+
+.modeUnread-1qO3K1 {
     color: rgb(var(--gradient-primary));
 }
 .modeUnread-1zpFdA:hover .name-3_Dsmg {
