@@ -400,7 +400,7 @@
   }
 
   .jumpButton-3DTcS_ {
-    background-color: rgb(var(--gradient-primary));;
+    background-color: rgb(var(--gradient-primary));
     background-image: linear-gradient(to bottom right, rgb(var(--gradient-primary)), rgb(var(--gradient-secondary)));
     display: block;
     padding: 10px;
@@ -462,17 +462,6 @@
     background: rgba(0, 0, 0, .5);
 }
 
-.modeUnread-1zpFdA .name-3_Dsmg {
-    color: rgb(var(--gradient-primary));
-}
-
-.da-modeUnread {
-    color: rgb(var(--gradient-primary));
-}
-
-.modeUnread-1qO3K1 {
-    color: rgb(var(--gradient-primary));
-}
-.modeUnread-1zpFdA:hover .name-3_Dsmg {
-    color: rgb(var(--gradient-primary));
+/* Unread Channels */
+.modeUnread-1zpFdA:hover .name-3_Dsmg:hover, .modeUnread-1zpFdA .name-3_Dsmg{color: rgb(var(--gradient-primary)) !important;
 }
