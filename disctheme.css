@@ -461,3 +461,10 @@
 .categoryItemDefaultCategorySelected-_HCKoz:hover {
     background: rgba(0, 0, 0, .5);
 }
+
+.modeUnread-1zpFdA .name-3_Dsmg {
+    color: var(--gradient-primary);
+}
+.modeUnread-1zpFdA:hover .name-3_Dsmg {
+    color: var(--gradient-primary);
+}
