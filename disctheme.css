@@ -465,6 +465,10 @@
 .modeUnread-1zpFdA .name-3_Dsmg {
     color: rgb(var(--gradient-primary));
 }
+
+.unread-2lAfLh da-unread {
+    color: rgb(var(--gradient-primary));
+}
 .modeUnread-1zpFdA:hover .name-3_Dsmg {
     color: rgb(var(--gradient-primary));
 }
