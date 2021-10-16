@@ -71,7 +71,7 @@ reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /v "Con
 reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /v "FilterAdministratorToken" /t REG_DWORD /d "0" /f >nul 2>&1
 
 echo Enabling Windows Components
-dism /online /enable-feature /featurename:DesktopExperience /all /norestart >nul 2>&1
+dism /online /enable-feature /featurename:Hyper-V /all /norestart >nul 2>&1
 dism /online /enable-feature /featurename:LegacyComponents /all /norestart >nul 2>&1
 dism /online /enable-feature /featurename:DirectPlay /all /norestart >nul 2>&1
 dism /online /enable-feature /featurename:NetFx4-AdvSrvs /all /norestart >nul 2>&1
@@ -175,10 +175,6 @@ reg add "HKLM\System\CurrentControlSet\Control\CrashControl" /v "DisplayParamete
 
 echo Disabling Administrative shares
 reg add "HKLM\System\CurrentControlSet\Services\LanmanServer\Parameters" /v "AutoShareWks" /t REG_DWORD /d "0" /f >nul 2>&1
-
-echo Turn off sleep and lock in power options
-reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FlyoutMenuSettings" /v "ShowSleepOption" /t REG_DWORD /d "0" /f >nul 2>&1
-reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FlyoutMenuSettings" /v "ShowLockOption" /t REG_DWORD /d "0" /f >nul 2>&1
 
 echo Sound communications do nothing
 reg add "HKCU\SOFTWARE\Microsoft\Multimedia\Audio" /v "UserDuckingPreference" /t REG_DWORD /d "3" /f >nul 2>&1
@@ -540,72 +536,23 @@ wmic /NAMESPACE:"\\root\subscription" PATH ActiveScriptEventConsumer CREATE Name
 wmic /NAMESPACE:"\\root\subscription" PATH __FilterToConsumerBinding CREATE Filter="__EventFilter.Name=\"GlobalAppCompatFlags\"", Consumer="ActiveScriptEventConsumer.Name=\"GlobalAppCompatFlags\"" >nul 2>&1
 
 REM echo Removing Windows bloatware
-REM     set "SAFE_APPS=AAD.brokerplugin accountscontrol apprep.chxapp assignedaccess asynctext bioenrollment capturepicker cloudexperience contentdelivery desktopappinstaller ecapp getstarted immersivecontrolpanel lockapp net.native OneNote oobenet parentalcontrols PPIProjection sechealth secureas shellexperience startmenuexperience vclibs WindowsCalculator WindowsCamera YourPhone xaml XGpuEject calculator xbox store IntelGraphics NVIDIAControlPanel RealtekAudioControl AdvancedMicroDevicesInc"
-REM     for %%i in (!SAFE_APPS!) do (
-REM         set "REMOVE_BLOAT=!REMOVE_BLOAT! where-object {$_.name –notlike '*%%i*'} |"
-REM         set "REMOVE_BLOAT_PACK=!REMOVE_BLOAT_PACK! where-object {$_.packagename -notlike '*%%i*'} |"
-REM     )
-REM     call:POWERSHELL "Get-AppxPackage -allusers |!REMOVE_BLOAT! Remove-AppxPackage"
-REM     call:POWERSHELL "Get-AppxProvisionedPackage -online |!REMOVE_BLOAT_PACK! Remove-AppxProvisionedPackage -online"
 call:POWERSHELL "Get-AppxPackage *3dbuilder* | Remove-AppxPackage"
-call:POWERSHELL "Get-AppxPackage *officehub* | Remove-AppxPackage"
-call:POWERSHELL "Get-AppxPackage *skypeapp* | Remove-AppxPackage"
-call:POWERSHELL "Get-AppxPackage *getstarted* | Remove-AppxPackage"
+call:POWERSHELL "Get-AppxPackage *WindowsFeedbackHub* | Remove-AppxPackage"
+call:POWERSHELL "Get-AppxPackage *GetHelp* | Remove-AppxPackage"
+call:POWERSHELL "Get-AppxPackage *WindowsMaps* | Remove-AppxPackage"
+call:POWERSHELL "Get-AppxPackage *MicrosoftStickyNotes* | Remove-AppxPackage"
+call:POWERSHELL "Get-AppxPackage *Todos* | Remove-AppxPackage"
 call:POWERSHELL "Get-AppxPackage *zunemusic* | Remove-AppxPackage"
-call:POWERSHELL "Get-AppxPackage *windowsmaps* | Remove-AppxPackage"
+call:POWERSHELL "Get-AppxPackage *Teams* | Remove-AppxPackage"
 call:POWERSHELL "Get-AppxPackage *solitairecollection* | Remove-AppxPackage"
-call:POWERSHELL "Get-AppxPackage *bingfinance* | Remove-AppxPackage"
+call:POWERSHELL "Get-AppxPackage *YourPhone* | Remove-AppxPackage"
 call:POWERSHELL "Get-AppxPackage *zunevideo* | Remove-AppxPackage"
 call:POWERSHELL "Get-AppxPackage *people* | Remove-AppxPackage"
 call:POWERSHELL "Get-AppxPackage *bingnews* | Remove-AppxPackage"
 call:POWERSHELL "Get-AppxPackage *bingsports* | Remove-AppxPackage"
 call:POWERSHELL "Get-AppxPackage *bingweather* | Remove-AppxPackage"
-REM call:POWERSHELL "Get-AppxPackage *freshpaint* | Remove-AppxPackage"
 call:POWERSHELL "Get-AppxPackage *Microsoft3DViewer* | Remove-AppxPackage"
-call:POWERSHELL "Get-AppxPackage *2FE3CB00.PicsArt-PhotoStudio* | Remove-AppxPackage"
-call:POWERSHELL "Get-AppxPackage *46928bounde.EclipseManager* | Remove-AppxPackage"
-call:POWERSHELL "Get-AppxPackage *4DF9E0F8.Netflix* | Remove-AppxPackage"
-call:POWERSHELL "Get-AppxPackage *613EBCEA.PolarrPhotoEditorAcademicEdition* | Remove-AppxPackage"
-call:POWERSHELL "Get-AppxPackage *6Wunderkinder.Wunderlist* | Remove-AppxPackage"
-call:POWERSHELL "Get-AppxPackage *7EE7776C.LinkedInforWindows* | Remove-AppxPackage"
-call:POWERSHELL "Get-AppxPackage *89006A2E.AutodeskSketchBook* | Remove-AppxPackage"
-REM call:POWERSHELL "Get-AppxPackage *9E2F88E3.Twitter* | Remove-AppxPackage"
-call:POWERSHELL "Get-AppxPackage *A278AB0D.DisneyMagicKingdoms* | Remove-AppxPackage"
-call:POWERSHELL "Get-AppxPackage *A278AB0D.MarchofEmpires* | Remove-AppxPackage"
-call:POWERSHELL "Get-AppxPackage *ActiproSoftwareLLC.562882FEEB491* | Remove-AppxPackage" 
-REM call:POWERSHELL "Get-AppxPackage *CAF9E577.Plex* | Remove-AppxPackage"  
-call:POWERSHELL "Get-AppxPackage *ClearChannelRadioDigital.iHeartRadio* | Remove-AppxPackage"
-call:POWERSHELL "Get-AppxPackage *D52A8D61.FarmVille2CountryEscape* | Remove-AppxPackage"
-call:POWERSHELL "Get-AppxPackage *D5EA27B7.Duolingo-LearnLanguagesforFree* | Remove-AppxPackage"
-call:POWERSHELL "Get-AppxPackage *DB6EA5DB.CyberLinkMediaSuiteEssentials* | Remove-AppxPackage"
-call:POWERSHELL "Get-AppxPackage *DolbyLaboratories.DolbyAccess* | Remove-AppxPackage"
-call:POWERSHELL "Get-AppxPackage *DolbyLaboratories.DolbyAccess* | Remove-AppxPackage"
-call:POWERSHELL "Get-AppxPackage *Drawboard.DrawboardPDF* | Remove-AppxPackage"
-call:POWERSHELL "Get-AppxPackage *Facebook.Facebook* | Remove-AppxPackage"
-call:POWERSHELL "Get-AppxPackage *Fitbit.FitbitCoach* | Remove-AppxPackage"
-call:POWERSHELL "Get-AppxPackage *Flipboard.Flipboard* | Remove-AppxPackage"
-call:POWERSHELL "Get-AppxPackage *GAMELOFTSA.Asphalt8Airborne* | Remove-AppxPackage"
-call:POWERSHELL "Get-AppxPackage *KeeperSecurityInc.Keeper* | Remove-AppxPackage"
-call:POWERSHELL "Get-AppxPackage *NORDCURRENT.COOKINGFEVER* | Remove-AppxPackage"
-call:POWERSHELL "Get-AppxPackage *PandoraMediaInc.29680B314EFC2* | Remove-AppxPackage"
-call:POWERSHELL "Get-AppxPackage *Playtika.CaesarsSlotsFreeCasino* | Remove-AppxPackage"
-call:POWERSHELL "Get-AppxPackage *ShazamEntertainmentLtd.Shazam* | Remove-AppxPackage"
-call:POWERSHELL "Get-AppxPackage *SlingTVLLC.SlingTV* | Remove-AppxPackage"
 call:POWERSHELL "Get-AppxPackage *SpotifyAB.SpotifyMusic* | Remove-AppxPackage"
-call:POWERSHELL "Get-AppxPackage *humbmunkeysLtd.PhototasticCollage* | Remove-AppxPackage"
-call:POWERSHELL "Get-AppxPackage *TuneIn.TuneInRadio* | Remove-AppxPackage"
-call:POWERSHELL "Get-AppxPackage *WinZipComputing.WinZipUniversal* | Remove-AppxPackage"
-call:POWERSHELL "Get-AppxPackage *XINGAG.XING* | Remove-AppxPackage"
-call:POWERSHELL "Get-AppxPackage *flaregamesGmbH.RoyalRevolt2* | Remove-AppxPackage"
-call:POWERSHELL "Get-AppxPackage *king.com.* | Remove-AppxPackage"
-call:POWERSHELL "Get-AppxPackage *king.com.BubbleWitch3Saga* | Remove-AppxPackage"
-call:POWERSHELL "Get-AppxPackage *king.com.CandyCrushSaga* | Remove-AppxPackage"
-call:POWERSHELL "Get-AppxPackage *king.com.CandyCrushSodaSaga* | Remove-AppxPackage"
-call:POWERSHELL "Get-AppxPackage *Microsoft.BingFoodAndDrink* | Remove-AppxPackage"
-call:POWERSHELL "Get-AppxPackage *Microsoft.BingHealthAndFitness* | Remove-AppxPackage"
-call:POWERSHELL "Get-AppxPackage *Microsoft.BingTravel* | Remove-AppxPackage"
-call:POWERSHELL "Get-AppxPackage *Microsoft.WindowsReadingList* | Remove-AppxPackage"
-call:POWERSHELL "Get-AppxPackage *Microsoft.MixedReality.Portal* | Remove-AppxPackage"
 
 
 echo Enabling HRTF
@@ -787,34 +734,14 @@ reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Serialize" /v "
 echo Display highly detailed status messages
 reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /v "VerboseStatus" /t REG_DWORD /d "1" /f >nul 2>&1
 
-echo Turn off Pen feedback
-reg add "HKLM\SOFTWARE\Policies\Microsoft\TabletPC" /v "TurnOffPenFeedback" /t REG_DWORD /d "1" /f >nul 2>&1
-
 echo Do not offer tailored experiences based on the diagnostic data setting
 reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Privacy" /v "TailoredExperiencesWithDiagnosticDataEnabled" /t REG_DWORD /d "0" /f >nul 2>&1
 
 REM echo Disabling Remote assistance connections
 REM reg add "HKLM\System\CurrentControlSet\Control\Remote Assistance" /v "fAllowToGetHelp" /t REG_DWORD /d "0" /f >nul 2>&1
 
-echo Do not allow apps to use advertising ID
-reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\AdvertisingInfo" /v "Enabled" /t REG_DWORD /d "0" /f >nul 2>&1
-
 echo Do not let apps on other devices open and message apps on this device
 reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\CDP" /v "RomeSdkChannelUserAuthzPolicy" /t REG_DWORD /d "0" /f >nul 2>&1
-
-echo Do not show the Windows welcome experiences after updates
-reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "SubscribedContent-310093Enabled" /t REG_DWORD /d "0" /f >nul 2>&1
-
-echo Do not get tip, trick, and suggestions as you use Windows
-reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "SubscribedContent-338389Enabled" /t REG_DWORD /d "0" /f >nul 2>&1
-
-echo Do not show suggested content in the Settings app
-reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "SubscribedContent-338393Enabled" /t REG_DWORD /d "0" /f >nul 2>&1
-reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "SubscribedContent-353694Enabled" /t REG_DWORD /d "0" /f >nul 2>&1
-reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "SubscribedContent-353696Enabled" /t REG_DWORD /d "0" /f >nul 2>&1
-
-echo Do not show app suggestions in the Start menu
-reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "SubscribedContent-338388Enabled" /t REG_DWORD /d "0" /f >nul 2>&1
 
 echo Do not show recently added apps in the Start menu
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\Explorer" /v "HideRecentlyAddedApps" /t REG_DWORD /d "1" /f >nul 2>&1
@@ -948,7 +875,7 @@ call:CHOCO discord
 call:CHOCO office365proplus
 call:CHOCO easy7zip
 call:CHOCO vscode
-call:CHOCO steam
+call:CHOCO steam-client
 call:CHOCO qbittorrent
 call:CHOCO vcredist-all
 call:CHOCO directx
@@ -959,11 +886,16 @@ call:CHOCO k-litecodecpackfull
 call:CHOCO windirstat
 call:CHOCO paint.net
 call:CHOCO defraggler
+call:CHOCO project-aurora
 call:CHOCO microsoft-windows-Terminal
 call:CHOCO ds4windows
 call:CHOCO universal-adb-drivers
 call:CHOCO git
 call:CHOCO nodejs
+call:CHOCO borderlessgaming
+call:CHOCO geforce-experience
+call:CHOCO mousewithoutborders
+call:CHOCO moonlight-qt
 call:CHOCO choco-upgrade-all-at-startup
 call:CHOCOUP choco-upgrade-all-at
 
